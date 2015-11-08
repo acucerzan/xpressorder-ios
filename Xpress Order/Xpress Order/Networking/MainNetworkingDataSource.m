@@ -1,0 +1,71 @@
+//
+//  EventsDataSource.m
+//  XpressOrder
+//
+//  Created by Adrian Cucerzan on 22/08/14.
+//
+
+#import "MainNetworkingDataSource.h"
+#import "PlaceListParser.h"
+
+#import "AFNetworkReachabilityManager.h"
+
+//#define URL_SERVER @"http://coffee.dahuasoft2008.com/api/"
+#define URL_SERVER @"http://www.coffeeapp.club/api/"
+//#define URL_SERVER @"http://192.168.1.115/API/"
+
+@implementation MainNetworkingDataSource
+
+- (id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        // start reachability monitor
+        [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    }
+    
+    return self;
+}
+
+- (NSString *)getPlacesURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"get_place_list.php"];
+    
+    return str;
+}
+
+- (void)getPlacesWithCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+//    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//        return;
+//    }
+    
+    NSDictionary *headers = [NSDictionary dictionaryWithObjectsAndKeys:
+                             @"application/json", @"Content-type",
+                             nil];
+    
+    
+//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   nil];
+    
+    [self getDataWithUrl:[self getPlacesURL]
+         timeoutInterval:30
+                 headers:headers
+              parameters:nil//params
+           requestMethod:@"GET"
+         fallbackToCache:NO
+             parserClass:[PlaceListParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
+
+- (void)cancelPlacesRequest
+{
+    [self cancelOperationWithUrl:[self getPlacesURL]];
+}
+
+@end
