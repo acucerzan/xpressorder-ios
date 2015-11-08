@@ -10,13 +10,15 @@
 
 #import "UIImageView+AFNetworking.h"
 
-#define kMerchantImageView 401
-#define kMerchantNameLabel 402
-#define kLikeButton 403
-#define kDistanceButton 404
-#define kVisitsLabel 405
-#define kPointsLabel 406
-#define kLabelsContainer 407
+#import "HCSStarRatingView.h"
+
+#define kImageView 101
+#define kNameLabel 102
+#define kReviewButton 104
+#define kRatingView 103
+
+
+//#define kLabelsContainer 407
 
 @interface PlaceCell ()
 
@@ -24,54 +26,35 @@
 
 @implementation PlaceCell
 
-- (UIImageView *)merchantImageView
-{
-    return (UIImageView *)[self viewWithTag:kMerchantImageView];
-}
-
-- (UILabel *)merchantNameLabel
-{
-    return (UILabel *)[self viewWithTag:kMerchantNameLabel];
-}
-
-- (UIButton *)likeButton
-{
-    return (UIButton *)[self viewWithTag:kLikeButton];
-}
-
-//- (MVDistanceButton *)distanceButton
-//{
-//    return (MVDistanceButton *)[self viewWithTag:kDistanceButton];
-//}
-
-- (UILabel *)visitsLabel
-{
-    return (UILabel *)[self viewWithTag:kVisitsLabel];
-}
-
-- (UILabel *)pointsLabel
-{
-    return (UILabel *)[self viewWithTag:kPointsLabel];
-}
-
 - (UIImageView *)imageView
 {
-    return [self merchantImageView];
+    return [self placeImageView];
 }
 
-- (UILabel *)titleLabel
+- (UIImageView *)placeImageView
 {
-    return [self merchantNameLabel];
+    return (UIImageView *)[self viewWithTag:kImageView];
 }
 
-- (UIView *)labelsContainerView
+- (UILabel *)placeNameLabel
 {
-    return [self viewWithTag:kLabelsContainer];
+    return (UILabel *)[self viewWithTag:kNameLabel];
 }
 
-- (void)loadMerchantImage:(UIImage *)image
+- (CafeReviewButton *)reviewButton
 {
-    UIImageView *merchantImgView = [self merchantImageView];
+    return (CafeReviewButton *)[self viewWithTag:kReviewButton];
+}
+
+- (HCSStarRatingView *)visitsLabel
+{
+    return (HCSStarRatingView *)[self viewWithTag:kRatingView];
+}
+
+
+- (void)loadPlaceImage:(UIImage *)image
+{
+    UIImageView *merchantImgView = [self placeImageView];
     
     [merchantImgView setContentMode:UIViewContentModeScaleAspectFill];
     [merchantImgView setClipsToBounds:YES];
@@ -79,48 +62,32 @@
     [merchantImgView setImage:image];
 }
 
-//- (void)loadItem
-//{
-//    UIImageView *merchantImgView = [self merchantImageView];
-//    
-//    [merchantImgView setContentMode:UIViewContentModeCenter];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:merchant.photo.url]];
-//    [merchantImgView setImageWithURLRequest:request placeholderImage:Image(@"ic_place_holder") success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-//        [self loadMerchantImage:image];
-//    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-//        NSLog(@"Place Failed dowloading merchant image");
-//    }];
-//    
-//    merchantImgView.layer.cornerRadius = 1;
-//    
+- (void)loadItem:(Cafe *)item
+{
+    UIImageView *placeImgView = [self placeImageView];
+    
+    NSString *imageName = item.place_logo_image_name;
+    
+    if (imageName && imageName.length > 0) {
+        [placeImgView setImage:[UIImage imageNamed:imageName]];
+    }
+    else
+    {
+        [placeImgView setImage:[UIImage imageNamed:@"place_list_logo"]];
+    }
+    
 //    UIView *containerView = [self labelsContainerView];
 //    containerView.layer.cornerRadius = 2;
 //    
 //    containerView.layer.borderWidth = 1.0f;
-//
-//    UIButton *likeBtn = [self likeButton];
-//    likeBtn.selected = [merchant.isFavorite boolValue];
-//    
-//    UILabel *merchantNameLbl = [self merchantNameLabel];
-//    
-//    [merchantNameLbl setText:merchant.placeName];
-//    
-//    UILabel *visitsLbl = [self visitsLabel];
-//    
-//    [visitsLbl setText:[NSString stringWithFormat:@"%d %@", [merchant.visits intValue], lang(@"visits_text")]];
-//
-//    UILabel *pointsLbl = [self pointsLabel];
-//	if (merchant.rewardInfo && merchant.rewardInfo.points)
-//		[pointsLbl setText:fmt(@"%d %@", [merchant.rewardInfo.points intValue], _(@"points_text"))];
-//
-//    MVDistanceButton *distanceBtn = [self distanceButton];
-//    
-//	[distanceBtn setDistance:merchant.distance];
-//    
-//    
-//    NSString *distanceString = [distanceBtn distanceInKmToCurrentLocation];
-//    [distanceBtn setTitle:distanceString forState:UIControlStateNormal];
-//    
-//}
+
+    
+    
+    UIButton *reviewBtn = [self reviewButton];
+    [reviewBtn setTitle:@"REVIEW" forState:UIControlStateNormal];
+
+    
+    NSLog(@"Place review: %@", item.place_review);
+}
 
 @end

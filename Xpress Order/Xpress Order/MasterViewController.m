@@ -109,24 +109,17 @@
     
     Cafe *cafeObj = [self.arrayCafe objectAtIndex:indexPath.row];
     
-    UIImageView *ivImage = (UIImageView*)[cell viewWithTag:1];
-    [ivImage setImage:[UIImage imageNamed:cafeObj.place_logo_image_name]];
-    
-    UILabel *lblName = (UILabel*)[cell viewWithTag:2];
-    [lblName setText:cafeObj.place_name];
+    [cell loadItem:cafeObj];
     
 //    HCSStarRatingView *ratingView = (HCSStarRatingView*)[cell viewWithTag:3];
     //Star
 //    [ratingView setImagesDeselected:@"place_list_star_white1.png" partlySelected:@"place_list_star_red1.png" fullSelected:@"place_list_star_red1.png" andDelegate:nil];
 //    [ratingView displayRating:cafeObj.place_review.floatValue];
     
-    UIButton *button = (UIButton*)[cell viewWithTag:4];
-    button.tag = indexPath.row;
-    [button addTarget:self action:@selector(gotoCafe:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *btnreview = (UIButton*)[cell viewWithTag:5];
-    btnreview.tag = indexPath.row;
+    CafeReviewButton *btnreview = [cell reviewButton];
+    [btnreview setWeakPlace:cafeObj];
     [btnreview addTarget:self action:@selector(setReview:) forControlEvents:UIControlEventTouchUpInside];
+    
     
     return cell;
 }
@@ -153,11 +146,17 @@
 
 - (void) setReview:(id)sender
 {
-    UIButton *btn = (UIButton*)sender;
-    NSInteger index = btn.tag;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     
-    NSLog(@"setReview index %@", indexPath);
+    CafeReviewButton *btn = (CafeReviewButton *)sender;
+
+    if (btn.weakPlace)
+    {
+        NSLog(@"Clicked review for Place: %@", btn.weakPlace);
+    }
+    
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    
+//    NSLog(@"setReview index %@", indexPath);
     
 //    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
 //    

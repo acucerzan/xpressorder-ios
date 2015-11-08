@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CafeReviewButton.h"
 
 @interface PlaceCell : UITableViewCell
 
-//- (UIImageView *)merchantImageView;
-//- (UILabel *)merchantNameLabel;
-//- (UIButton *)likeButton;
-//- (MVDistanceButton *)distanceButton;
-//- (UILabel *)visitsLabel;
-//- (UILabel *)pointsLabel;
-//
+- (CafeReviewButton *)reviewButton;
+
+- (void)loadItem:(Cafe *)item;
 
 @end

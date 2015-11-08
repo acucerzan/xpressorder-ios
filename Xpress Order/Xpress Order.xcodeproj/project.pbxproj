@@ -39,6 +39,7 @@
 		4A1852F01BE9173E00AF495F /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852EF1BE9173E00AF495F /* Cafe.m */; };
 		4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852F41BE9289900AF495F /* PlaceCell.m */; };
 		4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852F51BE9289900AF495F /* PlaceCell.xib */; };
+		4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		4A1852F31BE9289900AF495F /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
 		4A1852F41BE9289900AF495F /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
 		4A1852F51BE9289900AF495F /* PlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
+		4ABFCF281BEF9DCC00987B79 /* CafeReviewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeReviewButton.h; sourceTree = "<group>"; };
+		4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeReviewButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,7 @@
 		4A1852381BE7CF0700AF495F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4ABFCF271BEF9D9C00987B79 /* CafeReviewButton */,
 				4A1852F11BE9289900AF495F /* TableViewCells */,
 			);
 			path = Views;
@@ -303,6 +307,15 @@
 			path = PlaceCell;
 			sourceTree = "<group>";
 		};
+		4ABFCF271BEF9D9C00987B79 /* CafeReviewButton */ = {
+			isa = PBXGroup;
+			children = (
+				4ABFCF281BEF9DCC00987B79 /* CafeReviewButton.h */,
+				4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */,
+			);
+			name = CafeReviewButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,6 +403,7 @@
 				4A1852E51BE7DA9200AF495F /* CJSONScanner.m in Sources */,
 				4A1852ED1BE9151700AF495F /* AFNetworkReachabilityManager.m in Sources */,
 				4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */,
+				4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */,
 				4A1852211BE7CD0D00AF495F /* MasterViewController.m in Sources */,
 				4A1852D41BE7DA8600AF495F /* PlaceListParser.m in Sources */,
 				4A1852C71BE7DA2E00AF495F /* AFImageRequestOperation.m in Sources */,
@@ -552,6 +566,7 @@
 				4A1852321BE7CD0D00AF495F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
