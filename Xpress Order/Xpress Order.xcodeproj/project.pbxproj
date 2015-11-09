@@ -39,6 +39,10 @@
 		4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852F41BE9289900AF495F /* PlaceCell.m */; };
 		4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852F51BE9289900AF495F /* PlaceCell.xib */; };
 		4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */; };
+		BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4221BF11DC70029338D /* TableSelectionVC.m */; };
+		BD04F4261BF13CEC0029338D /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4251BF13CEC0029338D /* Table.m */; };
+		BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4281BF13E1F0029338D /* TableSelectionCell.m */; };
+		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +111,13 @@
 		4A1852F51BE9289900AF495F /* PlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
 		4ABFCF281BEF9DCC00987B79 /* CafeReviewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeReviewButton.h; sourceTree = "<group>"; };
 		4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeReviewButton.m; sourceTree = "<group>"; };
+		BD04F4211BF11DC70029338D /* TableSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionVC.h; sourceTree = "<group>"; };
+		BD04F4221BF11DC70029338D /* TableSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionVC.m; sourceTree = "<group>"; };
+		BD04F4241BF13CEC0029338D /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		BD04F4251BF13CEC0029338D /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
+		BD04F4271BF13E1F0029338D /* TableSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionCell.h; sourceTree = "<group>"; };
+		BD04F4281BF13E1F0029338D /* TableSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionCell.m; sourceTree = "<group>"; };
+		BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSelectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +161,7 @@
 				4A1852341BE7CF0700AF495F /* 3rd Party */,
 				4A1852351BE7CF0700AF495F /* Model */,
 				4A1852361BE7CF0700AF495F /* Networking */,
-				4A1852371BE7CF0700AF495F /* ViewControllers */,
+				BD04F4201BF11DC70029338D /* ViewControllers */,
 				4A1852381BE7CF0700AF495F /* Views */,
 				4A1852191BE7CD0D00AF495F /* Supporting Files */,
 			);
@@ -184,6 +195,8 @@
 				4A1852E91BE9100A00AF495F /* XPModel.m */,
 				4A1852EE1BE9173E00AF495F /* Cafe.h */,
 				4A1852EF1BE9173E00AF495F /* Cafe.m */,
+				BD04F4241BF13CEC0029338D /* Table.h */,
+				BD04F4251BF13CEC0029338D /* Table.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,13 +210,6 @@
 				4A1852D21BE7DA8600AF495F /* PlaceListParser.m */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		4A1852371BE7CF0700AF495F /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		4A1852381BE7CF0700AF495F /* Views */ = {
@@ -288,6 +294,9 @@
 			isa = PBXGroup;
 			children = (
 				4A1852F21BE9289900AF495F /* PlaceCell */,
+				BD04F4271BF13E1F0029338D /* TableSelectionCell.h */,
+				BD04F4281BF13E1F0029338D /* TableSelectionCell.m */,
+				BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -309,6 +318,15 @@
 				4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */,
 			);
 			name = CafeReviewButton;
+			sourceTree = "<group>";
+		};
+		BD04F4201BF11DC70029338D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BD04F4211BF11DC70029338D /* TableSelectionVC.h */,
+				BD04F4221BF11DC70029338D /* TableSelectionVC.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */,
+				BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */,
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
 				4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */,
@@ -388,6 +407,7 @@
 				4A1852E61BE7DA9200AF495F /* CJSONSerializer.m in Sources */,
 				4A1852CC1BE7DA2E00AF495F /* AFXMLRequestOperation.m in Sources */,
 				4A1852C81BE7DA2E00AF495F /* AFJSONRequestOperation.m in Sources */,
+				BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */,
 				4A1852C61BE7DA2E00AF495F /* AFHTTPRequestOperation.m in Sources */,
 				4A1852CD1BE7DA2E00AF495F /* LAbstractAFDataSource.m in Sources */,
 				4A1852631BE7CFBF00AF495F /* HCSStarRatingView.m in Sources */,
@@ -400,11 +420,13 @@
 				4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */,
 				4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */,
 				4A1852211BE7CD0D00AF495F /* MasterViewController.m in Sources */,
+				BD04F4261BF13CEC0029338D /* Table.m in Sources */,
 				4A1852D41BE7DA8600AF495F /* PlaceListParser.m in Sources */,
 				4A1852C71BE7DA2E00AF495F /* AFImageRequestOperation.m in Sources */,
 				4A1852E21BE7DA9200AF495F /* CDataScanner_Extensions.m in Sources */,
 				4A1852C91BE7DA2E00AF495F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4A18521B1BE7CD0D00AF495F /* main.m in Sources */,
+				BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */,
 				4A1852E41BE7DA9200AF495F /* CJSONDeserializer.m in Sources */,
 				4A1852EA1BE9100A00AF495F /* XPModel.m in Sources */,
 				4A1852C51BE7DA2E00AF495F /* AFHTTPClient.m in Sources */,

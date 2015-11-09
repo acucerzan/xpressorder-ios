@@ -7,7 +7,7 @@
 //
 
 #import "MasterViewController.h"
-
+#import "TableSelectionVC.h"
 #import "HCSStarRatingView.h"
 
 #import "PlaceCell.h"
@@ -31,6 +31,7 @@
     [self.myTableView setSeparatorColor:[UIColor clearColor]];
     [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
+    //self.title =@"Back";
     [self downloadPlaces];
 }
 
@@ -186,12 +187,12 @@
     
     if (self.navigationController)
         NSLog(@"%@", self.navigationController);
+
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"TableSelectionVC"];
     
-//    TableListController *vc = (TableListController *)ViewControllerWithIdentifier(@"TableListViewID");
-//    vc.strPlaceID = [cafeObj place_id];
-//    vc.strPlaceName = [cafeObj place_name];
-//    
-//    OpenViewControllerInNavigation(vc, self.navigationController);
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 #pragma mark UITableViewDelegate

@@ -78,6 +78,58 @@
             </objects>
             <point key="canvasLocation" x="-275" y="97"/>
         </scene>
+        <!--TableSelectionVC-->
+        <scene sceneID="sw3-OG-Uwt">
+            <objects>
+                <viewController storyboardIdentifier="TableSelectionVC" title="TableSelectionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JTL-nM-GEI" customClass="TableSelectionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RA7-PM-hzh"/>
+                        <viewControllerLayoutGuide type="bottom" id="rFo-zp-l3x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NHd-3Y-7YM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ssr-Og-9L1">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JTL-nM-GEI" id="Gzl-Gb-st2"/>
+                                    <outlet property="delegate" destination="JTL-nM-GEI" id="4c9-yM-9KK"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwS-9e-kCU">
+                                <rect key="frame" x="0.0" y="60" width="375" height="10"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.18450337629898961" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="wG9-IZ-ksl"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ssr-Og-9L1" firstAttribute="top" secondItem="NHd-3Y-7YM" secondAttribute="top" id="CNR-y8-sF1"/>
+                            <constraint firstItem="BwS-9e-kCU" firstAttribute="top" secondItem="NHd-3Y-7YM" secondAttribute="top" constant="60" id="GDU-Qu-7Wl"/>
+                            <constraint firstAttribute="trailing" secondItem="Ssr-Og-9L1" secondAttribute="trailing" id="Lg9-QH-PqI"/>
+                            <constraint firstItem="rFo-zp-l3x" firstAttribute="top" secondItem="Ssr-Og-9L1" secondAttribute="bottom" id="MRz-jG-jEk"/>
+                            <constraint firstAttribute="trailing" secondItem="BwS-9e-kCU" secondAttribute="trailing" id="UDd-wA-zGy"/>
+                            <constraint firstItem="BwS-9e-kCU" firstAttribute="leading" secondItem="NHd-3Y-7YM" secondAttribute="leading" id="iIq-YX-YCf"/>
+                            <constraint firstItem="Ssr-Og-9L1" firstAttribute="leading" secondItem="NHd-3Y-7YM" secondAttribute="leading" id="pXn-hR-wAe"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableViewTableSelection" destination="Ssr-Og-9L1" id="OTh-0G-EyX"/>
+                        <outlet property="viewShadowTop" destination="BwS-9e-kCU" id="fI5-wL-63J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIE-SV-5fe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285.5" y="-619.5"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="YFJ-Vf-0lU">
             <objects>
