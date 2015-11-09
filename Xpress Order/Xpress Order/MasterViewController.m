@@ -28,6 +28,8 @@
     
     self.arrayCafe = [NSMutableArray arrayWithCapacity:0];
     
+    [self.myTableView setBackgroundColor:[UIColor clearColor]];
+    
     [self downloadPlaces];
 }
 
@@ -95,7 +97,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *cellIdentifierLast = @"cellIdentifierLast";
+    static NSString *cellIdentifierLast = @"cellIdentifierLast1";
     PlaceCell *cell = (PlaceCell *) [self.myTableView dequeueReusableCellWithIdentifier:cellIdentifierLast];
     
     if(!cell)
@@ -110,11 +112,6 @@
     Cafe *cafeObj = [self.arrayCafe objectAtIndex:indexPath.row];
     
     [cell loadItem:cafeObj];
-    
-//    HCSStarRatingView *ratingView = (HCSStarRatingView*)[cell viewWithTag:3];
-    //Star
-//    [ratingView setImagesDeselected:@"place_list_star_white1.png" partlySelected:@"place_list_star_red1.png" fullSelected:@"place_list_star_red1.png" andDelegate:nil];
-//    [ratingView displayRating:cafeObj.place_review.floatValue];
     
     CafeReviewButton *btnreview = [cell reviewButton];
     [btnreview setWeakPlace:cafeObj];

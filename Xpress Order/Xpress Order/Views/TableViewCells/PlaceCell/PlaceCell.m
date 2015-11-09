@@ -46,7 +46,7 @@
     return (CafeReviewButton *)[self viewWithTag:kReviewButton];
 }
 
-- (HCSStarRatingView *)visitsLabel
+- (HCSStarRatingView *)ratingsView
 {
     return (HCSStarRatingView *)[self viewWithTag:kRatingView];
 }
@@ -76,16 +76,23 @@
         [placeImgView setImage:[UIImage imageNamed:@"place_list_logo"]];
     }
     
-//    UIView *containerView = [self labelsContainerView];
-//    containerView.layer.cornerRadius = 2;
-//    
-//    containerView.layer.borderWidth = 1.0f;
-
+    
+    UILabel *placeNameLabel = [self placeNameLabel];
+    [placeNameLabel setText:item.place_name];
     
     
     UIButton *reviewBtn = [self reviewButton];
     [reviewBtn setTitle:@"REVIEW" forState:UIControlStateNormal];
 
+    HCSStarRatingView *starView = [self ratingsView];
+    starView.minimumValue = 0;
+    starView.maximumValue = 5;
+    starView.tintColor = RGB(76, 24, 76);
+    
+    starView.value = [item.place_review floatValue];
+    
+    
+    starView.userInteractionEnabled = YES;
     
     NSLog(@"Place review: %@", item.place_review);
 }

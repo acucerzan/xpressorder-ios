@@ -51,6 +51,9 @@
                 
                 if (imglogo && ![imglogo isEqualToString:@""]) {
                     
+                    if ([imglogo hasSuffix:@".png"])
+                        imglogo = [imglogo substringToIndex:imglogo.length-@".png".length];
+                    
                     cafeObj.place_logo_image_name = imglogo;
                     
                 }
@@ -59,7 +62,9 @@
                     cafeObj.place_logo_image_name = @"place_list_logo";
                 
                 cafeObj.place_name = [value objectForKey:@"name"];
-                cafeObj.place_review = [value objectForKey:@"place_review"];
+                float review = [[value objectForKey:@"place_review"] floatValue];
+                
+                cafeObj.place_review = [NSNumber numberWithFloat:review];
                 
                 [_items addObject:cafeObj];
                 

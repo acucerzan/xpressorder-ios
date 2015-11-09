@@ -13,6 +13,6 @@
 @property (nonatomic, retain) NSString *place_id;
 @property (nonatomic, retain) NSString *place_logo_image_name;
 @property (nonatomic, retain) NSString *place_name;
-@property (nonatomic, retain) NSString *place_review;
+@property (nonatomic, retain) NSNumber *place_review;
 
 @end

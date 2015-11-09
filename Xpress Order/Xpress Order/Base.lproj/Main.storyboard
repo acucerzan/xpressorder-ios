@@ -33,6 +33,7 @@
                                 <rect key="frame" x="10" y="144" width="580" height="456"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Ygv-gR-VdV" id="7ts-MK-Eil"/>
                                     <outlet property="delegate" destination="Ygv-gR-VdV" id="iYd-cr-cAY"/>
@@ -133,104 +134,9 @@
             </objects>
             <point key="canvasLocation" x="-1180" y="97"/>
         </scene>
-        <!--Coffee App-->
-        <scene sceneID="nM4-gU-GAE">
-            <objects>
-                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KuQ-nQ-4hH" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ryj-ce-s6m"/>
-                        <viewControllerLayoutGuide type="bottom" id="YOx-G2-72H"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="c0e-7h-h1F">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-Qh-Hgc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <animations/>
-                            </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="OVZ-lm-hvM">
-                                <rect key="frame" x="0.0" y="84" width="320" height="484"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellID" rowHeight="116" id="lat-ID-Nle">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="116"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lat-ID-Nle" id="fom-yL-eB0">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IJP-fX-3uX">
-                                                    <rect key="frame" x="9" y="20" width="76" height="77"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blank Cafe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSz-3R-nSe">
-                                                    <rect key="frame" x="107" y="20" width="102" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvl-Qr-ep7">
-                                                    <rect key="frame" x="107" y="70" width="67" height="26"/>
-                                                    <animations/>
-                                                    <state key="normal" image="place_list_review.png">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <view clearsContextBeforeDrawing="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LSb-7e-dlc" customClass="RatingView">
-                                                    <rect key="frame" x="107" y="45" width="114" height="16"/>
-                                                    <animations/>
-                                                </view>
-                                                <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMn-hA-EJ6">
-                                                    <rect key="frame" x="256" y="36" width="44" height="44"/>
-                                                    <animations/>
-                                                    <state key="normal" title="Button" image="place_list_goto_table.png">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                            </subviews>
-                                            <animations/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="In care cafenea doresti sa mergi?" translatesAutoresizingMaskIntoConstraints="NO" id="Vxd-MK-BB2">
-                                <rect key="frame" x="102" y="28" width="238" height="63"/>
-                                <animations/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pyb-gq-19J">
-                                <rect key="frame" x="16" y="31" width="57" height="57"/>
-                                <animations/>
-                            </imageView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Coffee App" id="tOt-8y-evZ"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <connections>
-                        <outlet property="tblView" destination="OVZ-lm-hvM" id="KZo-bB-vfT"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A1E-dA-qO5" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="329" y="104"/>
-        </scene>
     </scenes>
     <resources>
         <image name="app_logo" width="73" height="73"/>
         <image name="background" width="400" height="640"/>
-        <image name="place_list_goto_table.png" width="320" height="480"/>
-        <image name="place_list_review.png" width="320" height="480"/>
     </resources>
 </document>
