@@ -10,7 +10,6 @@
 		4A18521B1BE7CD0D00AF495F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521A1BE7CD0D00AF495F /* main.m */; };
 		4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521D1BE7CD0D00AF495F /* AppDelegate.m */; };
 		4A1852211BE7CD0D00AF495F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852201BE7CD0D00AF495F /* MasterViewController.m */; };
-		4A1852241BE7CD0D00AF495F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852231BE7CD0D00AF495F /* DetailViewController.m */; };
 		4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852251BE7CD0D00AF495F /* Main.storyboard */; };
 		4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852281BE7CD0D00AF495F /* Assets.xcassets */; };
 		4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A18522A1BE7CD0D00AF495F /* LaunchScreen.storyboard */; };
@@ -49,8 +48,6 @@
 		4A18521D1BE7CD0D00AF495F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4A18521F1BE7CD0D00AF495F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		4A1852201BE7CD0D00AF495F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		4A1852221BE7CD0D00AF495F /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4A1852231BE7CD0D00AF495F /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4A1852261BE7CD0D00AF495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A1852281BE7CD0D00AF495F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A18522B1BE7CD0D00AF495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -146,8 +143,6 @@
 				4A18521D1BE7CD0D00AF495F /* AppDelegate.m */,
 				4A18521F1BE7CD0D00AF495F /* MasterViewController.h */,
 				4A1852201BE7CD0D00AF495F /* MasterViewController.m */,
-				4A1852221BE7CD0D00AF495F /* DetailViewController.h */,
-				4A1852231BE7CD0D00AF495F /* DetailViewController.m */,
 				4A1852251BE7CD0D00AF495F /* Main.storyboard */,
 				4A1852281BE7CD0D00AF495F /* Assets.xcassets */,
 				4A18522A1BE7CD0D00AF495F /* LaunchScreen.storyboard */,
@@ -411,7 +406,6 @@
 				4A1852C91BE7DA2E00AF495F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4A18521B1BE7CD0D00AF495F /* main.m in Sources */,
 				4A1852E41BE7DA9200AF495F /* CJSONDeserializer.m in Sources */,
-				4A1852241BE7CD0D00AF495F /* DetailViewController.m in Sources */,
 				4A1852EA1BE9100A00AF495F /* XPModel.m in Sources */,
 				4A1852C51BE7DA2E00AF495F /* AFHTTPClient.m in Sources */,
 				4A1852F01BE9173E00AF495F /* Cafe.m in Sources */,

@@ -13,7 +13,7 @@
 @interface PlaceCell : UITableViewCell
 
 - (CafeReviewButton *)reviewButton;
-
+- (UIView *) viewSeparator;
 - (void)loadItem:(Cafe *)item;
 
 @end

@@ -16,7 +16,7 @@
 #define kNameLabel 102
 #define kReviewButton 104
 #define kRatingView 103
-
+#define kViewSeparatorTag 105
 
 //#define kLabelsContainer 407
 
@@ -25,6 +25,11 @@
 @end
 
 @implementation PlaceCell
+
+-(UIView *) viewSeparator
+{
+    return [self viewWithTag:kViewSeparatorTag];
+}
 
 - (UIImageView *)imageView
 {

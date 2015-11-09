@@ -7,7 +7,6 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
 
 #import "HCSStarRatingView.h"
 
@@ -29,6 +28,8 @@
     self.arrayCafe = [NSMutableArray arrayWithCapacity:0];
     
     [self.myTableView setBackgroundColor:[UIColor clearColor]];
+    [self.myTableView setSeparatorColor:[UIColor clearColor]];
+    [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     [self downloadPlaces];
 }
