@@ -6,19 +6,19 @@
 //  Copyright © 2015 Adrian Cucerzan. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "PlacesVC.h"
 #import "TableSelectionVC.h"
 #import "HCSStarRatingView.h"
 
 #import "PlaceCell.h"
 
-@interface MasterViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface PlacesVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic, retain) NSMutableArray *arrayCafe;
 @end
 
-@implementation MasterViewController
+@implementation PlacesVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +37,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

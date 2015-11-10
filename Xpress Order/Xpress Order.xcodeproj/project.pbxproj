@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4A18521B1BE7CD0D00AF495F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521A1BE7CD0D00AF495F /* main.m */; };
 		4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521D1BE7CD0D00AF495F /* AppDelegate.m */; };
-		4A1852211BE7CD0D00AF495F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852201BE7CD0D00AF495F /* MasterViewController.m */; };
+		4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852201BE7CD0D00AF495F /* PlacesVC.m */; };
 		4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852251BE7CD0D00AF495F /* Main.storyboard */; };
 		4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852281BE7CD0D00AF495F /* Assets.xcassets */; };
 		4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A18522A1BE7CD0D00AF495F /* LaunchScreen.storyboard */; };
@@ -50,8 +50,8 @@
 		4A18521A1BE7CD0D00AF495F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A18521C1BE7CD0D00AF495F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A18521D1BE7CD0D00AF495F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4A18521F1BE7CD0D00AF495F /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		4A1852201BE7CD0D00AF495F /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		4A18521F1BE7CD0D00AF495F /* PlacesVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PlacesVC.h; path = ../PlacesVC.h; sourceTree = "<group>"; };
+		4A1852201BE7CD0D00AF495F /* PlacesVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PlacesVC.m; path = ../PlacesVC.m; sourceTree = "<group>"; };
 		4A1852261BE7CD0D00AF495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A1852281BE7CD0D00AF495F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A18522B1BE7CD0D00AF495F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,8 +152,6 @@
 			children = (
 				4A18521C1BE7CD0D00AF495F /* AppDelegate.h */,
 				4A18521D1BE7CD0D00AF495F /* AppDelegate.m */,
-				4A18521F1BE7CD0D00AF495F /* MasterViewController.h */,
-				4A1852201BE7CD0D00AF495F /* MasterViewController.m */,
 				4A1852251BE7CD0D00AF495F /* Main.storyboard */,
 				4A1852281BE7CD0D00AF495F /* Assets.xcassets */,
 				4A18522A1BE7CD0D00AF495F /* LaunchScreen.storyboard */,
@@ -323,6 +321,8 @@
 		BD04F4201BF11DC70029338D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A18521F1BE7CD0D00AF495F /* PlacesVC.h */,
+				4A1852201BE7CD0D00AF495F /* PlacesVC.m */,
 				BD04F4211BF11DC70029338D /* TableSelectionVC.h */,
 				BD04F4221BF11DC70029338D /* TableSelectionVC.m */,
 			);
@@ -419,7 +419,7 @@
 				4A1852ED1BE9151700AF495F /* AFNetworkReachabilityManager.m in Sources */,
 				4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */,
 				4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */,
-				4A1852211BE7CD0D00AF495F /* MasterViewController.m in Sources */,
+				4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */,
 				BD04F4261BF13CEC0029338D /* Table.m in Sources */,
 				4A1852D41BE7DA8600AF495F /* PlaceListParser.m in Sources */,
 				4A1852C71BE7DA2E00AF495F /* AFImageRequestOperation.m in Sources */,

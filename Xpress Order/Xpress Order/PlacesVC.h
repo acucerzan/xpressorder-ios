@@ -8,12 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class DetailViewController;
-
-@interface MasterViewController : UIViewController
-
-@property (strong, nonatomic) DetailViewController *detailViewController;
-
+@interface PlacesVC : UIViewController
 
 @end
 
