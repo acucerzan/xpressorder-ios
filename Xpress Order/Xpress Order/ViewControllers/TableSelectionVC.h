@@ -14,6 +14,7 @@
 @interface TableSelectionVC : BaseViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewTableSelection;
-@property (nonatomic, strong) Cafe *cafe;
+
+- (void)setPlace:(Cafe *)place;
 
 @end

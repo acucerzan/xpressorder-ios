@@ -15,6 +15,9 @@
     NSArray <Table *> *dataSource;
     __weak IBOutlet UIView *viewShadowTop;
 }
+
+@property (nonatomic, strong) Cafe *currentPlace;
+
 @end
 
 @implementation TableSelectionVC
@@ -23,16 +26,9 @@
 {
     [super viewDidLoad];
     
-    dataSource = @[[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init]];
-    [self.tableViewTableSelection setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self initialise];
     
-
-    viewShadowTop.layer.masksToBounds = NO;
-    viewShadowTop.layer.shadowOffset = CGSizeMake(0, 50);
-    viewShadowTop.layer.shadowRadius = 0;
-    viewShadowTop.layer.shadowOpacity = 0.5;
-    
-    [self loadBackButton];
+    [self downloadTablesForCurrentTable];
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -41,9 +37,48 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initialise
+{
+    dataSource = @[[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init],[[Table alloc]init]];
+    [self.tableViewTableSelection setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
+    
+    viewShadowTop.layer.masksToBounds = NO;
+    viewShadowTop.layer.shadowOffset = CGSizeMake(0, 50);
+    viewShadowTop.layer.shadowRadius = 0;
+    viewShadowTop.layer.shadowOpacity = 0.5;
+    
+    [self loadBackButton];
+}
+
+- (void)setPlace:(Cafe *)place
+{
+    self.currentPlace = place;
+}
+
+- (void)downloadTablesForCurrentTable
+{
+    if (self.currentPlace) {
+        MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+        
+        [networkingDataSource getTablesForPlaceWithId:self.currentPlace.place_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+            NSLog(@"Finished tables request for %@", self.currentPlace);
+            
+            if (items)
+            {
+                if (items.count > 0)
+                    NSLog(@"Tables: %@", items);
+ 
+                // TODO load tables
+            }
+        }];
+    }
 }
 
 #pragma mark --- TableView DataSource & Delegate

@@ -7,6 +7,7 @@
 
 #import "MainNetworkingDataSource.h"
 #import "PlaceListParser.h"
+#import "TablesParser.h"
 
 #import "AFNetworkReachabilityManager.h"
 
@@ -66,6 +67,43 @@
 - (void)cancelPlacesRequest
 {
     [self cancelOperationWithUrl:[self getPlacesURL]];
+}
+
+- (NSString *)getTablesURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"get_table_list.php"];
+    
+    return str;
+}
+
+- (void)getTablesForPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+//    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//        return;
+//    }
+    
+    
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   placeID, @"place_id",
+                                   nil];
+    
+    [self getDataWithUrl:[self getTablesURL]
+         timeoutInterval:30
+                 headers:nil//headers
+              parameters:params
+           requestMethod:@"POST"
+         fallbackToCache:NO
+             parserClass:[TablesParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
+
+- (void)cancelTablesForPlaceWithIdRequest:(NSString *)placeID
+{
+    [self cancelOperationWithUrl:[self getTablesURL]];
 }
 
 @end

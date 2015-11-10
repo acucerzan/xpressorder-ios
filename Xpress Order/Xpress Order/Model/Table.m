@@ -1,9 +1,9 @@
 //
 //  Table.m
-//  Xpress Order
+//  CafeApp
 //
-//  Created by Constantin Saulenco on 09/11/15.
-//  Copyright © 2015 Adrian Cucerzan. All rights reserved.
+//  Created by Lion on 11/27/14.
+//  Copyright (c) 2014 han. All rights reserved.
 //
 
 #import "Table.h"

@@ -12,4 +12,7 @@
 - (void)getPlacesWithCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
 - (void)cancelPlacesRequest;
 
+- (void)getTablesForPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
+- (void)cancelTablesForPlaceWithIdRequest:(NSString *)placeID;
+
 @end

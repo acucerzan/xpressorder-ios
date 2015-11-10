@@ -135,7 +135,7 @@
     
     if (vc)
     {
-        [vc setCurrentPlace:cafeObj];
+        [vc setPlace:cafeObj];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

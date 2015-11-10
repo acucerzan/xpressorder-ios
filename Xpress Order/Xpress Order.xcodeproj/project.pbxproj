@@ -40,8 +40,9 @@
 		4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852F51BE9289900AF495F /* PlaceCell.xib */; };
 		4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */; };
 		4ABFCF2E1BF241B300987B79 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF2D1BF241B300987B79 /* BaseViewController.m */; };
+		4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF301BF2496E00987B79 /* TablesParser.m */; };
+		4ABFCF341BF24FC800987B79 /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF331BF24FC800987B79 /* Table.m */; };
 		BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4221BF11DC70029338D /* TableSelectionVC.m */; };
-		BD04F4261BF13CEC0029338D /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4251BF13CEC0029338D /* Table.m */; };
 		BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4281BF13E1F0029338D /* TableSelectionCell.m */; };
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
 /* End PBXBuildFile section */
@@ -114,10 +115,12 @@
 		4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeReviewButton.m; sourceTree = "<group>"; };
 		4ABFCF2C1BF241B300987B79 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		4ABFCF2D1BF241B300987B79 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		4ABFCF2F1BF2496E00987B79 /* TablesParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TablesParser.h; sourceTree = "<group>"; };
+		4ABFCF301BF2496E00987B79 /* TablesParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TablesParser.m; sourceTree = "<group>"; };
+		4ABFCF321BF24FC800987B79 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
+		4ABFCF331BF24FC800987B79 /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		BD04F4211BF11DC70029338D /* TableSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionVC.h; sourceTree = "<group>"; };
 		BD04F4221BF11DC70029338D /* TableSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionVC.m; sourceTree = "<group>"; };
-		BD04F4241BF13CEC0029338D /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Table.h; sourceTree = "<group>"; };
-		BD04F4251BF13CEC0029338D /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		BD04F4271BF13E1F0029338D /* TableSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionCell.h; sourceTree = "<group>"; };
 		BD04F4281BF13E1F0029338D /* TableSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionCell.m; sourceTree = "<group>"; };
 		BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSelectionCell.xib; sourceTree = "<group>"; };
@@ -196,8 +199,8 @@
 				4A1852E91BE9100A00AF495F /* XPModel.m */,
 				4A1852EE1BE9173E00AF495F /* Cafe.h */,
 				4A1852EF1BE9173E00AF495F /* Cafe.m */,
-				BD04F4241BF13CEC0029338D /* Table.h */,
-				BD04F4251BF13CEC0029338D /* Table.m */,
+				4ABFCF321BF24FC800987B79 /* Table.h */,
+				4ABFCF331BF24FC800987B79 /* Table.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +212,8 @@
 				4A1852D01BE7DA8600AF495F /* MainNetworkingDataSource.m */,
 				4A1852D11BE7DA8600AF495F /* PlaceListParser.h */,
 				4A1852D21BE7DA8600AF495F /* PlaceListParser.m */,
+				4ABFCF2F1BF2496E00987B79 /* TablesParser.h */,
+				4ABFCF301BF2496E00987B79 /* TablesParser.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A1852CB1BE7DA2E00AF495F /* AFURLConnectionOperation.m in Sources */,
+				4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */,
 				4A1852D31BE7DA8600AF495F /* MainNetworkingDataSource.m in Sources */,
 				4A1852CE1BE7DA2E00AF495F /* UIImageView+AFNetworking.m in Sources */,
 				4A1852E61BE7DA9200AF495F /* CJSONSerializer.m in Sources */,
@@ -426,10 +432,10 @@
 				4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */,
 				4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */,
 				4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */,
-				BD04F4261BF13CEC0029338D /* Table.m in Sources */,
 				4A1852D41BE7DA8600AF495F /* PlaceListParser.m in Sources */,
 				4A1852C71BE7DA2E00AF495F /* AFImageRequestOperation.m in Sources */,
 				4A1852E21BE7DA9200AF495F /* CDataScanner_Extensions.m in Sources */,
+				4ABFCF341BF24FC800987B79 /* Table.m in Sources */,
 				4A1852C91BE7DA2E00AF495F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4A18521B1BE7CD0D00AF495F /* main.m in Sources */,
 				BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */,
