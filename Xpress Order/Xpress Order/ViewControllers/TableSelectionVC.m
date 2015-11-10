@@ -32,6 +32,7 @@
     viewShadowTop.layer.shadowRadius = 0;
     viewShadowTop.layer.shadowOpacity = 0.5;
     
+    [self loadBackButton];
 }
 
 -(void) viewWillAppear:(BOOL)animated

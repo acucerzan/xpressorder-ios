@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class Cafe;
-@interface TableSelectionVC : UIViewController
+#import "BaseViewController.h"
+
+
+@interface TableSelectionVC : BaseViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewTableSelection;
 @property (nonatomic, strong) Cafe *cafe;

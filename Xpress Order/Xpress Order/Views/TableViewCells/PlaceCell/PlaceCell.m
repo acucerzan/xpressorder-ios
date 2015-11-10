@@ -92,7 +92,7 @@
     HCSStarRatingView *starView = [self ratingsView];
     starView.minimumValue = 0;
     starView.maximumValue = 5;
-    starView.tintColor = RGB(76, 24, 76);
+    starView.tintColor = XP_PURPLE;
     
     starView.value = [item.place_review floatValue];
     

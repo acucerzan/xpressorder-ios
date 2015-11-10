@@ -9,6 +9,8 @@
 
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
+#define XP_PURPLE RGB(76, 24, 76)
+
 #define kFailedToChangePushSetting @"kFailedToChangePushSetting"
 #define FinishedLoadingMerchantsNotification @"FinishedLoadingMerchantsNotification"
 

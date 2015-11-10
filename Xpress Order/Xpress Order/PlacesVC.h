@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlacesVC : UIViewController
+#import "BaseViewController.h"
+
+@interface PlacesVC : BaseViewController
 
 @end
 

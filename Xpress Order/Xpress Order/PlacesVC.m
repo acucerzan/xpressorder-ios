@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     self.arrayCafe = [NSMutableArray arrayWithCapacity:0];
     
@@ -31,7 +30,9 @@
     [self.myTableView setSeparatorColor:[UIColor clearColor]];
     [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    //self.title =@"Back";
+    self.navigationController.navigationBar.barTintColor = XP_PURPLE;
+    [self setTitleString:@"Choose desired location"];
+
     [self downloadPlaces];
 }
 

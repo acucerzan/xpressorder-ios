@@ -21,6 +21,8 @@
 //    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
 //    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
 //    splitViewController.delegate = self;
+
+    [application setStatusBarStyle:UIStatusBarStyleLightContent];
     
     [XPModel sharedInstance];
     
