@@ -56,6 +56,19 @@
     return (HCSStarRatingView *)[self viewWithTag:kRatingView];
 }
 
+- (void)ratingViewChanged
+{
+    NSLog(@"Value changed");
+    
+    CafeReviewButton *reviewButton = [self reviewButton];
+    
+    if (reviewButton.weakPlace)
+    {
+        HCSStarRatingView *starView = [self ratingsView];
+        
+        [reviewButton.weakPlace setPlace_review:[NSNumber numberWithFloat:starView.value]];
+    }
+}
 
 - (void)loadPlaceImage:(UIImage *)image
 {
@@ -92,10 +105,12 @@
     HCSStarRatingView *starView = [self ratingsView];
     starView.minimumValue = 0;
     starView.maximumValue = 5;
+    starView.allowsHalfStars = YES;
     starView.tintColor = XP_PURPLE;
     
     starView.value = [item.place_review floatValue];
     
+    [starView addTarget:self action:@selector(ratingViewChanged) forControlEvents:UIControlEventValueChanged];
     
     starView.userInteractionEnabled = YES;
     

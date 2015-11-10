@@ -22,7 +22,7 @@
     
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    NSLog(@"Response: %@", [responseString description]);
+    NSLog(@"Response set review: %@", [responseString description]);
     
 //    NSDictionary *responseDict = [deserializer deserialize:data error:&deserializeError];
 //    

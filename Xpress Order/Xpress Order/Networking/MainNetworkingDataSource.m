@@ -8,6 +8,7 @@
 #import "MainNetworkingDataSource.h"
 #import "PlaceListParser.h"
 #import "TablesParser.h"
+#import "SetReviewParser.h"
 
 #import "AFNetworkReachabilityManager.h"
 
@@ -113,27 +114,27 @@
     return str;
 }
 
-- (void)setReview:(NSString *)reviewValue forPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+- (void)setReview:(NSNumber *)reviewValue forPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
 {
     //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
     //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
     //        return;
     //    }
     
-    
+    NSString *reviewString = [NSString stringWithFormat:@"%.2f", [reviewValue floatValue]];
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    placeID, @"place_id",
-                                   reviewValue, @"place_review",
+                                   reviewString, @"place_review",
                                    nil];
     
-    [self getDataWithUrl:[self getTablesURL]
+    [self getDataWithUrl:[self getSetReviewURL]
          timeoutInterval:30
                  headers:nil//headers
               parameters:params
            requestMethod:@"POST"
          fallbackToCache:NO
-             parserClass:[TablesParser class]
+             parserClass:[SetReviewParser class]
        completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
            completitionBlock(items, error, userInfo);
        }];

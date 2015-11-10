@@ -84,7 +84,7 @@
     
         MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
         
-        [networkingDataSource setReview:@"" forPlaceWithId:@"" withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+        [networkingDataSource setReview:btn.weakPlace.place_review forPlaceWithId:btn.weakPlace.place_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
             NSLog(@"Finished set review request");
             
         }];
