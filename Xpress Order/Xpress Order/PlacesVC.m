@@ -73,22 +73,22 @@
 }
 
 
-- (void) setReview:(id)sender
+- (void)setReview:(id)sender
 {
     CafeReviewButton *btn = (CafeReviewButton *)sender;
     
     if (btn.weakPlace)
     {
         NSLog(@"Clicked review for Place: %@", btn.weakPlace);
+    
+    
+        MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+        
+        [networkingDataSource setReview:@"" forPlaceWithId:@"" withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+            NSLog(@"Finished set review request");
+            
+        }];
     }
-    
-    //Start parser thread
-    //    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"setReview"]];
-    //    [request setPostValue:[[arrayCafe objectAtIndex:indexPath.row] place_id] forKey:@"place_id"];
-    //    [request setPostValue:strReview forKey:@"place_review"];
-    //    [request setDelegate:self];
-    //    [request startAsynchronous];
-    
 }
 
 #pragma mark UITableViewDataSource

@@ -106,4 +106,41 @@
     [self cancelOperationWithUrl:[self getTablesURL]];
 }
 
+- (NSString *)getSetReviewURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"setReview.php"];
+    
+    return str;
+}
+
+- (void)setReview:(NSString *)reviewValue forPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+    //        return;
+    //    }
+    
+    
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   placeID, @"place_id",
+                                   reviewValue, @"place_review",
+                                   nil];
+    
+    [self getDataWithUrl:[self getTablesURL]
+         timeoutInterval:30
+                 headers:nil//headers
+              parameters:params
+           requestMethod:@"POST"
+         fallbackToCache:NO
+             parserClass:[TablesParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
+- (void)cancelSetReviewRequest
+{
+    [self cancelOperationWithUrl:[self getSetReviewURL]];
+}
+
 @end

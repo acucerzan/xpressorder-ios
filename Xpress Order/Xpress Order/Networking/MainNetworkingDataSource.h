@@ -15,4 +15,8 @@
 - (void)getTablesForPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
 - (void)cancelTablesForPlaceWithIdRequest:(NSString *)placeID;
 
+
+- (void)setReview:(NSString *)reviewValue forPlaceWithId:(NSString *)placeID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
+- (void)cancelSetReviewRequest;
+
 @end

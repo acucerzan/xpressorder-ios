@@ -1,5 +1,5 @@
 //
-//  TablesParser.h
+//  SetReviewParser.h
 //  Xpress Order
 //
 //  Created by Adrian Cucerzan on 10/11/15.
@@ -10,7 +10,7 @@
 
 #import "LParserInterface.h"
 
-@interface TablesParser : NSObject <LParserInterface>
+@interface SetReviewParser : NSObject <LParserInterface>
 {
     NSMutableString *_mElementValue;
     
