@@ -40,15 +40,15 @@
 -(void) setLeftTableViewWithTable:(Table *) table
 {
     //TODO:implement this method
-    [self.labelLeftPersonsNumber setText:@"x4"];
-    [self.labelLeftTableNumber setText:@"1"];
-    [self.labelLeftTableState setText:@"BUSY"];
+    [self.labelLeftPersonsNumber setText:[NSString stringWithFormat:@"x%@",table.user_available]];
+    [self.labelLeftTableNumber setText:table.table_id];
+    [self.labelLeftTableState setText:table.user_state];
 }
 -(void) setRightTableViewWithTable:(Table *) table
 {
      //TODO:implement this method
-    [self.labelRightPersonsNumber setText:@"x4"];
-    [self.labelRightTableNumber setText:@"1"];
-    [self.labelRightTableState setText:@"BUSY"];
+    [self.labelRightPersonsNumber setText:[NSString stringWithFormat:@"x%@",table.user_available]];
+    [self.labelRightTableNumber setText:table.table_id];
+    [self.labelRightTableState setText:table.user_state];
 }
 @end

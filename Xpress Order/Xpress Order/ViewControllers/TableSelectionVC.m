@@ -14,6 +14,7 @@
 {
     NSArray <Table *> *dataSource;
     __weak IBOutlet UIView *viewShadowTop;
+    __weak IBOutlet UIView *viewShadowBottom;
 }
 
 @property (nonatomic, strong) Cafe *currentPlace;
@@ -38,6 +39,14 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if(self.tableViewTableSelection.contentOffset.y < self.tableViewTableSelection.contentSize.height - self.tableViewTableSelection.frame.size.height)
+        [viewShadowBottom setHidden:NO];
+    else
+        [viewShadowBottom setHidden:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -50,9 +59,14 @@
     
     
     viewShadowTop.layer.masksToBounds = NO;
-    viewShadowTop.layer.shadowOffset = CGSizeMake(0, 50);
+    viewShadowTop.layer.shadowOffset = CGSizeMake(0, viewShadowTop.frame.size.height);
     viewShadowTop.layer.shadowRadius = 0;
     viewShadowTop.layer.shadowOpacity = 0.5;
+    
+    viewShadowBottom.layer.masksToBounds = NO;
+    viewShadowBottom.layer.shadowOffset = CGSizeMake(0, -viewShadowBottom.frame.size.height);
+    viewShadowBottom.layer.shadowRadius = 0;
+    viewShadowBottom.layer.shadowOpacity = 0.5;
     
     [self loadBackButton];
 }
@@ -75,13 +89,29 @@
                 if (items.count > 0)
                     NSLog(@"Tables: %@", items);
  
-                // TODO load tables
+                dataSource = items;
+                [self.tableViewTableSelection reloadData];
             }
         }];
     }
 }
 
 #pragma mark --- TableView DataSource & Delegate
+#define kDefaultNavigationBarHeight 64
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    int yOffset  = self.tableViewTableSelection.contentOffset.y  + kDefaultNavigationBarHeight;
+
+    [viewShadowTop setHidden:yOffset<=0];
+    
+    //if(self.tableViewTableSelection.contentSize.height + kDefaultNavigationBarHeight > self.tableViewTableSelection.frame.size.height)
+    if(self.tableViewTableSelection.contentOffset.y < self.tableViewTableSelection.contentSize.height - self.tableViewTableSelection.frame.size.height)
+        [viewShadowBottom setHidden:NO];
+    else
+        [viewShadowBottom setHidden:YES];
+    
+    NSLog(@"offset Y %d",yOffset);
+}
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return kTableSelectionCellHeight;

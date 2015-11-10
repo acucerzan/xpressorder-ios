@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7YB-Ax-zqx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7YB-Ax-zqx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -100,29 +100,41 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BwS-9e-kCU">
-                                <rect key="frame" x="0.0" y="60" width="375" height="10"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="3"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.18450337629898961" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="wG9-IZ-ksl"/>
+                                    <constraint firstAttribute="height" constant="3" id="wG9-IZ-ksl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7hT-e3-c1P">
+                                <rect key="frame" x="0.0" y="664" width="375" height="3"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="5TR-Px-PoL"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7hT-e3-c1P" firstAttribute="leading" secondItem="NHd-3Y-7YM" secondAttribute="leading" id="1ML-Qk-ywQ"/>
                             <constraint firstItem="Ssr-Og-9L1" firstAttribute="top" secondItem="NHd-3Y-7YM" secondAttribute="top" id="CNR-y8-sF1"/>
-                            <constraint firstItem="BwS-9e-kCU" firstAttribute="top" secondItem="NHd-3Y-7YM" secondAttribute="top" constant="60" id="GDU-Qu-7Wl"/>
+                            <constraint firstItem="BwS-9e-kCU" firstAttribute="top" secondItem="NHd-3Y-7YM" secondAttribute="top" constant="64" id="GDU-Qu-7Wl"/>
                             <constraint firstAttribute="trailing" secondItem="Ssr-Og-9L1" secondAttribute="trailing" id="Lg9-QH-PqI"/>
                             <constraint firstItem="rFo-zp-l3x" firstAttribute="top" secondItem="Ssr-Og-9L1" secondAttribute="bottom" id="MRz-jG-jEk"/>
                             <constraint firstAttribute="trailing" secondItem="BwS-9e-kCU" secondAttribute="trailing" id="UDd-wA-zGy"/>
+                            <constraint firstAttribute="trailing" secondItem="7hT-e3-c1P" secondAttribute="trailing" id="edp-JX-sLO"/>
                             <constraint firstItem="BwS-9e-kCU" firstAttribute="leading" secondItem="NHd-3Y-7YM" secondAttribute="leading" id="iIq-YX-YCf"/>
+                            <constraint firstItem="rFo-zp-l3x" firstAttribute="top" secondItem="7hT-e3-c1P" secondAttribute="bottom" id="kNr-90-UGg"/>
                             <constraint firstItem="Ssr-Og-9L1" firstAttribute="leading" secondItem="NHd-3Y-7YM" secondAttribute="leading" id="pXn-hR-wAe"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableViewTableSelection" destination="Ssr-Og-9L1" id="OTh-0G-EyX"/>
+                        <outlet property="viewShadowBottom" destination="7hT-e3-c1P" id="l74-R7-uwD"/>
                         <outlet property="viewShadowTop" destination="BwS-9e-kCU" id="fI5-wL-63J"/>
                     </connections>
                 </viewController>
