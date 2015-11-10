@@ -39,7 +39,7 @@
                                     <outlet property="delegate" destination="Ygv-gR-VdV" id="iYd-cr-cAY"/>
                                 </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="In care cafenea doresti sa mergi?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-VY-mlb">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="În care cafenea dorești să mergi?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-VY-mlb">
                                 <rect key="frame" x="80" y="74" width="510" height="60"/>
                                 <animations/>
                                 <constraints>

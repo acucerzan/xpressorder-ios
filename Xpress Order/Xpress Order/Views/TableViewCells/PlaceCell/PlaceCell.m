@@ -100,7 +100,7 @@
     
     
     UIButton *reviewBtn = [self reviewButton];
-    [reviewBtn setTitle:@"REVIEW" forState:UIControlStateNormal];
+    [reviewBtn setTitle:@"Trimite recenzie" forState:UIControlStateNormal];
 
     HCSStarRatingView *starView = [self ratingsView];
     starView.minimumValue = 0;

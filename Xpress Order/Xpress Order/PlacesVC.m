@@ -48,7 +48,7 @@
     [self.myTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     self.navigationController.navigationBar.barTintColor = XP_PURPLE;
-    [self setTitleString:@"Choose desired location"];
+    [self setTitleString:@"Alegeți locația dorită"];
 }
 
 - (void)downloadPlaces
