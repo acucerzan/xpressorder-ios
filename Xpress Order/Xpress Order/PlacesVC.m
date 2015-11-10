@@ -24,6 +24,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    [self initialise];
+
+    [self downloadPlaces];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void)initialise
+{
     self.arrayCafe = [NSMutableArray arrayWithCapacity:0];
     
     [self.myTableView setBackgroundColor:[UIColor clearColor]];
@@ -32,19 +49,6 @@
     
     self.navigationController.navigationBar.barTintColor = XP_PURPLE;
     [self setTitleString:@"Choose desired location"];
-
-    [self downloadPlaces];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-//    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)downloadPlaces
@@ -68,30 +72,24 @@
 
 }
 
-- (void)insertNewObject:(id)sender {
+
+- (void) setReview:(id)sender
+{
+    CafeReviewButton *btn = (CafeReviewButton *)sender;
     
-//    OpenViewControllerInNavigation(ViewControllerWithIdentifier(@"DetailViewController"), self.navigationController);
-//
-//    if (!self.objects) {
-//        self.objects = [[NSMutableArray alloc] init];
-//    }
-//    [self.objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    if (btn.weakPlace)
+    {
+        NSLog(@"Clicked review for Place: %@", btn.weakPlace);
+    }
+    
+    //Start parser thread
+    //    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:@"setReview"]];
+    //    [request setPostValue:[[arrayCafe objectAtIndex:indexPath.row] place_id] forKey:@"place_id"];
+    //    [request setPostValue:strReview forKey:@"place_review"];
+    //    [request setDelegate:self];
+    //    [request startAsynchronous];
+    
 }
-
-#pragma mark - Segues
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        NSDate *object = self.objects[indexPath.row];
-//        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-//        [controller setDetailItem:object];
-//        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-//        controller.navigationItem.leftItemsSupplementBackButton = YES;
-//    }
-//}
 
 #pragma mark UITableViewDataSource
 
@@ -126,82 +124,20 @@
     return cell;
 }
 
-- (void) gotoCafe:(id)sender
-{
-    UIButton *btn = (UIButton*)sender;
-    NSInteger index = btn.tag;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    //    Cafe *mTempCafe = (Cafe *)[arrayCafe objectAtIndex:index];
-    //    NSString *strName = (NSString*)[mTempCafe name];
-    //
-    //    NSLog(@"%@", strName);
-    
-    //    UITableViewCell *cell = (UITableViewCell *)[tblView cellForRowAtIndexPath:indexPath];
-    //    NSString *strName = ((UILabel*)[cell viewWithTag:2]).text;
-    
-//    TableListController *vc = (TableListController *)ViewControllerWithIdentifier(@"TableListViewID");
-//    vc.strPlaceID = [[arrayCafe objectAtIndex:indexPath.row] place_id];
-//    vc.strPlaceName = [[arrayCafe objectAtIndex:indexPath.row] place_name];
-//    
-//    OpenViewControllerInNavigation(vc, self.navigationController);
-}
-
-- (void) setReview:(id)sender
-{
-    
-    CafeReviewButton *btn = (CafeReviewButton *)sender;
-
-    if (btn.weakPlace)
-    {
-        NSLog(@"Clicked review for Place: %@", btn.weakPlace);
-    }
-    
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    
-//    NSLog(@"setReview index %@", indexPath);
-    
-//    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
-//    
-//    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    hud.labelText = @"Loading";
-//    
-//    strRequest = @"setReview";
-//    
-//    UITableViewCell *cell = (UITableViewCell *)[tblView cellForRowAtIndexPath:indexPath];
-//    RatingView *ratingView = (RatingView*)[cell viewWithTag:3];
-//    float freview = ratingView.rating;
-//    
-//    NSString *strReview = [NSString stringWithFormat:@"%f", freview];
-    
-    //Start parser thread
-//    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:str]];
-//    [request setPostValue:[[arrayCafe objectAtIndex:indexPath.row] place_id] forKey:@"place_id"];
-//    [request setPostValue:strReview forKey:@"place_review"];
-//    [request setDelegate:self];
-//    [request startAsynchronous];
-    
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"%@", indexPath);
     
     Cafe *cafeObj = [self.arrayCafe objectAtIndex:indexPath.row];
-    
-    if (self.navigationController)
-        NSLog(@"%@", self.navigationController);
 
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"TableSelectionVC"];
+    TableSelectionVC *vc = (TableSelectionVC *)[sb instantiateViewControllerWithIdentifier:@"TableSelectionVC"];
     
-    [self.navigationController pushViewController:vc animated:YES];
-    
-}
-
-#pragma mark UITableViewDelegate
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 116.0f;
+    if (vc)
+    {
+        [vc setCurrentPlace:cafeObj];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end
