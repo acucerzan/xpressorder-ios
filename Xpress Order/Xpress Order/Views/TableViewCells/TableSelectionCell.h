@@ -32,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelRightTableState;
 @property (weak, nonatomic) IBOutlet UILabel *labelRightPersonsNumber;
 
+@property (nonatomic, strong) void (^buttonTablePress)(Table *selectedTable);
+
 -(void) refreshCell;
 -(void) setLeftTableViewWithTable:(Table *) table;
 -(void) setRightTableViewWithTable:(Table *) table;

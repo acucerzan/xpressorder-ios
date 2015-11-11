@@ -46,6 +46,8 @@
 		BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4221BF11DC70029338D /* TableSelectionVC.m */; };
 		BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4281BF13E1F0029338D /* TableSelectionCell.m */; };
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
+		BD09C4591BF3E2FB004B35FB /* TableReservationPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */; };
+		BD09C45A1BF3E2FB004B35FB /* TableReservationPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +129,9 @@
 		BD04F4271BF13E1F0029338D /* TableSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionCell.h; sourceTree = "<group>"; };
 		BD04F4281BF13E1F0029338D /* TableSelectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionCell.m; sourceTree = "<group>"; };
 		BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSelectionCell.xib; sourceTree = "<group>"; };
+		BD09C4561BF3E2FB004B35FB /* TableReservationPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableReservationPopUp.h; sourceTree = "<group>"; };
+		BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableReservationPopUp.m; sourceTree = "<group>"; };
+		BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableReservationPopUp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +345,9 @@
 				BD04F4221BF11DC70029338D /* TableSelectionVC.m */,
 				4ABFCF2C1BF241B300987B79 /* BaseViewController.h */,
 				4ABFCF2D1BF241B300987B79 /* BaseViewController.m */,
+				BD09C4561BF3E2FB004B35FB /* TableReservationPopUp.h */,
+				BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */,
+				BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,6 +411,7 @@
 			files = (
 				4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */,
 				BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */,
+				BD09C45A1BF3E2FB004B35FB /* TableReservationPopUp.xib in Resources */,
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
 				4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */,
@@ -423,6 +432,7 @@
 				4A1852E61BE7DA9200AF495F /* CJSONSerializer.m in Sources */,
 				4A1852CC1BE7DA2E00AF495F /* AFXMLRequestOperation.m in Sources */,
 				4A1852C81BE7DA2E00AF495F /* AFJSONRequestOperation.m in Sources */,
+				BD09C4591BF3E2FB004B35FB /* TableReservationPopUp.m in Sources */,
 				BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */,
 				4A1852C61BE7DA2E00AF495F /* AFHTTPRequestOperation.m in Sources */,
 				4A1852CD1BE7DA2E00AF495F /* LAbstractAFDataSource.m in Sources */,

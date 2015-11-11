@@ -9,8 +9,9 @@
 #import "TableSelectionVC.h"
 #import "Table.h"
 #import "TableSelectionCell.h"
+#import "TableReservationPopUp.h"
 
-@interface TableSelectionVC () <UITableViewDataSource, UITableViewDelegate>
+@interface TableSelectionVC () <UITableViewDataSource, UITableViewDelegate, TableReservationProtocol>
 {
     NSArray <Table *> *dataSource;
     __weak IBOutlet UIView *viewShadowTop;
@@ -37,6 +38,8 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.tableViewTableSelection setBackgroundColor:[UIColor clearColor]];
+    [self.tableViewTableSelection setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -146,7 +149,40 @@
         table = [dataSource objectAtIndex:index];
         [cell setRightTableViewWithTable:table];
     }
+    
+    cell.buttonTablePress = ^(Table *table)
+    {
+        NSLog(@"Table press %@", table);
+        [self openTablePopUpForTable:table];
+    };
+    
+    [cell setBackgroundColor:[UIColor clearColor]];
     return cell;
 }
 
+#pragma mark --- Helper Functions
+
+-(void) openTablePopUpForTable:(Table *) table
+{
+    TableReservationPopUp *tablePopUp = [[TableReservationPopUp alloc] initWithNibName:@"TableReservationPopUp" bundle:[NSBundle mainBundle]];
+    tablePopUp.selectedTable = table;
+    tablePopUp.delegate = self;
+    
+    [tablePopUp showPopUpInViewController:self];
+}
+
+-(void) tableReservation:(TableReservationPopUp *) tablePopUp dismissedForOption:(DismissOption) dismissOption forTableView:(Table *) selectedTable
+{
+    if(dismissOption == DismissOptionMakeReservation)
+    {
+        //TODO make reservation Logic
+    }
+    
+    if(dismissOption == DismissOptionPinSubmition)
+    {
+        //TODO make pin submision logic
+    }
+    
+    [tablePopUp closePopUp];
+}
 @end

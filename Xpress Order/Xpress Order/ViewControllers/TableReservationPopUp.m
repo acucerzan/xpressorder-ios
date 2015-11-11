@@ -1,0 +1,148 @@
+//
+//  TableReservationPopUp.m
+//  Xpress Order
+//
+//  Created by Constantin Saulenco on 11/11/15.
+//  Copyright © 2015 Adrian Cucerzan. All rights reserved.
+//
+
+#import "TableReservationPopUp.h"
+#import "Table.h"
+
+@interface TableReservationPopUp ()
+{
+    
+    __weak IBOutlet UILabel *labelTable;
+    __weak IBOutlet UILabel *labelTableName;
+    __weak IBOutlet UILabel *labelTableNumber;
+    __weak IBOutlet UIView *viewTableContainer;
+    __weak IBOutlet UIView *viewTableNumber;
+    
+    __weak IBOutlet UILabel *labelState;
+}
+
+@end
+
+@implementation TableReservationPopUp
+
+-(void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [labelTable setText:@"TABLE"];
+    [labelTableName setText:self.selectedTable.table_id];
+    [labelTableNumber setText:self.selectedTable.user_available];
+    
+    [labelState setText:self.selectedTable.user_state];
+    
+  }
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.viewContainer.layer.cornerRadius = 5;
+    self.viewContainer.clipsToBounds = YES;
+    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:.5];
+    
+    [self applyMotionEffectsForView:self.viewContainer];
+    
+    [viewTableContainer.layer setCornerRadius:viewTableContainer.frame.size.height/2];
+    
+    [viewTableNumber.layer setCornerRadius:viewTableNumber.frame.size.height/2];
+    [viewTableNumber.layer setBorderWidth:1];
+    [viewTableNumber.layer setBorderColor:[UIColor whiteColor].CGColor];
+
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark --- Button Action
+
+- (IBAction)buttonSubmitPress:(id)sender
+{
+    NSLog(@"button submit Press");
+    [self.delegate tableReservation:self dismissedForOption:DismissOptionPinSubmition forTableView:self.selectedTable];
+}
+
+- (IBAction)buttonMakeReservationPress:(id)sender
+{
+    NSLog(@"button make reservation press");
+    [self.delegate tableReservation:self dismissedForOption:DismissOptionMakeReservation forTableView:self.selectedTable];
+}
+
+#pragma mark --- Helper Function
+
+-(void)showPopUpInViewController:(UIViewController *)viewController
+{
+    self.view.frame = viewController.view.frame;
+    
+    [self.view setAlpha:0];
+    
+    [viewController.navigationController addChildViewController:self];
+    [viewController.navigationController.view addSubview:self.view];
+    
+    [self didMoveToParentViewController:self];
+    
+    self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
+    
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+     {
+         self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+         self.view.alpha = 1;
+     }
+                     completion:^(BOOL finished) {
+                         if(finished)
+                         {
+                             [self viewWillAppear:YES];
+                         }
+                     }];
+
+}
+
+-(void) closePopUp
+{
+    self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1, 1);
+    
+    [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^
+     {
+         self.view.alpha = 0;
+         self.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);
+     }completion:^(BOOL finished)
+     {
+         [self removeFromParentViewController];
+         [self.view removeFromSuperview];
+         
+     }];
+
+}
+
+#define  kCustomIOS7MotionEffectExtent 20.0
+
+- (void)applyMotionEffectsForView:(UIView *) view
+{
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1)
+    {
+        return;
+    }
+    
+    UIInterpolatingMotionEffect *horizontalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x"
+                                                                                                    type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    horizontalEffect.minimumRelativeValue = @(-kCustomIOS7MotionEffectExtent);
+    horizontalEffect.maximumRelativeValue = @( kCustomIOS7MotionEffectExtent);
+    
+    UIInterpolatingMotionEffect *verticalEffect = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y"
+                                                                                                  type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    verticalEffect.minimumRelativeValue = @(-kCustomIOS7MotionEffectExtent);
+    verticalEffect.maximumRelativeValue = @( kCustomIOS7MotionEffectExtent);
+    
+    UIMotionEffectGroup *motionEffectGroup = [[UIMotionEffectGroup alloc] init];
+    motionEffectGroup.motionEffects = @[horizontalEffect, verticalEffect];
+    
+    [view addMotionEffect:motionEffectGroup];
+    
+}
+
+@end

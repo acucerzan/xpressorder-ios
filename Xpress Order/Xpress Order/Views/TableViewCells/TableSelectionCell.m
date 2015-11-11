@@ -10,6 +10,10 @@
 #import "Table.h"
 
 @implementation TableSelectionCell
+{
+    Table *leftTable;
+    Table *rightTable;
+}
 
 - (void)awakeFromNib
 {
@@ -37,18 +41,36 @@
     [self.viewContainerRightTable setHidden:NO];
     [self.viewContainerLeftTable setHidden:NO];
 }
+
 -(void) setLeftTableViewWithTable:(Table *) table
 {
-    //TODO:implement this method
+    leftTable = table;
     [self.labelLeftPersonsNumber setText:[NSString stringWithFormat:@"x%@",table.user_available]];
     [self.labelLeftTableNumber setText:table.table_id];
     [self.labelLeftTableState setText:table.user_state];
+    
+    [self.viewContainerLeftTable setBackgroundColor:[UIColor clearColor]];
 }
+
 -(void) setRightTableViewWithTable:(Table *) table
 {
-     //TODO:implement this method
+    rightTable = table;
     [self.labelRightPersonsNumber setText:[NSString stringWithFormat:@"x%@",table.user_available]];
     [self.labelRightTableNumber setText:table.table_id];
     [self.labelRightTableState setText:table.user_state];
+    
+    [self.viewContainerRightTable setBackgroundColor:[UIColor clearColor]];
 }
+
+- (IBAction)buttonLeftTablePress:(id)sender
+{
+    if(self.buttonTablePress)
+        self.buttonTablePress(leftTable);
+}
+
+- (IBAction)buttonRightTablePress:(id)sender
+{
+    self.buttonTablePress(rightTable);
+}
+
 @end
