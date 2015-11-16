@@ -48,6 +48,9 @@
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
 		BD09C4591BF3E2FB004B35FB /* TableReservationPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */; };
 		BD09C45A1BF3E2FB004B35FB /* TableReservationPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */; };
+		BDE2FC2A1BFA62EE007C9354 /* TableViewDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */; };
+		BDE2FC2B1BFA62EE007C9354 /* TableViewDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */; };
+		BDE2FC351BFA7845007C9354 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +135,11 @@
 		BD09C4561BF3E2FB004B35FB /* TableReservationPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableReservationPopUp.h; sourceTree = "<group>"; };
 		BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableReservationPopUp.m; sourceTree = "<group>"; };
 		BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableReservationPopUp.xib; sourceTree = "<group>"; };
+		BDE2FC271BFA62EE007C9354 /* TableViewDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDetailVC.h; sourceTree = "<group>"; };
+		BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDetailVC.m; sourceTree = "<group>"; };
+		BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewDetailVC.xib; sourceTree = "<group>"; };
+		BDE2FC331BFA7845007C9354 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
+		BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +200,7 @@
 		4A1852341BE7CF0700AF495F /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				BDE2FC321BFA7845007C9354 /* AAShareBubbles */,
 				4A18523C1BE7CFBF00AF495F /* AFNetworking */,
 				4A1852521BE7CFBF00AF495F /* HCSStarRatingView */,
 				4A18526F1BE7D14600AF495F /* JSON */,
@@ -348,8 +357,20 @@
 				BD09C4561BF3E2FB004B35FB /* TableReservationPopUp.h */,
 				BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */,
 				BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */,
+				BDE2FC271BFA62EE007C9354 /* TableViewDetailVC.h */,
+				BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */,
+				BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BDE2FC321BFA7845007C9354 /* AAShareBubbles */ = {
+			isa = PBXGroup;
+			children = (
+				BDE2FC331BFA7845007C9354 /* DWBubbleMenuButton.h */,
+				BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */,
+			);
+			path = AAShareBubbles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +432,7 @@
 			files = (
 				4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */,
 				BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */,
+				BDE2FC2B1BFA62EE007C9354 /* TableViewDetailVC.xib in Resources */,
 				BD09C45A1BF3E2FB004B35FB /* TableReservationPopUp.xib in Resources */,
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
@@ -427,6 +449,7 @@
 			files = (
 				4A1852CB1BE7DA2E00AF495F /* AFURLConnectionOperation.m in Sources */,
 				4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */,
+				BDE2FC2A1BFA62EE007C9354 /* TableViewDetailVC.m in Sources */,
 				4A1852D31BE7DA8600AF495F /* MainNetworkingDataSource.m in Sources */,
 				4A1852CE1BE7DA2E00AF495F /* UIImageView+AFNetworking.m in Sources */,
 				4A1852E61BE7DA9200AF495F /* CJSONSerializer.m in Sources */,
@@ -439,6 +462,7 @@
 				4ABFCF2E1BF241B300987B79 /* BaseViewController.m in Sources */,
 				4A1852631BE7CFBF00AF495F /* HCSStarRatingView.m in Sources */,
 				4A1852E31BE7DA9200AF495F /* CDataScanner.m in Sources */,
+				BDE2FC351BFA7845007C9354 /* DWBubbleMenuButton.m in Sources */,
 				4A1852E71BE7DA9200AF495F /* NSDictionary_JSONExtensions.m in Sources */,
 				4A1852641BE7CFBF00AF495F /* MBProgressHUD.m in Sources */,
 				4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */,

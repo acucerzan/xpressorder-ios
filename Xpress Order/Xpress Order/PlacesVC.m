@@ -135,6 +135,7 @@
     
     if (vc)
     {
+        [[XPModel sharedInstance] setSelectedCafe:cafeObj];
         [vc setPlace:cafeObj];
         [self.navigationController pushViewController:vc animated:YES];
     }

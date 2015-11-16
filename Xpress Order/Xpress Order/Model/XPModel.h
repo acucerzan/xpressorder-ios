@@ -31,6 +31,7 @@
 
 #import "MainNetworkingDataSource.h"
 #import "Cafe.h"
+#import "Table.h"
 
 typedef NS_ENUM(int, iPhoneScreenSize) {
 	iPhoneScreenSize_iPhone4 = 0,
@@ -50,6 +51,8 @@ typedef NS_ENUM(int, iPhoneScreenSize) {
 @property (nonatomic, readonly) NSInteger userLimit;
 
 
+@property (nonatomic, strong) Cafe *selectedCafe;
+@property (nonatomic, strong) Table *selectedTable;
 #pragma mark Constructor
 
 + (XPModel *)sharedInstance;

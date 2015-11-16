@@ -10,6 +10,7 @@
 #import "Table.h"
 #import "TableSelectionCell.h"
 #import "TableReservationPopUp.h"
+#import "TableViewDetailVC.h"
 
 @interface TableSelectionVC () <UITableViewDataSource, UITableViewDelegate, TableReservationProtocol>
 {
@@ -37,9 +38,12 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.tableViewTableSelection setBackgroundColor:[UIColor clearColor]];
     [self.tableViewTableSelection setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
+    
+   /* if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
+        self.edgesForExtendedLayout = UIRectEdgeNone;*/
 }
 
 -(void) viewDidAppear:(BOOL)animated
@@ -164,6 +168,8 @@
 
 -(void) openTablePopUpForTable:(Table *) table
 {
+    [[XPModel sharedInstance] setSelectedTable:table];
+    
     TableReservationPopUp *tablePopUp = [[TableReservationPopUp alloc] initWithNibName:@"TableReservationPopUp" bundle:[NSBundle mainBundle]];
     tablePopUp.selectedTable = table;
     tablePopUp.delegate = self;
@@ -173,6 +179,8 @@
 
 -(void) tableReservation:(TableReservationPopUp *) tablePopUp dismissedForOption:(DismissOption) dismissOption forTableView:(Table *) selectedTable
 {
+    [tablePopUp closePopUp];
+    
     if(dismissOption == DismissOptionMakeReservation)
     {
         //TODO make reservation Logic
@@ -180,9 +188,15 @@
     
     if(dismissOption == DismissOptionPinSubmition)
     {
-        //TODO make pin submision logic
+        [self performSelector:@selector(openTableViewDetails) withObject:nil afterDelay:.3];
     }
     
-    [tablePopUp closePopUp];
+    
+}
+
+-(void) openTableViewDetails
+{
+    TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithNibName:@"TableViewDetailVC" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:tableViewDetail animated:YES];
 }
 @end

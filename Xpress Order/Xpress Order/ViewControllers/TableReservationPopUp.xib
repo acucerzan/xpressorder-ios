@@ -11,6 +11,10 @@
                 <outlet property="labelTable" destination="Bhh-SD-5hX" id="Vsq-qs-JYa"/>
                 <outlet property="labelTableName" destination="69G-sq-YsK" id="iXy-E0-wLX"/>
                 <outlet property="labelTableNumber" destination="0rh-1W-gF2" id="zZ3-8Z-7wR"/>
+                <outlet property="textFieldFirst" destination="Nbw-xD-Vu8" id="cgx-4N-Hd0"/>
+                <outlet property="textFieldFourth" destination="qAR-Bk-VZy" id="dvP-Wr-AHM"/>
+                <outlet property="textFieldSecond" destination="Rjr-Bb-9fI" id="YTW-te-W3I"/>
+                <outlet property="textFieldThird" destination="IGO-BS-aw4" id="HCF-ad-CII"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewContainer" destination="BGG-Zb-9Yl" id="9zO-IU-N4L"/>
                 <outlet property="viewTableContainer" destination="UFp-EL-pTD" id="Orm-mw-L0P"/>
@@ -41,10 +45,52 @@
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-DC-sTo">
                             <rect key="frame" x="25" y="264" width="245" height="51"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rjr-Bb-9fI">
+                                    <rect key="frame" x="67" y="11" width="52" height="30"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="1" green="0.38892734733484569" blue="0.4048528404578331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-BS-aw4">
+                                    <rect key="frame" x="127" y="11" width="51" height="30"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="1" green="0.38892734733484569" blue="0.4048528404578331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qAR-Bk-VZy">
+                                    <rect key="frame" x="186" y="11" width="51" height="30"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="1" green="0.38892734733484569" blue="0.4048528404578331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nbw-xD-Vu8">
+                                    <rect key="frame" x="8" y="11" width="51" height="30"/>
+                                    <animations/>
+                                    <color key="backgroundColor" red="1" green="0.38892734733484569" blue="0.4048528404578331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
                             <animations/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="qAR-Bk-VZy" firstAttribute="width" secondItem="Nbw-xD-Vu8" secondAttribute="width" id="3oC-KC-X9T"/>
+                                <constraint firstItem="Rjr-Bb-9fI" firstAttribute="centerY" secondItem="Nbw-xD-Vu8" secondAttribute="centerY" id="8Xn-oj-hyU"/>
+                                <constraint firstItem="Rjr-Bb-9fI" firstAttribute="leading" secondItem="Nbw-xD-Vu8" secondAttribute="trailing" constant="8" id="CLH-by-zCc"/>
+                                <constraint firstItem="Rjr-Bb-9fI" firstAttribute="width" secondItem="Nbw-xD-Vu8" secondAttribute="width" id="Km6-82-DX9"/>
+                                <constraint firstItem="qAR-Bk-VZy" firstAttribute="centerY" secondItem="IGO-BS-aw4" secondAttribute="centerY" id="LrH-eV-Xgt"/>
+                                <constraint firstItem="IGO-BS-aw4" firstAttribute="width" secondItem="Nbw-xD-Vu8" secondAttribute="width" id="OJQ-ff-3Eh"/>
                                 <constraint firstAttribute="height" constant="51" id="Rc7-9G-fJX"/>
+                                <constraint firstItem="IGO-BS-aw4" firstAttribute="leading" secondItem="Rjr-Bb-9fI" secondAttribute="trailing" constant="8" id="UD4-kW-HnW"/>
+                                <constraint firstItem="qAR-Bk-VZy" firstAttribute="leading" secondItem="IGO-BS-aw4" secondAttribute="trailing" constant="8" id="cBP-YD-L4U"/>
+                                <constraint firstItem="Nbw-xD-Vu8" firstAttribute="centerY" secondItem="yfe-DC-sTo" secondAttribute="centerY" id="hVp-Xx-kRR"/>
+                                <constraint firstItem="Nbw-xD-Vu8" firstAttribute="leading" secondItem="yfe-DC-sTo" secondAttribute="leading" constant="8" id="l9B-0L-qz1"/>
+                                <constraint firstAttribute="trailing" secondItem="qAR-Bk-VZy" secondAttribute="trailing" constant="8" id="uoH-Og-H8S"/>
+                                <constraint firstItem="IGO-BS-aw4" firstAttribute="centerY" secondItem="Rjr-Bb-9fI" secondAttribute="centerY" id="wRZ-qc-FJ6"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ub7-LU-W8V">

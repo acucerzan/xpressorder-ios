@@ -9,7 +9,7 @@
 #import "TableReservationPopUp.h"
 #import "Table.h"
 
-@interface TableReservationPopUp ()
+@interface TableReservationPopUp () < UITextFieldDelegate>
 {
     
     __weak IBOutlet UILabel *labelTable;
@@ -19,6 +19,10 @@
     __weak IBOutlet UIView *viewTableNumber;
     
     __weak IBOutlet UILabel *labelState;
+    __weak IBOutlet UITextField *textFieldFirst;
+    __weak IBOutlet UITextField *textFieldSecond;
+    __weak IBOutlet UITextField *textFieldThird;
+    __weak IBOutlet UITextField *textFieldFourth;
 }
 
 @end
@@ -51,6 +55,10 @@
     [viewTableNumber.layer setBorderWidth:1];
     [viewTableNumber.layer setBorderColor:[UIColor whiteColor].CGColor];
 
+    [textFieldFirst setDelegate:self];
+    [textFieldSecond setDelegate:self];
+    [textFieldThird setDelegate:self];
+    [textFieldFourth setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,4 +153,30 @@
     
 }
 
+#pragma mark --- textfield Delegate 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if(textField == textFieldFirst)
+    {
+        [textFieldSecond performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:.5];
+    }
+    
+    if(textField == textFieldSecond)
+    {
+        [textFieldThird performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:.5];
+    }
+    
+    if(textField == textFieldThird)
+    {
+        [textFieldFourth performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:.5];
+    }
+    
+    if(textField == textFieldFourth)
+    {
+        if(textFieldFourth.text.length >=1 && ![string isEqualToString:@""])
+            return NO;
+    }
+    
+    return YES;
+}
 @end
