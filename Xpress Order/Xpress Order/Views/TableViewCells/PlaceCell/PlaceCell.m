@@ -86,12 +86,17 @@
     
     NSString *imageName = item.place_logo_image_name;
     
+//    http://www.coffeeapp.club/img/places/
     if (imageName && imageName.length > 0) {
-        [placeImgView setImage:[UIImage imageNamed:imageName]];
+        [placeImgView setImageWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.coffeeapp.club/img/places/%@", imageName]]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+            [self loadPlaceImage:image];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            [self loadPlaceImage:[UIImage imageNamed:@"place_list_logo"]];
+        }];
     }
     else
     {
-        [placeImgView setImage:[UIImage imageNamed:@"place_list_logo"]];
+        [self loadPlaceImage:[UIImage imageNamed:@"place_list_logo"]];
     }
     
     

@@ -51,8 +51,8 @@
                 
                 if (imglogo && ![imglogo isEqualToString:@""]) {
                     
-                    if ([imglogo hasSuffix:@".png"])
-                        imglogo = [imglogo substringToIndex:imglogo.length-@".png".length];
+//                    if ([imglogo hasSuffix:@".png"])
+//                        imglogo = [imglogo substringToIndex:imglogo.length-@".png".length];
                     
                     cafeObj.place_logo_image_name = imglogo;
                     
