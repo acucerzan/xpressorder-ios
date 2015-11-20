@@ -8,6 +8,7 @@
 
 #import "TableViewDetailVC.h"
 #import "DWBubbleMenuButton.h"
+#import "ProductSelectionVC.h"
 
 @interface TableViewDetailVC ()
 {
@@ -33,7 +34,9 @@
     [labelSpaceName setText:shared.selectedCafe.place_name];
     [labelTableViewId setText:shared.selectedTable.table_id];
     
-    [self loadBackButton];
+   // [self loadBackButton];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.title = @"Back";
     [self setTitleString:@"Welcome"];
 }
 
@@ -111,6 +114,9 @@
 
 - (IBAction)buttonMenuPress:(id)sender
 {
+    ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithNibName:@"ProductSelectionVC" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:productSelection animated:YES];
+    
     NSLog(@"Button Menu Press");
 }
 - (IBAction)buttonCallPress:(id)sender

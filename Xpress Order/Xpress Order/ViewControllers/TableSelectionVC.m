@@ -30,8 +30,12 @@
     [super viewDidLoad];
     
     [self initialise];
-    
     [self downloadTablesForCurrentTable];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
+    self.title = @"Back";
+    [self setTitleString:@"Choose desire table"];
+
 }
 
 -(void) viewWillAppear:(BOOL)animated
@@ -42,9 +46,7 @@
     [self.tableViewTableSelection setBackgroundColor:[UIColor clearColor]];
     [self.tableViewTableSelection setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
     
-   /* if ([self respondsToSelector:@selector(edgesForExtendedLayout)])
-        self.edgesForExtendedLayout = UIRectEdgeNone;*/
-}
+   }
 
 -(void) viewDidAppear:(BOOL)animated
 {
@@ -75,7 +77,7 @@
     viewShadowBottom.layer.shadowRadius = 0;
     viewShadowBottom.layer.shadowOpacity = 0.5;
     
-    [self loadBackButton];
+   // [self loadBackButton];
 }
 
 - (void)setPlace:(Cafe *)place

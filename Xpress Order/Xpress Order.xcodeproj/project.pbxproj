@@ -48,6 +48,12 @@
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
 		BD09C4591BF3E2FB004B35FB /* TableReservationPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */; };
 		BD09C45A1BF3E2FB004B35FB /* TableReservationPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */; };
+		BDC951961BFF27080050D80C /* ProductSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC951941BFF27080050D80C /* ProductSelectionVC.m */; };
+		BDC951971BFF27080050D80C /* ProductSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDC951951BFF27080050D80C /* ProductSelectionVC.xib */; };
+		BDC9519B1BFF31910050D80C /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC951991BFF31910050D80C /* ProductCell.m */; };
+		BDC9519C1BFF31910050D80C /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDC9519A1BFF31910050D80C /* ProductCell.xib */; };
+		BDC951A01BFF35580050D80C /* ProductGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC9519E1BFF35580050D80C /* ProductGroupCell.m */; };
+		BDC951A11BFF35580050D80C /* ProductGroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDC9519F1BFF35580050D80C /* ProductGroupCell.xib */; };
 		BDE2FC2A1BFA62EE007C9354 /* TableViewDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */; };
 		BDE2FC2B1BFA62EE007C9354 /* TableViewDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */; };
 		BDE2FC351BFA7845007C9354 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */; };
@@ -135,6 +141,15 @@
 		BD09C4561BF3E2FB004B35FB /* TableReservationPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableReservationPopUp.h; sourceTree = "<group>"; };
 		BD09C4571BF3E2FB004B35FB /* TableReservationPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableReservationPopUp.m; sourceTree = "<group>"; };
 		BD09C4581BF3E2FB004B35FB /* TableReservationPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableReservationPopUp.xib; sourceTree = "<group>"; };
+		BDC951931BFF27080050D80C /* ProductSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectionVC.h; sourceTree = "<group>"; };
+		BDC951941BFF27080050D80C /* ProductSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectionVC.m; sourceTree = "<group>"; };
+		BDC951951BFF27080050D80C /* ProductSelectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSelectionVC.xib; sourceTree = "<group>"; };
+		BDC951981BFF31910050D80C /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		BDC951991BFF31910050D80C /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		BDC9519A1BFF31910050D80C /* ProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
+		BDC9519D1BFF35580050D80C /* ProductGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductGroupCell.h; sourceTree = "<group>"; };
+		BDC9519E1BFF35580050D80C /* ProductGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductGroupCell.m; sourceTree = "<group>"; };
+		BDC9519F1BFF35580050D80C /* ProductGroupCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductGroupCell.xib; sourceTree = "<group>"; };
 		BDE2FC271BFA62EE007C9354 /* TableViewDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewDetailVC.h; sourceTree = "<group>"; };
 		BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewDetailVC.m; sourceTree = "<group>"; };
 		BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewDetailVC.xib; sourceTree = "<group>"; };
@@ -322,6 +337,12 @@
 				BD04F4271BF13E1F0029338D /* TableSelectionCell.h */,
 				BD04F4281BF13E1F0029338D /* TableSelectionCell.m */,
 				BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */,
+				BDC951981BFF31910050D80C /* ProductCell.h */,
+				BDC951991BFF31910050D80C /* ProductCell.m */,
+				BDC9519A1BFF31910050D80C /* ProductCell.xib */,
+				BDC9519D1BFF35580050D80C /* ProductGroupCell.h */,
+				BDC9519E1BFF35580050D80C /* ProductGroupCell.m */,
+				BDC9519F1BFF35580050D80C /* ProductGroupCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -360,6 +381,9 @@
 				BDE2FC271BFA62EE007C9354 /* TableViewDetailVC.h */,
 				BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */,
 				BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */,
+				BDC951931BFF27080050D80C /* ProductSelectionVC.h */,
+				BDC951941BFF27080050D80C /* ProductSelectionVC.m */,
+				BDC951951BFF27080050D80C /* ProductSelectionVC.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -430,13 +454,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC9519C1BFF31910050D80C /* ProductCell.xib in Resources */,
 				4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */,
 				BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */,
 				BDE2FC2B1BFA62EE007C9354 /* TableViewDetailVC.xib in Resources */,
 				BD09C45A1BF3E2FB004B35FB /* TableReservationPopUp.xib in Resources */,
+				BDC951A11BFF35580050D80C /* ProductGroupCell.xib in Resources */,
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
 				4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */,
+				BDC951971BFF27080050D80C /* ProductSelectionVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,10 +477,13 @@
 				4A1852CB1BE7DA2E00AF495F /* AFURLConnectionOperation.m in Sources */,
 				4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */,
 				BDE2FC2A1BFA62EE007C9354 /* TableViewDetailVC.m in Sources */,
+				BDC951A01BFF35580050D80C /* ProductGroupCell.m in Sources */,
 				4A1852D31BE7DA8600AF495F /* MainNetworkingDataSource.m in Sources */,
 				4A1852CE1BE7DA2E00AF495F /* UIImageView+AFNetworking.m in Sources */,
+				BDC9519B1BFF31910050D80C /* ProductCell.m in Sources */,
 				4A1852E61BE7DA9200AF495F /* CJSONSerializer.m in Sources */,
 				4A1852CC1BE7DA2E00AF495F /* AFXMLRequestOperation.m in Sources */,
+				BDC951961BFF27080050D80C /* ProductSelectionVC.m in Sources */,
 				4A1852C81BE7DA2E00AF495F /* AFJSONRequestOperation.m in Sources */,
 				BD09C4591BF3E2FB004B35FB /* TableReservationPopUp.m in Sources */,
 				BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */,
@@ -592,7 +622,6 @@
 		4A1852311BE7CD0D00AF495F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "Xpress Order/PrefixHeader.pch";
 				INFOPLIST_FILE = "Xpress Order/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -605,7 +634,6 @@
 		4A1852321BE7CD0D00AF495F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "Xpress Order/PrefixHeader.pch";
 				INFOPLIST_FILE = "Xpress Order/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
