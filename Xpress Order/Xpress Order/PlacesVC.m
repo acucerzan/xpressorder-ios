@@ -12,10 +12,14 @@
 
 #import "PlaceCell.h"
 
-@interface PlacesVC () <UITableViewDataSource, UITableViewDelegate>
+#define ReviewTAG 120
+
+@interface PlacesVC () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic, retain) NSMutableArray *arrayCafe;
+@property (nonatomic, weak) Cafe *weakReferenceWhileAlertView;
+
 @end
 
 @implementation PlacesVC
@@ -72,6 +76,23 @@
 
 }
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == ReviewTAG)
+    {
+        NSLog(@"Button index: %d", buttonIndex);
+        
+        if (buttonIndex == 1)
+        {
+            MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+            
+            [networkingDataSource setReview:self.weakReferenceWhileAlertView.place_review forPlaceWithId:self.weakReferenceWhileAlertView.place_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+                NSLog(@"Finished set review request");
+                
+            }];
+        }
+    }
+}
 
 - (void)setReview:(id)sender
 {
@@ -80,14 +101,16 @@
     if (btn.weakPlace)
     {
         NSLog(@"Clicked review for Place: %@", btn.weakPlace);
-    
-    
-        MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
         
-        [networkingDataSource setReview:btn.weakPlace.place_review forPlaceWithId:btn.weakPlace.place_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
-            NSLog(@"Finished set review request");
-            
-        }];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Trimite recenzie" message:[NSString stringWithFormat:@"Doriți să trimiteți %.1f stele pentru %@?", [btn.weakPlace.place_review floatValue], btn.weakPlace.place_name] delegate:self cancelButtonTitle:@"Nu" otherButtonTitles:@"Da", nil];
+        
+        self.weakReferenceWhileAlertView = btn.weakPlace;
+        
+        alert.tag = ReviewTAG;
+        
+        [alert show];
+    
+        
     }
 }
 

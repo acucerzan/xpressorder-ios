@@ -109,7 +109,7 @@
 
 - (NSString *)getSetReviewURL
 {
-    NSString *str = [URL_SERVER stringByAppendingString:@"setReview.php"];
+    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
     
     return str;
 }
