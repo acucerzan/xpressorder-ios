@@ -37,4 +37,7 @@
 - (void)cancelCallWaitressRequest;
 
 
+- (void)getCategoryFoodforPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
+- (void)cancelCategoryFoodRequest;
+
 @end
