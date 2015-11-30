@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A07C6741C0C7FE5003E0FB9 /* MyFoodsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C6731C0C7FE5003E0FB9 /* MyFoodsParser.m */; };
 		4A18521B1BE7CD0D00AF495F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521A1BE7CD0D00AF495F /* main.m */; };
 		4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521D1BE7CD0D00AF495F /* AppDelegate.m */; };
 		4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852201BE7CD0D00AF495F /* PlacesVC.m */; };
@@ -69,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A07C6721C0C7FE5003E0FB9 /* MyFoodsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFoodsParser.h; sourceTree = "<group>"; };
+		4A07C6731C0C7FE5003E0FB9 /* MyFoodsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFoodsParser.m; sourceTree = "<group>"; };
 		4A1852161BE7CD0D00AF495F /* Xpress Order.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xpress Order.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A18521A1BE7CD0D00AF495F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A18521C1BE7CD0D00AF495F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 				4AE8AE411C0C61D4006BB91F /* CallWaitressParser.m */,
 				4AE8AE431C0C647C006BB91F /* CategoryFoodsParser.h */,
 				4AE8AE441C0C647C006BB91F /* CategoryFoodsParser.m */,
+				4A07C6721C0C7FE5003E0FB9 /* MyFoodsParser.h */,
+				4A07C6731C0C7FE5003E0FB9 /* MyFoodsParser.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */,
 				4A1852C61BE7DA2E00AF495F /* AFHTTPRequestOperation.m in Sources */,
 				4A1852CD1BE7DA2E00AF495F /* LAbstractAFDataSource.m in Sources */,
+				4A07C6741C0C7FE5003E0FB9 /* MyFoodsParser.m in Sources */,
 				4ABFCF2E1BF241B300987B79 /* BaseViewController.m in Sources */,
 				4A1852631BE7CFBF00AF495F /* HCSStarRatingView.m in Sources */,
 				4A1852E31BE7DA9200AF495F /* CDataScanner.m in Sources */,

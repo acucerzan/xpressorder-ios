@@ -40,4 +40,8 @@
 - (void)getCategoryFoodforPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
 - (void)cancelCategoryFoodRequest;
 
+
+- (void)getFoodFromOrderID:(NSString *)orderID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
+- (void)cancelFoodFromOrderRequest;
+
 @end

@@ -13,6 +13,7 @@
 #import "CheckTableCodeParser.h"
 #import "CallWaitressParser.h"
 #import "CategoryFoodsParser.h"
+#import "MyFoodsParser.h"
 
 #import "AFNetworkReachabilityManager.h"
 
@@ -299,7 +300,43 @@
 
 - (void)cancelCategoryFoodRequest
 {
-        [self cancelOperationWithUrl:[self getCategoryFoodURL]];
+    [self cancelOperationWithUrl:[self getCategoryFoodURL]];
+}
+
+
+- (NSString *)getMyFoodURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"get_food_like.php"];
+    
+    return str;
+}
+
+- (void)getFoodFromOrderID:(NSString *)orderID withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+    //        return;
+    //    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   orderID, @"reservation_id",
+                                   nil];
+    
+    [self getDataWithUrl:[self getMyFoodURL]
+         timeoutInterval:30
+                 headers:nil//headers
+              parameters:params
+           requestMethod:@"POST"
+         fallbackToCache:NO
+             parserClass:[MyFoodsParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
+
+- (void)cancelFoodFromOrderRequest
+{
+    [self cancelOperationWithUrl:[self getMyFoodURL]];
 }
 
 @end
