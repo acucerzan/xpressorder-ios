@@ -18,6 +18,6 @@
 #import <UIKit/UIKit.h>
 
 #import "XPModel.h"
-
+#import "Macros.h"
 
 #endif /* PrefixHeader_pch */

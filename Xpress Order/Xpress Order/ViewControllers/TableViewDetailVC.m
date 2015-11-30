@@ -75,7 +75,7 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     
-    [imageView setImage:[UIImage imageNamed:@"table_page_social_btn"]];
+    [imageView setImage:[UIImage imageNamed:@"social_media_button"]];
     
     return imageView;
 }

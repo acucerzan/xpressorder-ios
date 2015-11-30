@@ -18,13 +18,13 @@
 - (void)awakeFromNib
 {
     // Initialization code
-    [self.viewLeftTable.layer setCornerRadius:self.viewLeftTable.frame.size.height/2];
-    [self.viewLeftTableNumber.layer setCornerRadius:self.viewLeftTableNumber.frame.size.height/2];
-    [self.viewLeftTableState.layer setCornerRadius:self.viewLeftTableState.frame.size.height/2];
-    
-    [self.viewRightTable.layer setCornerRadius:self.viewRightTable.frame.size.height/2];
-    [self.viewRightTableState.layer setCornerRadius:self.viewRightTableState.frame.size.height/2];
-    [self.viewRightTableNumber.layer setCornerRadius:self.viewRightTableNumber.frame.size.height/2];
+//    [self.viewLeftTable.layer setCornerRadius:self.viewLeftTable.frame.size.height/2];
+//    [self.viewLeftTableNumber.layer setCornerRadius:self.viewLeftTableNumber.frame.size.height/2];
+//    [self.viewLeftTableState.layer setCornerRadius:self.viewLeftTableState.frame.size.height/2];
+//    
+//    [self.viewRightTable.layer setCornerRadius:self.viewRightTable.frame.size.height/2];
+//    [self.viewRightTableState.layer setCornerRadius:self.viewRightTableState.frame.size.height/2];
+//    [self.viewRightTableNumber.layer setCornerRadius:self.viewRightTableNumber.frame.size.height/2];
     
 }
 
@@ -45,21 +45,99 @@
 -(void) setLeftTableViewWithTable:(Table *) table
 {
     leftTable = table;
+    
+    NSString *imageTableState = @"";
+    NSString *imageTableView = @"free_table";
+    NSString *imagePersonNumber = @"number_of_ppl_purple";
+    
+    NSString *tableState = @"";
+    [self.viewLeftTableState setHidden:YES];
+    
+    if([leftTable.user_state isEqualToString:@"busy"])
+    {
+        imageTableView = @"grey_table_big";
+        imagePersonNumber = @"nr_of_person";
+        imageTableState = @"busy_or_reserved";
+        
+        tableState = @"R";
+        [self.viewLeftTableState setHidden:NO];
+    }
+    else
+        if(leftTable.user_state !=nil)
+    {
+        imageTableView = @"grey_table_big";
+        imagePersonNumber = @"grey_number_of_ppl";
+        imageTableState = @"busy_or_reserved";
+        
+        tableState = @"R";
+        [self.viewLeftTableState setHidden:NO];
+    }
+
+    
+    
     [self.labelLeftPersonsNumber setText:[NSString stringWithFormat:@"x%@",table.user_available]];
     [self.labelLeftTableNumber setText:table.table_id];
-    [self.labelLeftTableState setText:table.user_state];
+    [self.labelLeftTableState setText:tableState];
     
-    [self.viewContainerLeftTable setBackgroundColor:[UIColor clearColor]];
+    [self.imageViewLeftPersonNumer setImage:Image(imagePersonNumber)];
+    [self.imageViewLeftTable setImage:Image(imageTableView)];
+    [self.imageViewLeftTableState setImage:Image(imageTableState)];
+    
+    
+    [self.viewContainerLeftTable setBackgroundColor:ClearColor];
+    [self.viewLeftTableNumber setBackgroundColor:ClearColor];
+    [self.viewLeftTableState setBackgroundColor:ClearColor];
+    [self.viewLeftTable setBackgroundColor:ClearColor];
+    
 }
 
 -(void) setRightTableViewWithTable:(Table *) table
 {
     rightTable = table;
+    
+    NSString *imageTableState = @"";
+    NSString *imageTableView = @"free_table";
+    NSString *imagePersonNumber = @"number_of_ppl_purple";
+    
+    NSString *tableState = @"";
+    [self.viewLeftTableState setHidden:YES];
+    
+    if([rightTable.user_state isEqualToString:@"busy"])
+    {
+        imageTableView = @"grey_table_big";
+        imagePersonNumber = @"nr_of_person";
+        imageTableState = @"busy_or_reserved";
+        
+        tableState = @"R";
+        [self.viewLeftTableState setHidden:NO];
+    }
+    else
+        if(rightTable.user_state !=nil && ![rightTable.user_state isEqualToString:@"none"])
+        {
+            imageTableView = @"grey_table_big";
+            imagePersonNumber = @"grey_number_of_ppl";
+            imageTableState = @"busy_or_reserved";
+            
+            tableState = @"R";
+            [self.viewLeftTableState setHidden:NO];
+        }
+
+
+    
+    
     [self.labelRightPersonsNumber setText:[NSString stringWithFormat:@"x%@",table.user_available]];
     [self.labelRightTableNumber setText:table.table_id];
-    [self.labelRightTableState setText:table.user_state];
+    [self.labelRightTableState setText:tableState];
     
-    [self.viewContainerRightTable setBackgroundColor:[UIColor clearColor]];
+    [self.imageViewRightPersonNumber setImage:Image(imagePersonNumber)];
+    [self.imageViewRightTable setImage:Image(imageTableView)];
+    [self.imageViewRightTableState setImage:Image(imageTableState)];
+    
+    
+    [self.viewContainerRightTable setBackgroundColor:ClearColor];
+    [self.viewRightTableNumber setBackgroundColor:ClearColor];
+    [self.viewRightTableState setBackgroundColor:ClearColor];
+    [self.viewRightTable setBackgroundColor:ClearColor];
 }
 
 - (IBAction)buttonLeftTablePress:(id)sender

@@ -22,6 +22,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelLeftTableNumber;
 @property (weak, nonatomic) IBOutlet UILabel *labelLeftTableState;
 @property (weak, nonatomic) IBOutlet UILabel *labelLeftPersonsNumber;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLeftPersonNumer;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLeftTableState;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewLeftTable;
 
 @property (weak, nonatomic) IBOutlet UIView *viewContainerRightTable;
 @property (weak, nonatomic) IBOutlet UIView *viewRightTable;
@@ -31,6 +34,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelRightTableNumber;
 @property (weak, nonatomic) IBOutlet UILabel *labelRightTableState;
 @property (weak, nonatomic) IBOutlet UILabel *labelRightPersonsNumber;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewRightTable;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewRightTableState;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewRightPersonNumber;
 
 @property (nonatomic, strong) void (^buttonTablePress)(Table *selectedTable);
 

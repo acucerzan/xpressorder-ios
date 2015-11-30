@@ -34,10 +34,10 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_page_name1" translatesAutoresizingMaskIntoConstraints="NO" id="Stf-ex-Hoe">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="number_of_ppl_grey" translatesAutoresizingMaskIntoConstraints="NO" id="Stf-ex-Hoe">
                             <rect key="frame" x="48" y="93" width="69" height="69"/>
                             <animations/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Stf-ex-Hoe" secondAttribute="height" multiplier="1:1" id="UpP-3k-fUH"/>
                             </constraints>
@@ -65,26 +65,30 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFc-Is-dCT">
                     <rect key="frame" x="0.0" y="450" width="375" height="217"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-IQ-Sq8">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="texture" translatesAutoresizingMaskIntoConstraints="NO" id="H6a-h6-nzO">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
+                            <animations/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-IQ-Sq8">
                             <rect key="frame" x="280" y="111" width="70" height="70"/>
                             <animations/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="qnN-IQ-Sq8" secondAttribute="height" multiplier="1:1" id="GBc-jC-fdp"/>
                             </constraints>
-                            <state key="normal" image="table_page_call_btn"/>
+                            <state key="normal" image="call"/>
                             <connections>
                                 <action selector="buttonCallPress:" destination="-1" eventType="touchUpInside" id="wbg-ub-UPL"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vl8-RD-8pM">
-                            <rect key="frame" x="130" y="8" width="114" height="114"/>
+                            <rect key="frame" x="128" y="12" width="119" height="119"/>
                             <animations/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="vl8-RD-8pM" secondAttribute="height" multiplier="1:1" id="T0I-Cp-xBc"/>
                             </constraints>
-                            <state key="normal" image="table_page_menu"/>
+                            <state key="normal" image="buton_bar"/>
                             <connections>
                                 <action selector="buttonMenuPress:" destination="-1" eventType="touchUpInside" id="idg-xc-zbE"/>
                             </connections>
@@ -102,12 +106,16 @@
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="H6a-h6-nzO" secondAttribute="trailing" id="3B0-G9-k1n"/>
                         <constraint firstItem="qnN-IQ-Sq8" firstAttribute="centerY" secondItem="hB7-J8-rXa" secondAttribute="centerY" id="FA3-hi-HeE"/>
                         <constraint firstAttribute="width" secondItem="uFc-Is-dCT" secondAttribute="height" multiplier="375:217" id="Ggh-Nt-EOJ"/>
+                        <constraint firstItem="H6a-h6-nzO" firstAttribute="leading" secondItem="uFc-Is-dCT" secondAttribute="leading" id="NW6-CZ-pOR"/>
                         <constraint firstItem="vl8-RD-8pM" firstAttribute="centerX" secondItem="uFc-Is-dCT" secondAttribute="centerX" id="OEJ-vN-jW0"/>
                         <constraint firstItem="hB7-J8-rXa" firstAttribute="centerY" secondItem="uFc-Is-dCT" secondAttribute="centerY" constant="37.5" id="RyD-E8-Gbd"/>
-                        <constraint firstItem="vl8-RD-8pM" firstAttribute="top" secondItem="uFc-Is-dCT" secondAttribute="top" constant="8" id="d0e-cr-uF8"/>
+                        <constraint firstItem="H6a-h6-nzO" firstAttribute="top" secondItem="uFc-Is-dCT" secondAttribute="top" id="bjR-ZY-IqD"/>
+                        <constraint firstItem="vl8-RD-8pM" firstAttribute="top" secondItem="uFc-Is-dCT" secondAttribute="top" constant="12" id="d0e-cr-uF8"/>
                         <constraint firstItem="hB7-J8-rXa" firstAttribute="leading" secondItem="uFc-Is-dCT" secondAttribute="leading" constant="18" id="dFT-YH-e6u"/>
+                        <constraint firstAttribute="bottom" secondItem="H6a-h6-nzO" secondAttribute="bottom" id="eGI-nu-rA6"/>
                         <constraint firstAttribute="trailing" secondItem="qnN-IQ-Sq8" secondAttribute="trailing" constant="25" id="y4J-D3-eYm"/>
                     </constraints>
                 </view>
@@ -129,13 +137,14 @@
                 <constraint firstAttribute="bottom" secondItem="I0w-MF-Ivn" secondAttribute="bottom" id="wyY-nR-Dov"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="250.5" y="300.5"/>
+            <point key="canvasLocation" x="90.5" y="243.5"/>
         </view>
     </objects>
     <resources>
         <image name="bg_tables" width="375" height="667"/>
-        <image name="table_page_call_btn" width="70" height="70"/>
-        <image name="table_page_menu" width="114" height="114"/>
-        <image name="table_page_name1" width="69" height="69"/>
+        <image name="buton_bar" width="119" height="119"/>
+        <image name="call" width="74" height="74"/>
+        <image name="number_of_ppl_grey" width="72" height="72"/>
+        <image name="texture" width="375" height="218"/>
     </resources>
 </document>

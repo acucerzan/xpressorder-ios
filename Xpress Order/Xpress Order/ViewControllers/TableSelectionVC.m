@@ -107,6 +107,7 @@
 
 #pragma mark --- TableView DataSource & Delegate
 #define kDefaultNavigationBarHeight 64
+
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     int yOffset  = self.tableViewTableSelection.contentOffset.y  + kDefaultNavigationBarHeight;
