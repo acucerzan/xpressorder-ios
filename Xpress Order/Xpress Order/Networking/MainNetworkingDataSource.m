@@ -9,6 +9,7 @@
 #import "PlaceListParser.h"
 #import "TablesParser.h"
 #import "SetReviewParser.h"
+#import "CheckReservationParser.h"
 
 #import "AFNetworkReachabilityManager.h"
 
@@ -107,6 +108,8 @@
     [self cancelOperationWithUrl:[self getTablesURL]];
 }
 
+
+
 - (NSString *)getSetReviewURL
 {
     NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
@@ -144,44 +147,84 @@
     [self cancelOperationWithUrl:[self getSetReviewURL]];
 }
 
-
-- (NSString *)getCreateReservationURL
+- (NSString *)getCheckReserved
 {
-    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
+    NSString *str = [URL_SERVER stringByAppendingString:@"reservation_time.php"];
     
     return str;
 }
 
-
-- (void)createReservation:(ReservationRequest *)reservationRequest withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+- (void)checkIfReservedForPlaceWithId:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
 {
-    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
-    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
-    //        return;
-    //    }
-    
-//    NSString *reviewString = [NSString stringWithFormat:@"%.2f", [reviewValue floatValue]];
+//    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//        return;
+//    }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    placeID, @"place_id",
-                                   reviewString, @"place_review",
+                                   tableNr, @"table_no",
                                    nil];
     
-    [self getDataWithUrl:[self getSetReviewURL]
+    [self getDataWithUrl:[self getCheckReserved]
          timeoutInterval:30
                  headers:nil//headers
               parameters:params
            requestMethod:@"POST"
          fallbackToCache:NO
-             parserClass:[SetReviewParser class]
+             parserClass:[CheckReservationParser class]
        completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
            completitionBlock(items, error, userInfo);
        }];
 }
 
-- (void)cancelCreateReservationRequest
+
+- (void)cancelCheckIfReservedRequest
 {
-    [self cancelOperationWithUrl:[self getSetReviewURL]];
+    [self cancelOperationWithUrl:[self getCheckReserved]];
 }
+
+
+//- (NSString *)getCreateReservationURL
+//{
+//    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
+//    
+//    return str;
+//}
+//
+//
+//- (void)createReservation:(ReservationRequest *)reservationRequest withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+//{
+//    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//    //        return;
+//    //    }
+//    
+////    NSString *reviewString = [NSString stringWithFormat:@"%.2f", [reviewValue floatValue]];
+//    
+//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   placeID, @"place_id",
+//                                   reviewString, @"place_review",
+//                                   nil];
+//    
+//    [self getDataWithUrl:[self getSetReviewURL]
+//         timeoutInterval:30
+//                 headers:nil//headers
+//              parameters:params
+//           requestMethod:@"POST"
+//         fallbackToCache:NO
+//             parserClass:[SetReviewParser class]
+//       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+//           completitionBlock(items, error, userInfo);
+//       }];
+//}
+//
+//- (void)cancelCreateReservationRequest
+//{
+//    [self cancelOperationWithUrl:[self getSetReviewURL]];
+//}
+
+
+
 
 @end

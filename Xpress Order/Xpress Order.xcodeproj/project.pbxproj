@@ -44,6 +44,7 @@
 		4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF301BF2496E00987B79 /* TablesParser.m */; };
 		4ABFCF341BF24FC800987B79 /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF331BF24FC800987B79 /* Table.m */; };
 		4ABFCF371BF250A300987B79 /* SetReviewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF361BF250A300987B79 /* SetReviewParser.m */; };
+		4AE8AE361C0C4811006BB91F /* CheckReservationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */; };
 		BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4221BF11DC70029338D /* TableSelectionVC.m */; };
 		BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4281BF13E1F0029338D /* TableSelectionCell.m */; };
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
@@ -136,6 +137,8 @@
 		4ABFCF331BF24FC800987B79 /* Table.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Table.m; sourceTree = "<group>"; };
 		4ABFCF351BF250A300987B79 /* SetReviewParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetReviewParser.h; sourceTree = "<group>"; };
 		4ABFCF361BF250A300987B79 /* SetReviewParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetReviewParser.m; sourceTree = "<group>"; };
+		4AE8AE341C0C4811006BB91F /* CheckReservationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckReservationParser.h; sourceTree = "<group>"; };
+		4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckReservationParser.m; sourceTree = "<group>"; };
 		BD04F4211BF11DC70029338D /* TableSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionVC.h; sourceTree = "<group>"; };
 		BD04F4221BF11DC70029338D /* TableSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionVC.m; sourceTree = "<group>"; };
 		BD04F4271BF13E1F0029338D /* TableSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionCell.h; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				4ABFCF301BF2496E00987B79 /* TablesParser.m */,
 				4ABFCF351BF250A300987B79 /* SetReviewParser.h */,
 				4ABFCF361BF250A300987B79 /* SetReviewParser.m */,
+				4AE8AE341C0C4811006BB91F /* CheckReservationParser.h */,
+				4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				4A1852641BE7CFBF00AF495F /* MBProgressHUD.m in Sources */,
 				4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */,
 				4A1852E51BE7DA9200AF495F /* CJSONScanner.m in Sources */,
+				4AE8AE361C0C4811006BB91F /* CheckReservationParser.m in Sources */,
 				4A1852ED1BE9151700AF495F /* AFNetworkReachabilityManager.m in Sources */,
 				4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */,
 				4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */,
