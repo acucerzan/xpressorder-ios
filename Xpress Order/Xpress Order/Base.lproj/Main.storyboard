@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_primap" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-8F-Tcu">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_primap" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-8F-Tcu">
                                 <rect key="frame" x="10" y="74" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
