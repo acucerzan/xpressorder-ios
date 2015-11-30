@@ -24,7 +24,7 @@
     
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
-    NSLog(@"Response: %@", [responseString description]);
+//    NSLog(@"Response: %@", [responseString description]);
     
     NSDictionary *responseDict = [deserializer deserialize:data error:&deserializeError];
     
@@ -47,6 +47,8 @@
             tableObject.user_name = [value objectForKey:@"username"];
             tableObject.user_available = [value objectForKey:@"user_available"];
             tableObject.user_state = [value objectForKey:@"state"];
+            
+            NSLog(@"Table state: %@", tableObject.user_state);
             
             [_items addObject:tableObject];
             

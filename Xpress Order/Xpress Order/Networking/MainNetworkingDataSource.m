@@ -14,7 +14,7 @@
 
 //#define URL_SERVER @"http://coffee.dahuasoft2008.com/api/"
 #define URL_SERVER @"http://www.coffeeapp.club/api/"
-//#define URL_SERVER @"http://192.168.1.115/API/"
+#define CATEGORY_LOGO_URL "http://www.coffeeapp.club/img/food_categories/"
 
 @implementation MainNetworkingDataSource
 
@@ -140,6 +140,46 @@
        }];
 }
 - (void)cancelSetReviewRequest
+{
+    [self cancelOperationWithUrl:[self getSetReviewURL]];
+}
+
+
+- (NSString *)getCreateReservationURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
+    
+    return str;
+}
+
+
+- (void)createReservation:(ReservationRequest *)reservationRequest withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+    //        return;
+    //    }
+    
+//    NSString *reviewString = [NSString stringWithFormat:@"%.2f", [reviewValue floatValue]];
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   placeID, @"place_id",
+                                   reviewString, @"place_review",
+                                   nil];
+    
+    [self getDataWithUrl:[self getSetReviewURL]
+         timeoutInterval:30
+                 headers:nil//headers
+              parameters:params
+           requestMethod:@"POST"
+         fallbackToCache:NO
+             parserClass:[SetReviewParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
+
+- (void)cancelCreateReservationRequest
 {
     [self cancelOperationWithUrl:[self getSetReviewURL]];
 }

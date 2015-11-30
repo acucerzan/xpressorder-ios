@@ -38,6 +38,7 @@
 		4A1852F01BE9173E00AF495F /* Cafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852EF1BE9173E00AF495F /* Cafe.m */; };
 		4A1852F61BE9289900AF495F /* PlaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852F41BE9289900AF495F /* PlaceCell.m */; };
 		4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1852F51BE9289900AF495F /* PlaceCell.xib */; };
+		4AA91B3C1C0386F1001F31BD /* ReservationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AA91B3B1C0386F1001F31BD /* ReservationRequest.m */; };
 		4ABFCF2A1BEF9DCC00987B79 /* CafeReviewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */; };
 		4ABFCF2E1BF241B300987B79 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF2D1BF241B300987B79 /* BaseViewController.m */; };
 		4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF301BF2496E00987B79 /* TablesParser.m */; };
@@ -117,6 +118,8 @@
 		4A1852F31BE9289900AF495F /* PlaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceCell.h; sourceTree = "<group>"; };
 		4A1852F41BE9289900AF495F /* PlaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceCell.m; sourceTree = "<group>"; };
 		4A1852F51BE9289900AF495F /* PlaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceCell.xib; sourceTree = "<group>"; };
+		4AA91B3A1C0386F1001F31BD /* ReservationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationRequest.h; sourceTree = "<group>"; };
+		4AA91B3B1C0386F1001F31BD /* ReservationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationRequest.m; sourceTree = "<group>"; };
 		4ABFCF281BEF9DCC00987B79 /* CafeReviewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafeReviewButton.h; sourceTree = "<group>"; };
 		4ABFCF291BEF9DCC00987B79 /* CafeReviewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafeReviewButton.m; sourceTree = "<group>"; };
 		4ABFCF2C1BF241B300987B79 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				4A1852EF1BE9173E00AF495F /* Cafe.m */,
 				4ABFCF321BF24FC800987B79 /* Table.h */,
 				4ABFCF331BF24FC800987B79 /* Table.m */,
+				4AA91B3A1C0386F1001F31BD /* ReservationRequest.h */,
+				4AA91B3B1C0386F1001F31BD /* ReservationRequest.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 			files = (
 				4A1852CB1BE7DA2E00AF495F /* AFURLConnectionOperation.m in Sources */,
 				4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */,
+				4AA91B3C1C0386F1001F31BD /* ReservationRequest.m in Sources */,
 				BDE2FC2A1BFA62EE007C9354 /* TableViewDetailVC.m in Sources */,
 				4A1852D31BE7DA8600AF495F /* MainNetworkingDataSource.m in Sources */,
 				4A1852CE1BE7DA2E00AF495F /* UIImageView+AFNetworking.m in Sources */,
