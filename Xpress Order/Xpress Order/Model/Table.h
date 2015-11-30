@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "TableAccess.h"
+
 @interface Table : NSObject
 
 @property (nonatomic, retain) NSString *table_id;
@@ -16,5 +18,7 @@
 @property (nonatomic, retain) NSString *user_name;
 @property (nonatomic, retain) NSString *user_available;
 @property (nonatomic, retain) NSString *user_state;
+
+@property (nonatomic, retain) TableAccess *tableAccess;
 
 @end
