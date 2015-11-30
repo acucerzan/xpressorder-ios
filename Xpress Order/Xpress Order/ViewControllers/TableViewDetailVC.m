@@ -46,6 +46,7 @@
     [self addSharedBoobles];
     
 }
+
 -(void) addSharedBoobles
 {
     [viewShare setBackgroundColor:[UIColor clearColor]];
@@ -106,11 +107,32 @@
     
     return buttons;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (void)downloadFoodsAndCategories
+{
+    XPModel *shared = [XPModel sharedInstance];
+    
+    if (shared.selectedCafe)
+    {
+        MainNetworkingDataSource *main = [shared mainNetworkingDataSource];
+        
+        [main getCategoryFoodforPlaceID:shared.selectedCafe.place_id andTableNumber:shared.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+            NSLog(@"Finished getting food categories");
+            
+            if (items)
+            {
+                for (CategoryModel *categ in items) {
+                    NSLog(@"%@", [categ description]);
+                }
+            }
+        }];
+    }
+}
 
 - (IBAction)buttonMenuPress:(id)sender
 {

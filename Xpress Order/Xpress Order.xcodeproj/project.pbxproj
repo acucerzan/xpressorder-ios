@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4A07C6741C0C7FE5003E0FB9 /* MyFoodsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C6731C0C7FE5003E0FB9 /* MyFoodsParser.m */; };
+		4A07C6771C0C822C003E0FB9 /* TakeTableParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C6761C0C822C003E0FB9 /* TakeTableParser.m */; };
+		4A07C67A1C0C8843003E0FB9 /* CompareTableCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A07C6791C0C8843003E0FB9 /* CompareTableCodeParser.m */; };
 		4A18521B1BE7CD0D00AF495F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521A1BE7CD0D00AF495F /* main.m */; };
 		4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A18521D1BE7CD0D00AF495F /* AppDelegate.m */; };
 		4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1852201BE7CD0D00AF495F /* PlacesVC.m */; };
@@ -72,6 +74,10 @@
 /* Begin PBXFileReference section */
 		4A07C6721C0C7FE5003E0FB9 /* MyFoodsParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFoodsParser.h; sourceTree = "<group>"; };
 		4A07C6731C0C7FE5003E0FB9 /* MyFoodsParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFoodsParser.m; sourceTree = "<group>"; };
+		4A07C6751C0C822C003E0FB9 /* TakeTableParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeTableParser.h; sourceTree = "<group>"; };
+		4A07C6761C0C822C003E0FB9 /* TakeTableParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeTableParser.m; sourceTree = "<group>"; };
+		4A07C6781C0C8843003E0FB9 /* CompareTableCodeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareTableCodeParser.h; sourceTree = "<group>"; };
+		4A07C6791C0C8843003E0FB9 /* CompareTableCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareTableCodeParser.m; sourceTree = "<group>"; };
 		4A1852161BE7CD0D00AF495F /* Xpress Order.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xpress Order.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A18521A1BE7CD0D00AF495F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4A18521C1BE7CD0D00AF495F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -292,12 +298,16 @@
 				4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */,
 				4AE8AE3A1C0C4E70006BB91F /* CheckTableCodeParser.h */,
 				4AE8AE3B1C0C4E70006BB91F /* CheckTableCodeParser.m */,
+				4A07C6781C0C8843003E0FB9 /* CompareTableCodeParser.h */,
+				4A07C6791C0C8843003E0FB9 /* CompareTableCodeParser.m */,
 				4AE8AE401C0C61D4006BB91F /* CallWaitressParser.h */,
 				4AE8AE411C0C61D4006BB91F /* CallWaitressParser.m */,
 				4AE8AE431C0C647C006BB91F /* CategoryFoodsParser.h */,
 				4AE8AE441C0C647C006BB91F /* CategoryFoodsParser.m */,
 				4A07C6721C0C7FE5003E0FB9 /* MyFoodsParser.h */,
 				4A07C6731C0C7FE5003E0FB9 /* MyFoodsParser.m */,
+				4A07C6751C0C822C003E0FB9 /* TakeTableParser.h */,
+				4A07C6761C0C822C003E0FB9 /* TakeTableParser.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -541,6 +551,7 @@
 				4A1852C81BE7DA2E00AF495F /* AFJSONRequestOperation.m in Sources */,
 				BD09C4591BF3E2FB004B35FB /* TableReservationPopUp.m in Sources */,
 				4AE8AE3F1C0C558C006BB91F /* TableAccess.m in Sources */,
+				4A07C6771C0C822C003E0FB9 /* TakeTableParser.m in Sources */,
 				BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */,
 				4A1852C61BE7DA2E00AF495F /* AFHTTPRequestOperation.m in Sources */,
 				4A1852CD1BE7DA2E00AF495F /* LAbstractAFDataSource.m in Sources */,
@@ -561,6 +572,7 @@
 				4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */,
 				4A1852D41BE7DA8600AF495F /* PlaceListParser.m in Sources */,
 				4A1852C71BE7DA2E00AF495F /* AFImageRequestOperation.m in Sources */,
+				4A07C67A1C0C8843003E0FB9 /* CompareTableCodeParser.m in Sources */,
 				4A1852E21BE7DA9200AF495F /* CDataScanner_Extensions.m in Sources */,
 				4ABFCF341BF24FC800987B79 /* Table.m in Sources */,
 				4A1852C91BE7DA2E00AF495F /* AFNetworkActivityIndicatorManager.m in Sources */,

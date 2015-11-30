@@ -10,4 +10,9 @@
 
 @implementation ReservationCheck
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Rezervat în data de %@ la ora %@", self.comingDate, self.arrivalTime];
+}
+
 @end

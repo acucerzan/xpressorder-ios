@@ -121,15 +121,29 @@
 //    }];
 }
 
-- (void)checkCode:(NSString *)pinCode
+- (void)takeTable:(Table *)table withPinCode:(NSString *)pinCode
 {
-    MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
-    [networkingDataSource checkPinCode:pinCode forPlaceID:self.selectedTable.place_id andTableNumber:self.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
-        NSLog(@"Finished pin check");
+    MainNetworkingDataSource *main = [[XPModel sharedInstance] mainNetworkingDataSource];
+    [main takeTableWithPinCode:pinCode forPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+        NSLog(@"Finished taking table");
+        
+        if (items)
+        {
+            [self compareCode:pinCode forTable:table];
+        }
+        
+    }];
+}
+
+- (void)compareCode:(NSString *)code forTable:(Table *)table
+{
+    MainNetworkingDataSource *main = [[XPModel sharedInstance] mainNetworkingDataSource];
+    [main comparePinCode:code forPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+        NSLog(@"Finished comparing pin code for table: %@", table.table_id);
         
         if (error)
         {
-        
+            
         }
         else if (items)
         {
@@ -137,11 +151,14 @@
             {
                 TableAccess *tableAccess = [items objectAtIndex:0];
                 
-                self.selectedTable.tableAccess = tableAccess;
+                table.tableAccess = tableAccess;
                 
-                NSLog(@"You have access to table %@ and order %@", self.selectedTable.table_id, tableAccess.orderID);
+                NSLog(@"You have access to table %@ and order %@", table.table_id, tableAccess.orderID);
+                
+                // TODO open table view details
             }
         }
+        
     }];
 }
 

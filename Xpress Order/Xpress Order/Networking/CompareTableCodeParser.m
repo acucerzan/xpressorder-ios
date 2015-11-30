@@ -6,13 +6,13 @@
 //  Copyright © 2015 Adrian Cucerzan. All rights reserved.
 //
 
-#import "CheckTableCodeParser.h"
+#import "CompareTableCodeParser.h"
 
 #import "CJSONDeserializer.h"
 
 #import "TableAccess.h"
 
-@implementation CheckTableCodeParser
+@implementation CompareTableCodeParser
 
 - (void)parseData:(NSData *)data
 {

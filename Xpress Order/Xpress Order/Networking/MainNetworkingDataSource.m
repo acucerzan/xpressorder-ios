@@ -11,9 +11,11 @@
 #import "SetReviewParser.h"
 #import "CheckReservationParser.h"
 #import "CheckTableCodeParser.h"
+#import "CompareTableCodeParser.h"
 #import "CallWaitressParser.h"
 #import "CategoryFoodsParser.h"
 #import "MyFoodsParser.h"
+#import "TakeTableParser.h"
 
 #import "AFNetworkReachabilityManager.h"
 
@@ -189,19 +191,58 @@
 }
 
 
-- (NSString *)getCheckPinCodeURL
+//- (NSString *)getCheckPinCodeURL
+//{
+//    NSString *str = [URL_SERVER stringByAppendingString:@"reservation_time.php"];
+//    
+//    return str;
+//}
+//
+//- (void)checkPinCode:(NSString *)pinCode forPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+//{
+////    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+////        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+////        return;
+////    }
+//    
+//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   pinCode, @"pin_code",
+//                                   placeID, @"place_id",
+//                                   tableNr, @"table_no",
+//                                   nil];
+//    
+//    [self getDataWithUrl:[self getCheckPinCodeURL]
+//         timeoutInterval:30
+//                 headers:nil//headers
+//              parameters:params
+//           requestMethod:@"POST"
+//         fallbackToCache:NO
+//             parserClass:[CheckTableCodeParser class]
+//       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+//           completitionBlock(items, error, userInfo);
+//       }];
+//}
+//
+//- (void)cancelCheckPinCodeRequest
+//{
+//    [self cancelOperationWithUrl:[self getCheckPinCodeURL]];
+//}
+
+
+
+- (NSString *)comparePinCodeURL
 {
-    NSString *str = [URL_SERVER stringByAppendingString:@"reservation_time.php"];
+    NSString *str = [URL_SERVER stringByAppendingString:@"compare_pincode.php"];
     
     return str;
 }
 
-- (void)checkPinCode:(NSString *)pinCode forPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+- (void)comparePinCode:(NSString *)pinCode forPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
 {
-//    if (![AFNetworkReachabilityManager sharedManager].reachable) {
-//        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
-//        return;
-//    }
+    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+    //        return;
+    //    }
     
     NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
                                    pinCode, @"pin_code",
@@ -209,21 +250,63 @@
                                    tableNr, @"table_no",
                                    nil];
     
-    [self getDataWithUrl:[self getCheckPinCodeURL]
+    [self getDataWithUrl:[self comparePinCodeURL]
          timeoutInterval:30
                  headers:nil//headers
               parameters:params
            requestMethod:@"POST"
          fallbackToCache:NO
-             parserClass:[CheckTableCodeParser class]
+             parserClass:[CompareTableCodeParser class]
        completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
            completitionBlock(items, error, userInfo);
        }];
 }
 
-- (void)cancelCheckPinCodeRequest
+- (void)cancelComparePinCodeRequest
 {
-    [self cancelOperationWithUrl:[self getCheckPinCodeURL]];
+    [self cancelOperationWithUrl:[self comparePinCodeURL]];
+}
+
+- (NSString *)takeTableURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"table_sit.php"];
+    
+    return str;
+}
+
+- (void)takeTableWithPinCode:(NSString *)pinCode forPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+    //        return;
+    //    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   pinCode, @"pin",
+                                   placeID, @"place_id",
+                                   tableNr, @"table_no",
+                                   [NSString stringWithFormat:@"name+%@", tableNr], @"name",
+                                   @"email-busy", @"email",
+                                   @"numar-busy", @"phone",
+                                   @"email-busy", @"coming_date",
+                                   @"email-busy", @"arriving_time",
+                                   nil];
+    
+    [self getDataWithUrl:[self takeTableURL]
+         timeoutInterval:30
+                 headers:nil//headers
+              parameters:params
+           requestMethod:@"POST"
+         fallbackToCache:NO
+             parserClass:[TakeTableParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
+
+- (void)cancelTakeTableWithPinCodeRequest
+{
+    [self cancelOperationWithUrl:[self takeTableURL]];
 }
 
 

@@ -6,13 +6,15 @@
 //  Copyright © 2015 Adrian Cucerzan. All rights reserved.
 //
 
-#import "CheckReservationParser.h"
+#import "TakeTableParser.h"
 
 #import "CJSONDeserializer.h"
 
-#import "ReservationCheck.h"
+#define CATEGORY_LOGO_URL @"http://www.coffeeapp.club/img/food_categories/"
 
-@implementation CheckReservationParser
+#define FOOD_LOGO_URL @"http://www.coffeeapp.club/img/food_poza/"
+
+@implementation TakeTableParser
 
 - (void)parseData:(NSData *)data
 {
@@ -23,8 +25,7 @@
     NSError *deserializeError = nil;
     
     NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"Response check reservation: %@", [responseString description]);
+    NSLog(@"Response take table: %@", [responseString description]);
     
     NSDictionary *responseDict = [deserializer deserialize:data error:&deserializeError];
 
@@ -32,22 +33,7 @@
     
     if (response)
     {
-        if ([response isEqualToString:@"1"])
-        {
-            ReservationCheck *check = [ReservationCheck new];
-            
-            check.isReserved = [response isEqualToString:@"1"];
-            
-            if (check.isReserved)
-            {
-                NSString *commingDate = [responseDict valueForKey:@"coming_date"];
-                NSString *arrivalTime = [responseDict valueForKey:@"arriving_time"];
-                
-                check.comingDate = commingDate;
-                check.arrivalTime = arrivalTime;
-            }
-            [_items addObject:check];
-        }
+        [_items addObject:@"1"];
     }
 }
 

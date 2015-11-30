@@ -10,6 +10,6 @@
 
 @interface TableAccess : NSObject
 
-@property(nonatomic, strong) NSString *orderID, *pinCode;
+@property(nonatomic, strong) NSString *orderID, *pinCode, *placeID;
 
 @end
