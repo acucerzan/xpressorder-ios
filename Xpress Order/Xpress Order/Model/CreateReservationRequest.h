@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ReservationRequest : NSObject
+@interface CreateReservationRequest : NSObject
 
 @property (nonatomic, strong) NSString *placeID, *tableNumber, *name, *email, *nrOfPersons;
-
+@property (nonatomic, strong) NSString *token;
 
 @end

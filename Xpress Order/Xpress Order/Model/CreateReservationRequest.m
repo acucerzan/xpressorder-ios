@@ -6,8 +6,8 @@
 //  Copyright © 2015 Adrian Cucerzan. All rights reserved.
 //
 
-#import "ReservationRequest.h"
+#import "CreateReservationRequest.h"
 
-@implementation ReservationRequest
+@implementation CreateReservationRequest
 
 @end

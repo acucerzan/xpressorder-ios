@@ -44,6 +44,8 @@
             
             [_items addObject:tableAccess];
         }
+        else
+            _error = [NSError errorWithDomain:@"Error" code:1 userInfo:nil];
     }
 }
 

@@ -67,7 +67,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)checkIfTableIsReserved
+- (void)checkIfTableIsReservedInCaseNoneState
 {
     MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
     [networkingDataSource checkIfReservedForPlaceWithId:self.selectedTable.place_id andTableNumber:self.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
@@ -86,6 +86,60 @@
                 {
                     NSLog(@"Masă liberă. Te rugăm setează codul mesei pentru ocupare");
                 }
+            }
+        }
+    }];
+}
+
+- (void)checkIfTableIsReservedInCaseBusyState
+{
+    MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+    [networkingDataSource checkIfReservedForPlaceWithId:self.selectedTable.place_id andTableNumber:self.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+        NSLog(@"Finished check table");
+        if (items)
+        {
+            if (items.count > 0)
+            {
+                NSLog(@"Masă ocupată pentru moment. Introdu codul mesei sau incercați la o masă liberă.");
+            }
+        }
+    }];
+}
+
+- (void)checkIfTableIsReservedInCaseIsMyReservationState
+{
+//    MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+//    [networkingDataSource checkIfReservedForPlaceWithId:self.selectedTable.place_id andTableNumber:self.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+//        NSLog(@"Finished check table");
+//        if (items)
+//        {
+//            if (items.count > 0)
+//            {
+//                NSLog(@"Masă ocupată pentru moment. Introdu codul mesei sau incercați la o masă liberă.");
+//            }
+//        }
+//    }];
+}
+
+- (void)checkCode:(NSString *)pinCode
+{
+    MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+    [networkingDataSource checkPinCode:pinCode forPlaceID:self.selectedTable.place_id andTableNumber:self.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+        NSLog(@"Finished pin check");
+        
+        if (error)
+        {
+        
+        }
+        else if (items)
+        {
+            if (items.count > 0)
+            {
+                TableAccess *tableAccess = [items objectAtIndex:0];
+                
+                self.selectedTable.tableAccess = tableAccess;
+                
+                NSLog(@"You have access to table %@ and order %@", self.selectedTable.table_id, tableAccess.orderID);
             }
         }
     }];
