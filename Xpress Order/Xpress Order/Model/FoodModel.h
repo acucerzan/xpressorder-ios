@@ -10,11 +10,13 @@
 
 @interface FoodModel : NSObject
 
-@property (nonatomic, retain) NSString *strCategoryId;
-@property (nonatomic, retain) NSString *strFoodId;
-@property (nonatomic, retain) NSString *strFoodName;
-@property (nonatomic, retain) NSString *strquantity;
-@property (nonatomic, retain) NSString *strPrice;
-@property (nonatomic, retain) NSString *strNote;
+@property (nonatomic, strong) NSString *strCategoryId;
+@property (nonatomic, strong) NSString *strFoodId;
+@property (nonatomic, strong) NSString *strFoodName;
+@property (nonatomic, strong) NSString *strquantity;
+@property (nonatomic, strong) NSString *strPrice;
+@property (nonatomic, strong) NSString *strNote;
+@property (nonatomic, strong) NSString *strImage;
+@property (nonatomic, strong) NSString *strMeasuringUnit;
 
 @end

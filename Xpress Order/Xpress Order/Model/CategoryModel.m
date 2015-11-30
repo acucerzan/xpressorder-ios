@@ -10,4 +10,9 @@
 
 @implementation CategoryModel
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"Categoria: %@ id: %@ logo: %@ \n    %@", self.strCategoryName, self.strCategoryId, self.imgCategoryLogo, self.arrayOfFoods];
+}
+
 @end

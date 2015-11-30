@@ -10,9 +10,9 @@
 
 @interface Cafe : NSObject
 
-@property (nonatomic, retain) NSString *place_id;
-@property (nonatomic, retain) NSString *place_logo_image_name;
-@property (nonatomic, retain) NSString *place_name;
-@property (nonatomic, retain) NSNumber *place_review;
+@property (nonatomic, strong) NSString *place_id;
+@property (nonatomic, strong) NSString *place_logo_image_name;
+@property (nonatomic, strong) NSString *place_name;
+@property (nonatomic, strong) NSNumber *place_review;
 
 @end

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-8F-Tcu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_primap" translatesAutoresizingMaskIntoConstraints="NO" id="XpI-8F-Tcu">
                                 <rect key="frame" x="10" y="74" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
@@ -171,7 +171,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="app_logo" width="73" height="73"/>
+        <image name="app_icon_primap" width="61" height="61"/>
         <image name="bg_texture" width="375" height="667"/>
     </resources>
 </document>

@@ -18,7 +18,7 @@
 
 //#define URL_SERVER @"http://coffee.dahuasoft2008.com/api/"
 #define URL_SERVER @"http://www.coffeeapp.club/api/"
-#define CATEGORY_LOGO_URL "http://www.coffeeapp.club/img/food_categories/"
+
 
 @implementation MainNetworkingDataSource
 

@@ -10,10 +10,9 @@
 
 #import "CJSONDeserializer.h"
 
-#import "ReservationCheck.h"
+#define CATEGORY_LOGO_URL @"http://www.coffeeapp.club/img/food_categories/"
 
-#import "FoodModel.h"
-#import "CategoryModel.h"
+#define FOOD_LOGO_URL @"http://www.coffeeapp.club/img/food_poza/"
 
 @implementation CategoryFoodsParser
 
@@ -25,9 +24,8 @@
     
     NSError *deserializeError = nil;
     
-    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"Response call waitress: %@", [responseString description]);
+//    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"Response category foods: %@", [responseString description]);
     
     NSDictionary *responseDict = [deserializer deserialize:data error:&deserializeError];
 
@@ -37,34 +35,30 @@
     {
         NSMutableArray* jsonArray = [responseDict objectForKey:@"result"];
         
-//        if(arrayCategory)
-//            [arrayCategory removeAllObjects];
-//        
-//        if(arrayFood)
-//            [arrayFood removeAllObjects];
-        
         for (NSInteger i = 0; i < [jsonArray count]; i++) {
             
             
             
             NSDictionary* value = (NSDictionary*)[jsonArray objectAtIndex:i];
             
-            CategoryModel *CategoryObject = [[CategoryModel alloc] init];
+            CategoryModel *categoryObject = [[CategoryModel alloc] init];
             
-            CategoryObject.strCategoryId = [value objectForKey:@"category_id"];
-            CategoryObject.strCategoryName = [value objectForKey:@"category_name"];
+            categoryObject.strCategoryId = [value objectForKey:@"category_id"];
+            categoryObject.strCategoryName = [value objectForKey:@"category_name"];
             
             NSString *imglogo = @"";
             imglogo = [value objectForKey:@"category_logo"];
             
-            if (imglogo && ![imglogo isEqualToString:@""]) {
+            if (imglogo && imglogo.length > 0) {
                 
-//                CategoryObject.imgCategoryLogo = [Utility getCachedImageFromPath:PATH_IMAGES_CATEGORY withName:[Utility thumbForFilename:imglogo]];
+                categoryObject.imgCategoryLogo = [NSString stringWithFormat:@"%@%@", CATEGORY_LOGO_URL, imglogo];
                 
             }
             
-//            if(!CategoryObject.imgCategoryLogo ) CategoryObject.imgCategoryLogo  = IMG_LOGO_DEFAULT;
+//            if(!categoryObject.imgCategoryLogo)
+//                categoryObject.imgCategoryLogo  = IMG_LOGO_DEFAULT;
             
+            categoryObject.arrayOfFoods = [NSMutableArray arrayWithCapacity:0];
             
             NSMutableArray *foodArray = [value objectForKey:@"foods"];
             for(NSInteger j = 0; j < [foodArray count]; j++ )
@@ -73,39 +67,29 @@
                 
                 FoodModel *foodModel = [[FoodModel alloc] init];
                 
-                foodModel.strCategoryId = CategoryObject.strCategoryId;
+                foodModel.strCategoryId = categoryObject.strCategoryId;
                 foodModel.strFoodId = [foodValue objectForKey:@"food_id"];
                 foodModel.strFoodName = [foodValue objectForKey:@"food_name"];
                 foodModel.strquantity = [foodValue objectForKey:@"food_quantity"];
                 foodModel.strPrice = [foodValue objectForKey:@"food_price"];
                 foodModel.strNote = [foodValue objectForKey:@"food_note"];
                 
-//                [arrayFood addObject:foodModel];
+                NSString *strImage = @"";
+                strImage = [foodValue objectForKey:@"poza"];
+                
+                if (strImage && strImage.length > 0)
+                {
+                    foodModel.strImage = [NSString stringWithFormat:@"%@%@", FOOD_LOGO_URL, strImage];
+                }
+                
+                foodModel.strMeasuringUnit = [foodValue objectForKey:@"unitate_masura"];
+                
+                [categoryObject.arrayOfFoods addObject:foodModel];
             }
             
-//            [arrayCategory addObject:CategoryObject];
+            [_items addObject:categoryObject];
         }
-        
-        
-//        if(arrayTemp)
-//            [arrayTemp removeAllObjects];
-        
-//        for (int i=0; i<arrayFood.count; i++ ) {
-//            
-//            NSString *strName = [[arrayFood objectAtIndex:i] strCategoryId];
-//            if ( [[[arrayCategory objectAtIndex:selIndex] strCategoryId] isEqualToString:strName] ) {
-//                FoodModel *foodModel = [[FoodModel alloc] init];
-//                
-//                foodModel.strCategoryId = [[arrayFood objectAtIndex:i] strCategoryId];
-//                foodModel.strFoodId = [[arrayFood objectAtIndex:i] strFoodId];
-//                foodModel.strFoodName = [[arrayFood objectAtIndex:i] strFoodName];
-//                foodModel.strquantity = [[arrayFood objectAtIndex:i] strquantity];
-//                foodModel.strPrice = [[arrayFood objectAtIndex:i] strPrice];
-//                foodModel.strNote = [[arrayFood objectAtIndex:i] strNote];
-//                
-//                [arrayTemp addObject:foodModel];
-//            }
-//        }
+   
     }
 }
 

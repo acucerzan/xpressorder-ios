@@ -10,4 +10,9 @@
 
 @implementation FoodModel
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"    Food: %@ id: %@ price %@ quantity: %@ %@, note: %@ image: %@", self.strFoodName, self.strFoodId, self.strPrice, self.strquantity, self.strMeasuringUnit, self.strNote, self.strImage];
+}
+
 @end

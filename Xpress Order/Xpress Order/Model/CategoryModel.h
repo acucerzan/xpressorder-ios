@@ -10,8 +10,9 @@
 
 @interface CategoryModel : NSObject
 
-@property (nonatomic, retain) NSString *strCategoryId;
-@property (nonatomic, retain) NSString *strCategoryName;
-@property (nonatomic, retain) UIImage *imgCategoryLogo;
+@property (nonatomic, strong) NSString *strCategoryId;
+@property (nonatomic, strong) NSString *strCategoryName;
+@property (nonatomic, strong) NSString *imgCategoryLogo;
+@property (nonatomic, strong) NSMutableArray *arrayOfFoods;
 
 @end

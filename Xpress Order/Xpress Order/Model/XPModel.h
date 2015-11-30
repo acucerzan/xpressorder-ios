@@ -32,6 +32,8 @@
 #import "MainNetworkingDataSource.h"
 #import "Cafe.h"
 #import "Table.h"
+#import "CategoryModel.h"
+#import "FoodModel.h"
 
 typedef NS_ENUM(int, iPhoneScreenSize) {
 	iPhoneScreenSize_iPhone4 = 0,

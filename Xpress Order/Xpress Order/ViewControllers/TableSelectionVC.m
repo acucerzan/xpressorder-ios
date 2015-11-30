@@ -159,7 +159,20 @@
     cell.buttonTablePress = ^(Table *table)
     {
         NSLog(@"Table press %@", table);
-        [self openTablePopUpForTable:table];
+        
+        MainNetworkingDataSource *main = [[XPModel sharedInstance] mainNetworkingDataSource];
+        
+        [main getCategoryFoodforPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+            NSLog(@"Finished getting food categories");
+            
+            if (items)
+            {
+                for (CategoryModel *categ in items) {
+                    NSLog(@"%@", [categ description]);
+                }
+            }
+        }];
+//        [self openTablePopUpForTable:table];
     };
     
     [cell setBackgroundColor:[UIColor clearColor]];
