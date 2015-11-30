@@ -20,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_page" translatesAutoresizingMaskIntoConstraints="NO" id="I0w-MF-Ivn">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_tables" translatesAutoresizingMaskIntoConstraints="NO" id="I0w-MF-Ivn">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <animations/>
                 </imageView>
@@ -35,16 +35,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table_page_name1" translatesAutoresizingMaskIntoConstraints="NO" id="Stf-ex-Hoe">
-                            <rect key="frame" x="34" y="93" width="69" height="69"/>
+                            <rect key="frame" x="48" y="93" width="69" height="69"/>
                             <animations/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="Stf-ex-Hoe" secondAttribute="height" multiplier="1:1" id="UpP-3k-fUH"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4KW-vU-X24">
-                            <rect key="frame" x="58" y="8" width="178" height="239"/>
+                            <rect key="frame" x="72" y="26" width="151" height="203"/>
                             <animations/>
-                            <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="170"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -67,6 +68,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnN-IQ-Sq8">
                             <rect key="frame" x="280" y="111" width="70" height="70"/>
                             <animations/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="qnN-IQ-Sq8" secondAttribute="height" multiplier="1:1" id="GBc-jC-fdp"/>
                             </constraints>
@@ -78,6 +80,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vl8-RD-8pM">
                             <rect key="frame" x="130" y="8" width="114" height="114"/>
                             <animations/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="vl8-RD-8pM" secondAttribute="height" multiplier="1:1" id="T0I-Cp-xBc"/>
                             </constraints>
@@ -130,7 +133,7 @@
         </view>
     </objects>
     <resources>
-        <image name="table_page" width="400" height="640"/>
+        <image name="bg_tables" width="375" height="667"/>
         <image name="table_page_call_btn" width="70" height="70"/>
         <image name="table_page_menu" width="114" height="114"/>
         <image name="table_page_name1" width="69" height="69"/>
