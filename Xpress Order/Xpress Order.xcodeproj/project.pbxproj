@@ -45,6 +45,7 @@
 		4ABFCF341BF24FC800987B79 /* Table.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF331BF24FC800987B79 /* Table.m */; };
 		4ABFCF371BF250A300987B79 /* SetReviewParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABFCF361BF250A300987B79 /* SetReviewParser.m */; };
 		4AE8AE361C0C4811006BB91F /* CheckReservationParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */; };
+		4AE8AE391C0C4C45006BB91F /* ReservationCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE381C0C4C45006BB91F /* ReservationCheck.m */; };
 		BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4221BF11DC70029338D /* TableSelectionVC.m */; };
 		BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4281BF13E1F0029338D /* TableSelectionCell.m */; };
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
@@ -139,6 +140,8 @@
 		4ABFCF361BF250A300987B79 /* SetReviewParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetReviewParser.m; sourceTree = "<group>"; };
 		4AE8AE341C0C4811006BB91F /* CheckReservationParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckReservationParser.h; sourceTree = "<group>"; };
 		4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckReservationParser.m; sourceTree = "<group>"; };
+		4AE8AE371C0C4C45006BB91F /* ReservationCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationCheck.h; sourceTree = "<group>"; };
+		4AE8AE381C0C4C45006BB91F /* ReservationCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationCheck.m; sourceTree = "<group>"; };
 		BD04F4211BF11DC70029338D /* TableSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionVC.h; sourceTree = "<group>"; };
 		BD04F4221BF11DC70029338D /* TableSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionVC.m; sourceTree = "<group>"; };
 		BD04F4271BF13E1F0029338D /* TableSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionCell.h; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				4ABFCF331BF24FC800987B79 /* Table.m */,
 				4AA91B3A1C0386F1001F31BD /* ReservationRequest.h */,
 				4AA91B3B1C0386F1001F31BD /* ReservationRequest.m */,
+				4AE8AE371C0C4C45006BB91F /* ReservationCheck.h */,
+				4AE8AE381C0C4C45006BB91F /* ReservationCheck.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -526,6 +531,7 @@
 				4A1852C51BE7DA2E00AF495F /* AFHTTPClient.m in Sources */,
 				4A1852F01BE9173E00AF495F /* Cafe.m in Sources */,
 				4A1852CA1BE7DA2E00AF495F /* AFPropertyListRequestOperation.m in Sources */,
+				4AE8AE391C0C4C45006BB91F /* ReservationCheck.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

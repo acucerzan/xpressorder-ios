@@ -10,6 +10,8 @@
 
 #import "CJSONDeserializer.h"
 
+#import "ReservationCheck.h"
+
 @implementation CheckReservationParser
 
 - (void)parseData:(NSData *)data
@@ -24,17 +26,27 @@
     
     NSLog(@"Response check reservation: %@", [responseString description]);
     
-//    NSDictionary *responseDict = [deserializer deserialize:data error:&deserializeError];
-//    
-//    NSString *response = [responseDict valueForKey:@"response"];
-//    
-//    NSString *message = [[NSString alloc] init];
-//    
-//    if([response isEqualToString:@"1"]) {
-//        
-//    } else if([response isEqualToString:@"0"]) {
-//        message = NSLocalizedString(@"Connection Failed!", nil);
-//    }
+    NSDictionary *responseDict = [deserializer deserialize:data error:&deserializeError];
+
+    NSString *response = [responseDict valueForKey:@"response"];
+    
+    if (response)
+    {
+        if ([response isEqualToString:@"1"])
+        {
+            NSString *commingDate = [responseDict valueForKey:@"coming_date"];
+            NSString *arrivalTime = [responseDict valueForKey:@"arriving_time"];
+            
+            ReservationCheck *check = [ReservationCheck new];
+            
+            check.isReserved = [response isEqualToString:@"1"];
+            
+            check.comingDate = commingDate;
+            check.arrivalTime = arrivalTime;
+            
+            [_items addObject:check];
+        }
+    }
 }
 
 - (NSError *)error

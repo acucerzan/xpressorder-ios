@@ -8,6 +8,7 @@
 
 #import "TableReservationPopUp.h"
 #import "Table.h"
+#import "ReservationCheck.h"
 
 @interface TableReservationPopUp () < UITextFieldDelegate>
 {
@@ -64,6 +65,30 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)checkIfTableIsReserved
+{
+    MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+    [networkingDataSource checkIfReservedForPlaceWithId:self.selectedTable.place_id andTableNumber:self.selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+        NSLog(@"Finished check table");
+        if (items)
+        {
+            if (items.count > 0)
+            {
+                ReservationCheck *check = (ReservationCheck *)[items objectAtIndex:0];
+                
+                if (check.isReserved)
+                {
+                    NSLog(@"Masă rezervată pe data de %@ de la ora %@. Dacă totuși doriți să ocupați până atunci, introduceți codul pentru ocuparea mesei.", check.comingDate, check.arrivalTime);
+                }
+                else
+                {
+                    NSLog(@"Masă liberă. Te rugăm setează codul mesei pentru ocupare");
+                }
+            }
+        }
+    }];
 }
 
 #pragma mark --- Button Action
