@@ -48,6 +48,7 @@
 		4AE8AE391C0C4C45006BB91F /* ReservationCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE381C0C4C45006BB91F /* ReservationCheck.m */; };
 		4AE8AE3C1C0C4E70006BB91F /* CheckTableCodeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE3B1C0C4E70006BB91F /* CheckTableCodeParser.m */; };
 		4AE8AE3F1C0C558C006BB91F /* TableAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE3E1C0C558C006BB91F /* TableAccess.m */; };
+		4AE8AE421C0C61D4006BB91F /* CallWaitressParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE411C0C61D4006BB91F /* CallWaitressParser.m */; };
 		BD04F4231BF11DC70029338D /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4221BF11DC70029338D /* TableSelectionVC.m */; };
 		BD04F42A1BF13E1F0029338D /* TableSelectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD04F4281BF13E1F0029338D /* TableSelectionCell.m */; };
 		BD04F42B1BF13E1F0029338D /* TableSelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD04F4291BF13E1F0029338D /* TableSelectionCell.xib */; };
@@ -148,6 +149,8 @@
 		4AE8AE3B1C0C4E70006BB91F /* CheckTableCodeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckTableCodeParser.m; sourceTree = "<group>"; };
 		4AE8AE3D1C0C558C006BB91F /* TableAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableAccess.h; sourceTree = "<group>"; };
 		4AE8AE3E1C0C558C006BB91F /* TableAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableAccess.m; sourceTree = "<group>"; };
+		4AE8AE401C0C61D4006BB91F /* CallWaitressParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallWaitressParser.h; sourceTree = "<group>"; };
+		4AE8AE411C0C61D4006BB91F /* CallWaitressParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallWaitressParser.m; sourceTree = "<group>"; };
 		BD04F4211BF11DC70029338D /* TableSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionVC.h; sourceTree = "<group>"; };
 		BD04F4221BF11DC70029338D /* TableSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionVC.m; sourceTree = "<group>"; };
 		BD04F4271BF13E1F0029338D /* TableSelectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionCell.h; sourceTree = "<group>"; };
@@ -273,6 +276,8 @@
 				4AE8AE351C0C4811006BB91F /* CheckReservationParser.m */,
 				4AE8AE3A1C0C4E70006BB91F /* CheckTableCodeParser.h */,
 				4AE8AE3B1C0C4E70006BB91F /* CheckTableCodeParser.m */,
+				4AE8AE401C0C61D4006BB91F /* CallWaitressParser.h */,
+				4AE8AE411C0C61D4006BB91F /* CallWaitressParser.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE8AE421C0C61D4006BB91F /* CallWaitressParser.m in Sources */,
 				4A1852CB1BE7DA2E00AF495F /* AFURLConnectionOperation.m in Sources */,
 				4ABFCF311BF2496E00987B79 /* TablesParser.m in Sources */,
 				4AA91B3C1C0386F1001F31BD /* CreateReservationRequest.m in Sources */,

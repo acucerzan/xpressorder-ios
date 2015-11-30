@@ -11,6 +11,7 @@
 #import "SetReviewParser.h"
 #import "CheckReservationParser.h"
 #import "CheckTableCodeParser.h"
+#import "CallWaitressParser.h"
 
 #import "AFNetworkReachabilityManager.h"
 
@@ -223,46 +224,43 @@
     [self cancelOperationWithUrl:[self getCheckPinCodeURL]];
 }
 
-//- (NSString *)getCreateReservationURL
-//{
-//    NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
-//    
-//    return str;
-//}
-//
-//
-//- (void)createReservation:(ReservationRequest *)reservationRequest withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
-//{
-//    //    if (![AFNetworkReachabilityManager sharedManager].reachable) {
-//    //        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
-//    //        return;
-//    //    }
-//    
-////    NSString *reviewString = [NSString stringWithFormat:@"%.2f", [reviewValue floatValue]];
-//    
-//    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                                   placeID, @"place_id",
-//                                   reviewString, @"place_review",
-//                                   nil];
-//    
-//    [self getDataWithUrl:[self getSetReviewURL]
-//         timeoutInterval:30
-//                 headers:nil//headers
-//              parameters:params
-//           requestMethod:@"POST"
-//         fallbackToCache:NO
-//             parserClass:[SetReviewParser class]
-//       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
-//           completitionBlock(items, error, userInfo);
-//       }];
-//}
-//
-//- (void)cancelCreateReservationRequest
-//{
-//    [self cancelOperationWithUrl:[self getSetReviewURL]];
-//}
+
+- (NSString *)getCallWaitressURL
+{
+    NSString *str = [URL_SERVER stringByAppendingString:@"call.php"];
+    
+    return str;
+}
+
+- (void)callWaitressforPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+{
+//    if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//        completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//        return;
+//    }
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   placeID, @"place_id",
+                                   tableNr, @"table_no",
+                                   nil];
+    
+    [self getDataWithUrl:[self getCallWaitressURL]
+         timeoutInterval:30
+                 headers:nil//headers
+              parameters:params
+           requestMethod:@"POST"
+         fallbackToCache:NO
+             parserClass:[CallWaitressParser class]
+       completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+           completitionBlock(items, error, userInfo);
+       }];
+}
 
 
+- (void)cancelCallWaitressRequest
+{
+    [self cancelOperationWithUrl:[self getCallWaitressURL]];
+}
 
 
 @end

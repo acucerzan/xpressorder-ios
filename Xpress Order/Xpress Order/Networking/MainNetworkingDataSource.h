@@ -7,8 +7,6 @@
 
 #import "LAbstractAFDataSource.h"
 
-#import "ReservationRequest.h"
-
 @interface MainNetworkingDataSource : LAbstractAFDataSource
 
 - (void)getPlacesWithCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
@@ -34,6 +32,9 @@
 //- (void)createReservation:(ReservationRequest *)reservationRequest withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
 //- (void)cancelCreateReservationRequest;
 
+
+- (void)callWaitressforPlaceID:(NSString *)placeID andTableNumber:(NSString *)tableNr withCompletitionBlock:(void(^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
+- (void)cancelCallWaitressRequest;
 
 
 @end
