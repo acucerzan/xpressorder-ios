@@ -17,6 +17,8 @@
     NSArray <Table *> *dataSource;
     __weak IBOutlet UIView *viewShadowTop;
     __weak IBOutlet UIView *viewShadowBottom;
+    
+    Table *selectedTable;
 }
 
 @property (nonatomic, strong) Cafe *currentPlace;
@@ -120,7 +122,7 @@
     else
         [viewShadowBottom setHidden:YES];
     
-    NSLog(@"offset Y %d",yOffset);
+//    NSLog(@"offset Y %d",yOffset);
 }
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -160,7 +162,7 @@
     cell.buttonTablePress = ^(Table *table)
     {
         NSLog(@"Table press %@", table);
-        
+        selectedTable = table;
         [self openTablePopUpForTable:table];
     };
     
@@ -200,7 +202,7 @@
 
 -(void) openTableViewDetails
 {
-    TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithNibName:@"TableViewDetailVC" bundle:[NSBundle mainBundle]];
+    TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithTable:selectedTable];
     [self.navigationController pushViewController:tableViewDetail animated:YES];
 }
 @end

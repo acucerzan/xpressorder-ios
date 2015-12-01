@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+@class  Table;
+
 @interface TableViewDetailVC : BaseViewController
+
+-(instancetype) initWithTable:(Table*) table;
 
 @end

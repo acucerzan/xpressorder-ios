@@ -63,7 +63,7 @@
         [self.viewLeftTableState setHidden:NO];
     }
     else
-        if(leftTable.user_state !=nil)
+        if(leftTable.user_state !=nil && ![leftTable.user_state isEqualToString:@"none"] )
     {
         imageTableView = @"grey_table_big";
         imagePersonNumber = @"grey_number_of_ppl";

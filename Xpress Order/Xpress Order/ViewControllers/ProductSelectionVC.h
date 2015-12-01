@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
+@class Table;
+
 @interface ProductSelectionVC : BaseViewController
+
+-(instancetype)initWithSelectedTable:(Table *) table;
 
 @end

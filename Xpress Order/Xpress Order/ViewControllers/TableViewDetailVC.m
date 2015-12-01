@@ -10,6 +10,8 @@
 #import "DWBubbleMenuButton.h"
 #import "ProductSelectionVC.h"
 
+#import "Table.h"
+
 @interface TableViewDetailVC ()
 {
     
@@ -19,6 +21,7 @@
     __weak IBOutlet UIView *viewBottomBase;
     
     NSArray *buttons;
+    Table *selectedTable;
 
 }
 
@@ -26,6 +29,27 @@
 
 @implementation TableViewDetailVC
 
+
+-(instancetype) initWithTable:(Table*) table
+{
+    self = [self init];
+    if(self)
+    {
+        selectedTable = table;
+    }
+    
+    return self;
+}
+-(instancetype) init
+{
+    self = [super initWithNibName:@"TableViewDetailVC" bundle:[NSBundle mainBundle]];
+    if(self)
+    {
+        // get data
+    }
+    
+    return self;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,6 +67,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.view layoutIfNeeded];
     [self addSharedBoobles];
     
 }
@@ -54,7 +80,7 @@
     UIImageView * imageView = [self createHomeButtonView];
     
     DWBubbleMenuButton *upMenuView = [[DWBubbleMenuButton alloc] initWithFrame:CGRectMake(viewShare.frame.origin.x,
-                                                                                          viewShare.frame.origin.y+viewBottomBase.frame.origin.y+64,
+                                                                                          viewShare.frame.origin.y+viewBottomBase.frame.origin.y,
                                                                                           viewShare.frame.size.width,
                                                                                           viewShare.frame.size.height)
                                                             expansionDirection:DirectionUp];
@@ -84,7 +110,7 @@
     NSMutableArray *buttonsMutable = [[NSMutableArray alloc] init];
     
     int i = 0;
-    for (NSString *title in @[@"social_twitter", @"social_facebook", @"social_google", @"social_exit"]) {
+    for (NSString *title in @[@"social_media_button", @"social_media_button", @"social_media_button", @"social_media_button"]) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -136,7 +162,7 @@
 
 - (IBAction)buttonMenuPress:(id)sender
 {
-    ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithNibName:@"ProductSelectionVC" bundle:[NSBundle mainBundle]];
+    ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithSelectedTable:selectedTable];
     [self.navigationController pushViewController:productSelection animated:YES];
     
     NSLog(@"Button Menu Press");
