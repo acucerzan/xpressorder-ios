@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProductCell : UITableViewCell
+#define kProductCellHeight 151
 
+@interface ProductCell : UITableViewCell
 @end

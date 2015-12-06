@@ -9,9 +9,14 @@
 #import "ProductGroupCell.h"
 
 @implementation ProductGroupCell
+{
+    UIImage *image;
+}
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)awakeFromNib
+{
+    [self.labelCategory setNumberOfLines:0];
+    [self.labelCategory setAdjustsFontSizeToFitWidth:YES];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -20,4 +25,15 @@
     // Configure the view for the selected state
 }
 
+-(void) imageFromURLString:(NSString *) stringURL
+{
+    
+    if(!image)
+    {
+        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:stringURL]];
+        image = [UIImage imageWithData:data];
+    }
+    
+    [self.imageCategory setImage:image];
+}
 @end

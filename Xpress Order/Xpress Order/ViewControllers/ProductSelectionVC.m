@@ -15,12 +15,16 @@
 #import "CategoryModel.h"
 #import "FoodModel.h"
 
-@interface ProductSelectionVC ()
+@interface ProductSelectionVC () <UITableViewDataSource, UITableViewDelegate>
 {
     Table *selectedTable;
     
     NSArray <CategoryModel *> *categoryList;
+    CategoryModel *selectedCategory;
+    NSArray <FoodModel *> *selectedFoods;
+    
     __weak IBOutlet UIScrollView *scrollViewCategory;
+    __weak IBOutlet UITableView *tableViewProducts;
 }
 
 @end
@@ -107,21 +111,66 @@
     
 }
 
+-(IBAction)buttonCategoryPress:(id)sender
+{
+    selectedCategory = [categoryList objectAtIndex:[sender tag]];
+    selectedFoods = selectedCategory.arrayOfFoods;
+    
+    [tableViewProducts reloadData];
+    
+}
+
+#pragma mark --- TableView Delegate and Data Source
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return selectedFoods.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell"];
+    
+    if(!cell)
+    {
+        cell = LoadCell(@"ProductCell");
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    }
+    
+    FoodModel *foodModel = [selectedFoods objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kProductCellHeight;
+}
+
 #pragma mark --- helperFunctions
+
 -(void) populateCategoryView
 {
     int yPosition = 0;
+    int tagValue = 0;
     for(CategoryModel *categ in categoryList)
     {
         ProductGroupCell *cell = LoadCell(@"ProductGroupCell");
+        [cell.labelCategory setText:categ.strCategoryName];
+        [cell imageFromURLString:categ.imgCategoryLogo];
+        [cell setBackgroundColor:ClearColor];
+        
+        [cell.buttonCategory setTag:tagValue];
+        [cell.buttonCategory addTarget:self action:@selector(buttonCategoryPress:) forControlEvents:1<<6];
+        
+        tagValue ++;
         CGRect frame  = cell.frame;
         frame.origin.y = yPosition;
         cell.frame = frame;
         
         yPosition += frame.size.height;
-        
         [scrollViewCategory addSubview:cell];
     }
+    
+    [scrollViewCategory setContentSize:CGSizeMake(scrollViewCategory.frame.size.width, yPosition)];
 }
 -(void) populateProductsForCategory:(CategoryModel *) categoryModel
 {

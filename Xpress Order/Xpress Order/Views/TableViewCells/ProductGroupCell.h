@@ -10,4 +10,10 @@
 
 @interface ProductGroupCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *labelCategory;
+@property (weak, nonatomic) IBOutlet UIImageView *imageCategory;
+@property (weak, nonatomic) IBOutlet UIButton *buttonCategory;
+
+-(void) imageFromURLString:(NSString *) stringURL;
+
 @end
