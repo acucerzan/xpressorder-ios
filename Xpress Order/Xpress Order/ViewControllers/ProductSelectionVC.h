@@ -13,5 +13,8 @@
 @interface ProductSelectionVC : BaseViewController
 
 -(instancetype)initWithSelectedTable:(Table *) table;
+@property (weak, nonatomic) IBOutlet UILabel *labelCategoryName;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldSearch;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
 
 @end

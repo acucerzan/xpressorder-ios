@@ -64,19 +64,22 @@
     UIButton *buttonOption  = [UIButton buttonWithType:UIButtonTypeCustom];
     [buttonOption setFrame:CGRectMake(0, 0, 40, 40)];
     [buttonOption addTarget:self action:@selector(buttonOptionPress:) forControlEvents:1<<6];
-    [buttonOption setTitle:@"Option" forState:0];
+//    [buttonOption setTitle:@"Option" forState:0];
+    [buttonOption setImage:Image(@"settings") forState:0];
     UIBarButtonItem *barButtonOption = [[UIBarButtonItem alloc] initWithCustomView:buttonOption];
     
     UIButton *buttonBill  = [UIButton buttonWithType:UIButtonTypeCustom];
     [buttonBill setFrame:CGRectMake(0, 0, 40, 40)];
     [buttonBill addTarget:self action:@selector(buttonBillPress:) forControlEvents:1<<6];
-    [buttonBill setTitle:@"Bill" forState:0];
+//    [buttonBill setTitle:@"Bill" forState:0];
+    [buttonBill setImage:Image(@"pay") forState:0];
      UIBarButtonItem *barButtonBill = [[UIBarButtonItem alloc] initWithCustomView:buttonBill];
     
     UIButton *buttonMenu  = [UIButton buttonWithType:UIButtonTypeCustom];
     [buttonMenu setFrame:CGRectMake(0, 0, 40, 40)];
     [buttonMenu addTarget:self action:@selector(buttonMenuPress:) forControlEvents:1<<6];
-    [buttonMenu setTitle:@"Menu" forState:0];
+    [buttonMenu setImage:Image(@"menu") forState:0];
+//    [buttonMenu setTitle:@"Menu" forState:0];
      UIBarButtonItem *barButtonMenu = [[UIBarButtonItem alloc] initWithCustomView:buttonMenu];
     
     [self.navigationItem setRightBarButtonItems:@[barButtonOption,barButtonBill,barButtonMenu]];
@@ -113,10 +116,7 @@
 
 -(IBAction)buttonCategoryPress:(id)sender
 {
-    selectedCategory = [categoryList objectAtIndex:[sender tag]];
-    selectedFoods = selectedCategory.arrayOfFoods;
-    
-    [tableViewProducts reloadData];
+    [self reloadProductsForCategoryAtIndex:[sender tag]];
     
 }
 
@@ -137,6 +137,11 @@
     }
     
     FoodModel *foodModel = [selectedFoods objectAtIndex:indexPath.row];
+    
+    [cell.imageViewProduct setImageWithURL:[NSURL URLWithString:foodModel.strImage]];
+    [cell.labelPrice setText:foodModel.strPrice];
+    [cell.labelProductname setText:foodModel.strFoodName];
+    [cell.labelQuantity setText:[NSString stringWithFormat:@"%@ %@",foodModel.strquantity, foodModel.strMeasuringUnit]];
     
     return cell;
 }
@@ -170,12 +175,21 @@
         [scrollViewCategory addSubview:cell];
     }
     
+    [self reloadProductsForCategoryAtIndex:0];
     [scrollViewCategory setContentSize:CGSizeMake(scrollViewCategory.frame.size.width, yPosition)];
 }
--(void) populateProductsForCategory:(CategoryModel *) categoryModel
+
+-(void) reloadProductsForCategoryAtIndex:(NSInteger) index
 {
+    selectedCategory = [categoryList objectAtIndex:index];
+    selectedFoods = selectedCategory.arrayOfFoods;
     
+    [self.labelCategoryName setText:selectedCategory.strCategoryName];
+    
+    [tableViewProducts reloadData];
+
 }
+
 
 #pragma mark --- Network place
 
