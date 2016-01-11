@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableMakeReservationPopUp">
+            <connections>
+                <outlet property="view" destination="Tut-RI-NuA" id="dNO-pe-wic"/>
+                <outlet property="viewContainer" destination="wdt-KP-kou" id="gBI-E2-gGD"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Tut-RI-NuA">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdt-KP-kou">
+                    <rect key="frame" x="27" y="94" width="320" height="480"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8It-1s-fbR">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="8It-1s-fbR" firstAttribute="top" secondItem="wdt-KP-kou" secondAttribute="top" id="4UT-fS-3Sm"/>
+                        <constraint firstAttribute="bottom" secondItem="8It-1s-fbR" secondAttribute="bottom" id="GFN-HD-kdG"/>
+                        <constraint firstAttribute="height" constant="480" id="VQt-7Z-ca7"/>
+                        <constraint firstAttribute="width" constant="320" id="ffR-61-rYG"/>
+                        <constraint firstItem="8It-1s-fbR" firstAttribute="leading" secondItem="wdt-KP-kou" secondAttribute="leading" id="ue9-3b-cxn"/>
+                        <constraint firstAttribute="trailing" secondItem="8It-1s-fbR" secondAttribute="trailing" id="xUP-D9-9bk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wdt-KP-kou" firstAttribute="centerX" secondItem="Tut-RI-NuA" secondAttribute="centerX" id="eFD-vR-qag"/>
+                <constraint firstItem="wdt-KP-kou" firstAttribute="centerY" secondItem="Tut-RI-NuA" secondAttribute="centerY" id="tXO-Tt-hQS"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="381.5" y="-18.5"/>
+        </view>
+    </objects>
+</document>

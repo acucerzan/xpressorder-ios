@@ -12,6 +12,10 @@
 
 #import "PlaceCell.h"
 
+// test
+#import "TableReservedPopUp.h"
+#import "TableMakeReservationPopUp.h"
+
 #define ReviewTAG 120
 
 @interface PlacesVC () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
@@ -31,10 +35,17 @@
     [self initialise];
 
     [self downloadPlaces];
+    
+    
+//    TableReservedPopUp *tablePopUp = [[TableReservedPopUp alloc] initWithNibName:@"TableReservedPopUp" bundle:[NSBundle mainBundle]];
+    TableMakeReservationPopUp *tablePopUp = [[TableMakeReservationPopUp alloc] initWithNibName:@"TableMakeReservationPopUp" bundle:[NSBundle mainBundle]];
+
+    [tablePopUp showPopUpInViewController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     
 }
 
@@ -153,8 +164,9 @@
     
     Cafe *cafeObj = [self.arrayCafe objectAtIndex:indexPath.row];
 
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    TableSelectionVC *vc = (TableSelectionVC *)[sb instantiateViewControllerWithIdentifier:@"TableSelectionVC"];
+//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    TableSelectionVC *vc = (TableSelectionVC *)[sb instantiateViewControllerWithIdentifier:@"TableSelectionVC"];
+   TableSelectionVC *vc = [[TableSelectionVC alloc] loadFromNib];
     
     if (vc)
     {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LogoCenterCell" rowHeight="80" id="KGk-i7-Jjw" customClass="LogoCenterCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-wf-DZX">
+                        <rect key="frame" x="88" y="2" width="145" height="76"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="wHn-wf-DZX" secondAttribute="height" multiplier="145:76" id="09i-fK-yKV"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wHn-wf-DZX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="WWF-ly-3Uw"/>
+                    <constraint firstAttribute="bottom" secondItem="wHn-wf-DZX" secondAttribute="bottom" constant="1" id="wbT-eZ-5lt"/>
+                    <constraint firstItem="wHn-wf-DZX" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="wyO-w2-t8g"/>
+                    <constraint firstItem="wHn-wf-DZX" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="xYv-9z-IRI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="239" y="173"/>
+        </tableViewCell>
+    </objects>
+</document>

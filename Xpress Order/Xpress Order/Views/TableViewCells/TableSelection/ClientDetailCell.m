@@ -1,14 +1,14 @@
 //
-//  ProductCell.m
+//  ClientDetailCell.m
 //  Xpress Order
 //
-//  Created by Constantin Saulenco on 20/11/15.
-//  Copyright © 2015 Adrian Cucerzan. All rights reserved.
+//  Created by Constantin Saulenco on 11/01/16.
+//  Copyright © 2016 Adrian Cucerzan. All rights reserved.
 //
 
-#import "ProductCell.h"
+#import "ClientDetailCell.h"
 
-@implementation ProductCell
+@implementation ClientDetailCell
 
 - (void)awakeFromNib {
     // Initialization code
