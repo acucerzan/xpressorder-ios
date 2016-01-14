@@ -55,6 +55,13 @@
 		4AE8AE451C0C647C006BB91F /* CategoryFoodsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE441C0C647C006BB91F /* CategoryFoodsParser.m */; };
 		4AE8AE4A1C0C6534006BB91F /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE471C0C6534006BB91F /* CategoryModel.m */; };
 		4AE8AE4B1C0C6534006BB91F /* FoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE491C0C6534006BB91F /* FoodModel.m */; };
+		BD4E11291C48581500C71DD4 /* XPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E11281C48581500C71DD4 /* XPUtils.m */; };
+		BD4E11341C48613D00C71DD4 /* ReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E11321C48613D00C71DD4 /* ReviewVC.m */; };
+		BD4E11351C48613D00C71DD4 /* ReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E11331C48613D00C71DD4 /* ReviewVC.xib */; };
+		BD4E11391C48655700C71DD4 /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E11371C48655700C71DD4 /* HistoryVC.m */; };
+		BD4E113A1C48655700C71DD4 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E11381C48655700C71DD4 /* HistoryVC.xib */; };
+		BD4E113E1C48661200C71DD4 /* ReserveTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E113C1C48661200C71DD4 /* ReserveTableVC.m */; };
+		BD4E113F1C48661200C71DD4 /* ReserveTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E113D1C48661200C71DD4 /* ReserveTableVC.xib */; };
 		BD8242FD1C44574F00444831 /* TableReservedPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8242F91C44574F00444831 /* TableReservedPopUp.m */; };
 		BD8242FE1C44574F00444831 /* TableReservedPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8242FA1C44574F00444831 /* TableReservedPopUp.xib */; };
 		BD8242FF1C44574F00444831 /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8242FC1C44574F00444831 /* TableSelectionVC.m */; };
@@ -182,6 +189,17 @@
 		4AE8AE471C0C6534006BB91F /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		4AE8AE481C0C6534006BB91F /* FoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodModel.h; sourceTree = "<group>"; };
 		4AE8AE491C0C6534006BB91F /* FoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodModel.m; sourceTree = "<group>"; };
+		BD4E11271C48581500C71DD4 /* XPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPUtils.h; sourceTree = "<group>"; };
+		BD4E11281C48581500C71DD4 /* XPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPUtils.m; sourceTree = "<group>"; };
+		BD4E11311C48613D00C71DD4 /* ReviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewVC.h; sourceTree = "<group>"; };
+		BD4E11321C48613D00C71DD4 /* ReviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewVC.m; sourceTree = "<group>"; };
+		BD4E11331C48613D00C71DD4 /* ReviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewVC.xib; sourceTree = "<group>"; };
+		BD4E11361C48655700C71DD4 /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
+		BD4E11371C48655700C71DD4 /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
+		BD4E11381C48655700C71DD4 /* HistoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
+		BD4E113B1C48661200C71DD4 /* ReserveTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReserveTableVC.h; sourceTree = "<group>"; };
+		BD4E113C1C48661200C71DD4 /* ReserveTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReserveTableVC.m; sourceTree = "<group>"; };
+		BD4E113D1C48661200C71DD4 /* ReserveTableVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveTableVC.xib; sourceTree = "<group>"; };
 		BD8242F81C44574F00444831 /* TableReservedPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableReservedPopUp.h; sourceTree = "<group>"; };
 		BD8242F91C44574F00444831 /* TableReservedPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableReservedPopUp.m; sourceTree = "<group>"; };
 		BD8242FA1C44574F00444831 /* TableReservedPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableReservedPopUp.xib; sourceTree = "<group>"; };
@@ -300,6 +318,8 @@
 			children = (
 				4A1852E81BE9100A00AF495F /* XPModel.h */,
 				4A1852E91BE9100A00AF495F /* XPModel.m */,
+				BD4E11271C48581500C71DD4 /* XPUtils.h */,
+				BD4E11281C48581500C71DD4 /* XPUtils.m */,
 				4A1852EE1BE9173E00AF495F /* Cafe.h */,
 				4A1852EF1BE9173E00AF495F /* Cafe.m */,
 				4ABFCF321BF24FC800987B79 /* Table.h */,
@@ -459,6 +479,8 @@
 		BD04F4201BF11DC70029338D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BD4E11301C48613D00C71DD4 /* HelperVC */,
+				BD4E112F1C48611500C71DD4 /* HelperVC */,
 				BD8243071C4462A800444831 /* BaseVC */,
 				BD8242F71C44574F00444831 /* TableSelection */,
 				4A18521F1BE7CD0D00AF495F /* PlacesVC.h */,
@@ -471,6 +493,29 @@
 				BDC951951BFF27080050D80C /* ProductSelectionVC.xib */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BD4E112F1C48611500C71DD4 /* HelperVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HelperVC;
+			sourceTree = "<group>";
+		};
+		BD4E11301C48613D00C71DD4 /* HelperVC */ = {
+			isa = PBXGroup;
+			children = (
+				BD4E11311C48613D00C71DD4 /* ReviewVC.h */,
+				BD4E11321C48613D00C71DD4 /* ReviewVC.m */,
+				BD4E11331C48613D00C71DD4 /* ReviewVC.xib */,
+				BD4E11361C48655700C71DD4 /* HistoryVC.h */,
+				BD4E11371C48655700C71DD4 /* HistoryVC.m */,
+				BD4E11381C48655700C71DD4 /* HistoryVC.xib */,
+				BD4E113B1C48661200C71DD4 /* ReserveTableVC.h */,
+				BD4E113C1C48661200C71DD4 /* ReserveTableVC.m */,
+				BD4E113D1C48661200C71DD4 /* ReserveTableVC.xib */,
+			);
+			path = HelperVC;
 			sourceTree = "<group>";
 		};
 		BD8242F71C44574F00444831 /* TableSelection */ = {
@@ -603,7 +648,9 @@
 			files = (
 				BD8243061C4461F500444831 /* TableMakeReservationPopUp.xib in Resources */,
 				4A18522C1BE7CD0D00AF495F /* LaunchScreen.storyboard in Resources */,
+				BD4E113F1C48661200C71DD4 /* ReserveTableVC.xib in Resources */,
 				BD8242FE1C44574F00444831 /* TableReservedPopUp.xib in Resources */,
+				BD4E113A1C48655700C71DD4 /* HistoryVC.xib in Resources */,
 				BD8243231C4466AB00444831 /* LogoCenterCell.xib in Resources */,
 				BD82432D1C44691A00444831 /* ReservationDateCell.xib in Resources */,
 				BD82431E1C44665F00444831 /* ProductGroupCell.xib in Resources */,
@@ -614,6 +661,7 @@
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				BD82431C1C44665F00444831 /* ProductCell.xib in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
+				BD4E11351C48613D00C71DD4 /* ReviewVC.xib in Resources */,
 				4A1852F71BE9289900AF495F /* PlaceCell.xib in Resources */,
 				BDC951971BFF27080050D80C /* ProductSelectionVC.xib in Resources */,
 				BD8243011C4457B900444831 /* TableSelectionVC.xib in Resources */,
@@ -646,7 +694,10 @@
 				4AE8AE3C1C0C4E70006BB91F /* CheckTableCodeParser.m in Sources */,
 				4A1852C81BE7DA2E00AF495F /* AFJSONRequestOperation.m in Sources */,
 				4AE8AE3F1C0C558C006BB91F /* TableAccess.m in Sources */,
+				BD4E11391C48655700C71DD4 /* HistoryVC.m in Sources */,
 				4A07C6771C0C822C003E0FB9 /* TakeTableParser.m in Sources */,
+				BD4E113E1C48661200C71DD4 /* ReserveTableVC.m in Sources */,
+				BD4E11341C48613D00C71DD4 /* ReviewVC.m in Sources */,
 				4A1852C61BE7DA2E00AF495F /* AFHTTPRequestOperation.m in Sources */,
 				4A1852CD1BE7DA2E00AF495F /* LAbstractAFDataSource.m in Sources */,
 				4A07C6741C0C7FE5003E0FB9 /* MyFoodsParser.m in Sources */,
@@ -676,6 +727,7 @@
 				4A1852C91BE7DA2E00AF495F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4A18521B1BE7CD0D00AF495F /* main.m in Sources */,
 				4ABFCF371BF250A300987B79 /* SetReviewParser.m in Sources */,
+				BD4E11291C48581500C71DD4 /* XPUtils.m in Sources */,
 				BD82432C1C44691A00444831 /* ReservationDateCell.m in Sources */,
 				BD82430A1C4462A800444831 /* BaseViewController.m in Sources */,
 				4AE8AE451C0C647C006BB91F /* CategoryFoodsParser.m in Sources */,

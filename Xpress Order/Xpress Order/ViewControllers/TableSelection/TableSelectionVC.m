@@ -27,22 +27,20 @@
 
 @implementation TableSelectionVC
 
-- (instancetype) loadFromNib
+- (instancetype) loadFromNibForPlace:(Cafe *)place
 {
     TableSelectionVC *vc = [[[NSBundle mainBundle]loadNibNamed:@"TableSelectionVC" owner:self options:nil] objectAtIndex:0];
-    if(self)
+    if(vc)
     {
-        
+        vc.currentPlace = place;
     }
     return vc;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    [self initialise];
-    [self downloadTablesForCurrentTable];
     
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
     self.title = @"Back";
@@ -54,6 +52,7 @@
 {
     [super viewWillAppear:animated];
     
+    [self downloadTablesForCurrentTable];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.tableViewTableSelection setBackgroundColor:[UIColor clearColor]];
     [self.tableViewTableSelection setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
@@ -92,10 +91,6 @@
    // [self loadBackButton];
 }
 
-- (void)setPlace:(Cafe *)place
-{
-    self.currentPlace = place;
-}
 
 - (void)downloadTablesForCurrentTable
 {

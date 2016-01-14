@@ -16,4 +16,9 @@
 - (UIView *) viewSeparator;
 - (void)loadItem:(Cafe *)item;
 
+@property (weak, nonatomic) IBOutlet CafeReviewButton *buttonReservTable;
+@property (weak, nonatomic) IBOutlet CafeReviewButton *buttonHistory;
+@property (weak, nonatomic) IBOutlet UIView *viewButtonsBase;
+@property (weak, nonatomic) IBOutlet UIButton *buttonReview;
+
 @end

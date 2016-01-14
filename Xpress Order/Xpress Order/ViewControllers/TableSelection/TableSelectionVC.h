@@ -15,6 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewTableSelection;
 
-- (void)setPlace:(Cafe *)place;
-- (instancetype) loadFromNib;
+- (instancetype) loadFromNibForPlace:(Cafe *)place;
+
 @end

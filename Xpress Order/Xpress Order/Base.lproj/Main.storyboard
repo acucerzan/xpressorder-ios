@@ -27,15 +27,6 @@
                                     <constraint firstAttribute="height" constant="60" id="f6u-by-8q6"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1D5-7g-tWS">
-                                <rect key="frame" x="10" y="144" width="580" height="456"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Ygv-gR-VdV" id="7ts-MK-Eil"/>
-                                    <outlet property="delegate" destination="Ygv-gR-VdV" id="iYd-cr-cAY"/>
-                                </connections>
-                            </tableView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="În care cafenea dorești să mergi?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoP-VY-mlb">
                                 <rect key="frame" x="80" y="74" width="510" height="60"/>
                                 <constraints>
@@ -45,6 +36,15 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="116" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="1D5-7g-tWS">
+                                <rect key="frame" x="0.0" y="144" width="600" height="456"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ygv-gR-VdV" id="7ts-MK-Eil"/>
+                                    <outlet property="delegate" destination="Ygv-gR-VdV" id="iYd-cr-cAY"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -53,11 +53,11 @@
                             <constraint firstItem="ufQ-sd-Ql6" firstAttribute="top" secondItem="LzF-cr-mAt" secondAttribute="bottom" id="CaH-WE-zwL"/>
                             <constraint firstItem="XpI-8F-Tcu" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" constant="10" id="Nek-KW-3fy"/>
                             <constraint firstItem="yoP-VY-mlb" firstAttribute="top" secondItem="8NZ-9t-Qnn" secondAttribute="bottom" constant="10" id="Nse-h5-qaz"/>
-                            <constraint firstAttribute="trailing" secondItem="1D5-7g-tWS" secondAttribute="trailing" constant="10" id="Obk-9k-Zz6"/>
+                            <constraint firstAttribute="trailing" secondItem="1D5-7g-tWS" secondAttribute="trailing" id="Obk-9k-Zz6"/>
                             <constraint firstItem="LzF-cr-mAt" firstAttribute="top" secondItem="9n9-EK-w1e" secondAttribute="top" id="QGf-bA-i1E"/>
                             <constraint firstItem="1D5-7g-tWS" firstAttribute="top" secondItem="yoP-VY-mlb" secondAttribute="bottom" constant="10" id="TAa-HW-P1M"/>
                             <constraint firstItem="XpI-8F-Tcu" firstAttribute="top" secondItem="8NZ-9t-Qnn" secondAttribute="bottom" constant="10" id="YGX-0K-KMl"/>
-                            <constraint firstItem="1D5-7g-tWS" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" constant="10" id="ZKE-b5-1py"/>
+                            <constraint firstItem="1D5-7g-tWS" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" id="ZKE-b5-1py"/>
                             <constraint firstItem="yoP-VY-mlb" firstAttribute="leading" secondItem="XpI-8F-Tcu" secondAttribute="trailing" constant="10" id="b7M-Mn-Q8L"/>
                             <constraint firstAttribute="trailing" secondItem="LzF-cr-mAt" secondAttribute="trailing" id="dRC-XY-xsL"/>
                             <constraint firstItem="LzF-cr-mAt" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" id="keC-W1-6HD"/>
