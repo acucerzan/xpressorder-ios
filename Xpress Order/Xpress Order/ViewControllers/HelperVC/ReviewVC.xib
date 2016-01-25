@@ -15,10 +15,29 @@
             <view key="view" contentMode="scaleToFill" id="BIE-1M-5cA">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QHh-h7-TxE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="gis-WF-Vym" id="mBL-KU-j0R"/>
+                            <outlet property="delegate" destination="gis-WF-Vym" id="ajs-bF-f70"/>
+                        </connections>
+                    </tableView>
+                </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="NSP-w7-iMK" firstAttribute="top" secondItem="QHh-h7-TxE" secondAttribute="bottom" id="2Pc-6k-9Nx"/>
+                    <constraint firstItem="QHh-h7-TxE" firstAttribute="leading" secondItem="BIE-1M-5cA" secondAttribute="leading" id="eCX-nw-Oh1"/>
+                    <constraint firstAttribute="trailing" secondItem="QHh-h7-TxE" secondAttribute="trailing" id="nDR-Qb-vEP"/>
+                    <constraint firstItem="QHh-h7-TxE" firstAttribute="top" secondItem="BIE-1M-5cA" secondAttribute="top" id="uMC-Jg-Z2B"/>
+                </constraints>
             </view>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-            <point key="canvasLocation" x="355.5" y="354.5"/>
+            <connections>
+                <outlet property="tableViewReview" destination="QHh-h7-TxE" id="664-op-wP4"/>
+            </connections>
+            <point key="canvasLocation" x="324" y="174"/>
         </viewController>
     </objects>
 </document>

@@ -18,7 +18,6 @@
 
 // test
 #import "TableReservedPopUp.h"
-#import "TableMakeReservationPopUp.h"
 
 #define ReviewTAG 120
 
@@ -43,9 +42,6 @@
 
 
 // TableReservedPopUp *tablePopUp = [[TableReservedPopUp alloc] initWithNibName:@"TableReservedPopUp" bundle:[NSBundle mainBundle]];
-// TableMakeReservationPopUp *tablePopUp = [[TableMakeReservationPopUp alloc] initWithNibName:@"TableMakeReservationPopUp" bundle:[NSBundle
-// mainBundle]];
-//
 // [tablePopUp showPopUpInViewController:self];
 }
 

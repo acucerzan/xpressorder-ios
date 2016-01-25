@@ -7,6 +7,9 @@
 //
 
 #import "HistoryVC.h"
+#import "ReviewCurrentVoteCell.h"
+#import "ReviewSetVoteCell.h"
+#import "ReservationButtonCell.h"
 
 @interface HistoryVC ()
 
