@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HCSStarRatingView.h"
 
-#define kReviewSetVoteCellHeight 160
+#define kReviewSetVoteCellHeight 200
 
 @interface ReviewSetVoteCell: UITableViewCell
 

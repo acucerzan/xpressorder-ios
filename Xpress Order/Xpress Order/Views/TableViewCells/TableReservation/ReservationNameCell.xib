@@ -8,11 +8,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservationNameCell" rowHeight="64" id="KGk-i7-Jjw" customClass="ReservationNameCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReservationNameCell" rowHeight="69" id="KGk-i7-Jjw" customClass="ReservationNameCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-Ug-JCr">
@@ -29,13 +29,23 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tej-Iw-Wr3">
+                        <rect key="frame" x="0.0" y="73" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="Oal-yg-Z6X"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="tej-Iw-Wr3" secondAttribute="bottom" id="2Gd-3C-tII"/>
                     <constraint firstItem="Kcc-Ug-JCr" firstAttribute="top" secondItem="E8m-LR-ulI" secondAttribute="bottom" constant="3" id="2eb-4F-DBR"/>
                     <constraint firstItem="Kcc-Ug-JCr" firstAttribute="width" secondItem="E8m-LR-ulI" secondAttribute="width" id="Kud-ce-Vyo"/>
                     <constraint firstItem="E8m-LR-ulI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="cpX-PK-QJG"/>
-                    <constraint firstAttribute="bottom" secondItem="Kcc-Ug-JCr" secondAttribute="bottom" constant="7" id="dLJ-vG-TCf"/>
+                    <constraint firstAttribute="bottom" secondItem="Kcc-Ug-JCr" secondAttribute="bottom" constant="12" id="dLJ-vG-TCf"/>
+                    <constraint firstAttribute="trailing" secondItem="tej-Iw-Wr3" secondAttribute="trailing" id="e1V-Ez-VgQ"/>
                     <constraint firstItem="E8m-LR-ulI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="mmf-O5-4ld"/>
+                    <constraint firstItem="tej-Iw-Wr3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nzF-xT-XR6"/>
                     <constraint firstAttribute="trailing" secondItem="E8m-LR-ulI" secondAttribute="trailing" constant="30" id="s1J-Uc-TTF"/>
                     <constraint firstItem="Kcc-Ug-JCr" firstAttribute="centerX" secondItem="E8m-LR-ulI" secondAttribute="centerX" id="vM6-zq-CRx"/>
                 </constraints>
@@ -43,8 +53,9 @@
             <connections>
                 <outlet property="labelTitle" destination="E8m-LR-ulI" id="0kh-So-kZ0"/>
                 <outlet property="textField" destination="Kcc-Ug-JCr" id="Ywh-9W-YCg"/>
+                <outlet property="viewSeparator" destination="tej-Iw-Wr3" id="JyR-w3-40T"/>
             </connections>
-            <point key="canvasLocation" x="328" y="134.5"/>
+            <point key="canvasLocation" x="328" y="136.5"/>
         </tableViewCell>
     </objects>
 </document>

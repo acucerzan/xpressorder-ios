@@ -11,8 +11,11 @@
 #define kReservationButtonCellHeight 44
 
 @interface ReservationButtonCell: UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;
 @property (weak, nonatomic) IBOutlet UIView *viewTopSeparator;
 @property (weak, nonatomic) IBOutlet UIView *viewBottomSeparator;
+
+- (void)setSeparatorsHidden:(BOOL)hidden;
 
 @end

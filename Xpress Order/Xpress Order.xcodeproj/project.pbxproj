@@ -97,6 +97,7 @@
 		BDE2FC2A1BFA62EE007C9354 /* TableViewDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2FC281BFA62EE007C9354 /* TableViewDetailVC.m */; };
 		BDE2FC2B1BFA62EE007C9354 /* TableViewDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */; };
 		BDE2FC351BFA7845007C9354 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */; };
+		BDE4A2B31C58CC1500EBF324 /* UITextField+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE4A2B21C58CC1500EBF324 /* UITextField+Types.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -263,6 +264,8 @@
 		BDE2FC291BFA62EE007C9354 /* TableViewDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewDetailVC.xib; sourceTree = "<group>"; };
 		BDE2FC331BFA7845007C9354 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWBubbleMenuButton.m; sourceTree = "<group>"; };
+		BDE4A2B11C58CC1500EBF324 /* UITextField+Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Types.h"; sourceTree = "<group>"; };
+		BDE4A2B21C58CC1500EBF324 /* UITextField+Types.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Types.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +304,7 @@
 				4A1852281BE7CD0D00AF495F /* Assets.xcassets */,
 				4A18522A1BE7CD0D00AF495F /* LaunchScreen.storyboard */,
 				4A18522D1BE7CD0D00AF495F /* Info.plist */,
+				BDE4A2B01C58CC1500EBF324 /* Utils */,
 				4A1852341BE7CF0700AF495F /* 3rd Party */,
 				4A1852351BE7CF0700AF495F /* Model */,
 				4A1852361BE7CF0700AF495F /* Networking */,
@@ -502,7 +506,6 @@
 			isa = PBXGroup;
 			children = (
 				BD4E11301C48613D00C71DD4 /* HelperVC */,
-				BD4E112F1C48611500C71DD4 /* HelperVC */,
 				BD8243071C4462A800444831 /* BaseVC */,
 				BD8242F71C44574F00444831 /* TableSelection */,
 				4A18521F1BE7CD0D00AF495F /* PlacesVC.h */,
@@ -547,13 +550,6 @@
 				BD2DD0A71C50479A001CC137 /* ReviewSetVoteCell.xib */,
 			);
 			path = Review;
-			sourceTree = "<group>";
-		};
-		BD4E112F1C48611500C71DD4 /* HelperVC */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = HelperVC;
 			sourceTree = "<group>";
 		};
 		BD4E11301C48613D00C71DD4 /* HelperVC */ = {
@@ -635,6 +631,15 @@
 				BDE2FC341BFA7845007C9354 /* DWBubbleMenuButton.m */,
 			);
 			path = AAShareBubbles;
+			sourceTree = "<group>";
+		};
+		BDE4A2B01C58CC1500EBF324 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BDE4A2B11C58CC1500EBF324 /* UITextField+Types.h */,
+				BDE4A2B21C58CC1500EBF324 /* UITextField+Types.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -788,6 +793,7 @@
 				4AE8AE451C0C647C006BB91F /* CategoryFoodsParser.m in Sources */,
 				4A1852E41BE7DA9200AF495F /* CJSONDeserializer.m in Sources */,
 				4A1852EA1BE9100A00AF495F /* XPModel.m in Sources */,
+				BDE4A2B31C58CC1500EBF324 /* UITextField+Types.m in Sources */,
 				4A1852C51BE7DA2E00AF495F /* AFHTTPClient.m in Sources */,
 				BD2DD0A31C504510001CC137 /* ReviewCurrentVoteCell.m in Sources */,
 				4A1852F01BE9173E00AF495F /* Cafe.m in Sources */,

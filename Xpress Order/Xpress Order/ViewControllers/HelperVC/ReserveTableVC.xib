@@ -5,11 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReserveTableVC">
-            <connections>
-                <outlet property="tableViewReservation" destination="1bZ-ed-JDx" id="rhU-6V-vBG"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReserveTableVC"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <viewController id="aUI-Op-X9J" customClass="ReserveTableVC">
             <layoutGuides>
@@ -38,6 +34,9 @@
                 </constraints>
             </view>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <connections>
+                <outlet property="tableViewReservation" destination="1bZ-ed-JDx" id="UXw-6j-iW6"/>
+            </connections>
             <point key="canvasLocation" x="84" y="267"/>
         </viewController>
     </objects>

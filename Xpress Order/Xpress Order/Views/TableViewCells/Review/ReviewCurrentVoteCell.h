@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HCSStarRatingView.h"
 
-#define kReviewCurrentVoteCellHeight 90
+#define kReviewCurrentVoteCellHeight 100
 
 @interface ReviewCurrentVoteCell: UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *labelTitle;

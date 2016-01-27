@@ -22,4 +22,9 @@
 	// Configure the view for the selected state
 }
 
+-(void) setSeparatorsHidden:(BOOL) hidden
+{
+    [self.viewBottomSeparator setHidden:hidden];
+    [self.viewTopSeparator setHidden:hidden];
+}
 @end
