@@ -27,6 +27,14 @@
                             <constraint firstAttribute="height" constant="1" id="WyM-7G-Su2"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZ4-Ws-Aft">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="08n-xz-vyj"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="MIi-e3-fG5"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="jMD-Cc-ovy" secondAttribute="bottom" id="3Jp-7F-94H"/>
@@ -34,8 +42,11 @@
                     <constraint firstAttribute="trailing" secondItem="Tto-Ls-I72" secondAttribute="trailing" id="DkK-IY-M0h"/>
                     <constraint firstItem="jMD-Cc-ovy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="EJm-SX-FNq"/>
                     <constraint firstItem="Tto-Ls-I72" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FV1-C5-Cbg"/>
+                    <constraint firstItem="SZ4-Ws-Aft" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="MwX-bJ-fNr"/>
                     <constraint firstAttribute="bottom" secondItem="Tto-Ls-I72" secondAttribute="bottom" id="Sqk-iG-I8O"/>
+                    <constraint firstItem="SZ4-Ws-Aft" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="af3-XW-1vn"/>
                     <constraint firstItem="Tto-Ls-I72" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lYp-L7-SUi"/>
+                    <constraint firstAttribute="trailing" secondItem="SZ4-Ws-Aft" secondAttribute="trailing" id="noc-Jm-Fhe"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

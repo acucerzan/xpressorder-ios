@@ -73,7 +73,7 @@
 {
 	UIImageView *merchantImgView = [self placeImageView];
 
-	[merchantImgView setContentMode:UIViewContentModeScaleAspectFill];
+	[merchantImgView setContentMode:UIViewContentModeScaleToFill];
 	[merchantImgView setClipsToBounds:YES];
 	merchantImgView.layer.masksToBounds = YES;
 	[merchantImgView setImage:image];
@@ -93,6 +93,7 @@
 
 	[self setButton:self.buttonHistory withText:@"Istoric"];
 	[self setButton:self.buttonReservTable withText:@"Rezervare"];
+    [self setButton:self.buttonMenu withText:@"Meniu"];
 
 	[self.viewButtonsBase setBackgroundColor:ClearColor];
 	[self.viewSeparator setBackgroundColor:[UIColor whiteColor]];

@@ -147,7 +147,17 @@
 	NSLog(@"button review press");
 }
 
+- (IBAction)buttonMenuPress:(id)sender
+{
+	NSLog(@"buttonMenu press");
+}
+
 #pragma mark UITableViewDataSource
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+	return kPlaceCellHeight;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -173,10 +183,15 @@
 
 	[cell.buttonHistory addTarget:self action:@selector(buttonHistoryPress:) forControlEvents:1 << 6];
 	[cell.buttonHistory setTag:indexPath.row];
+
 	[cell.buttonReservTable addTarget:self action:@selector(buttonReserveTablePress:) forControlEvents:1 << 6];
 	[cell.buttonReservTable setTag:indexPath.row];
+
 	[cell.buttonReview addTarget:self action:@selector(buttonReviewPress:) forControlEvents:1 << 6];
 	[cell.buttonReview setTag:indexPath.row];
+
+	[cell.buttonMenu addTarget:self action:@selector(buttonMenuPress:) forControlEvents:1 << 6];
+	[cell.buttonMenu setTag:indexPath.row];
 
 	return cell;
 }
