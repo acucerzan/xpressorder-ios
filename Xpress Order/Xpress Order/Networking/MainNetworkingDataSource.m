@@ -29,7 +29,15 @@
 #define kDefaultTimeOut 30
 
 // MARK: requests
-#define kRequestReservation @"create_reservation.php"
+#define kRequestReservation      @"create_reservation.php"
+#define kRequestGetTableList     @"get_table_list.php"
+#define KRequestGetPlaceList     @"get_place_list.php"
+#define kRequestSetReview        @"set_review.php"
+#define kRequestCheckReservation @"reservation_time.php"
+#define kRequestComparePinCode   @"compare_pincode.php"
+#define kRequestTakeTable        @"table_sit.php"
+#define kRequestGetCategoryFood  @"get_category_food.php"
+
 
 // MARK: request Params
 #define kParamPlaceId      @"place_id"
@@ -41,6 +49,9 @@
 #define kParamPersonsCount @"Nrpersoane"
 #define kParamAndroidId    @"Android_id"
 #define kParamObservations @"Observatii"
+#define kParamTableNomber  @"table_no"
+#define kParamPlaceReview  @"place_review"
+
 
 @implementation MainNetworkingDataSource
 
@@ -57,7 +68,7 @@
 
 - (NSString *)getPlacesURL
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"get_place_list.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:KRequestGetPlaceList];
 
 	return str;
 }
@@ -96,7 +107,7 @@
 
 - (NSString *)getTablesURL
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"get_table_list.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:kRequestGetTableList];
 
 	return str;
 }
@@ -110,7 +121,7 @@
 
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               placeID, @"place_id",
+	                               placeID, kParamPlaceId,
 	                               nil];
 
 	[self getDataWithUrl:[self getTablesURL]
@@ -132,7 +143,7 @@
 
 - (NSString *)getSetReviewURL
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"set_review.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:kRequestSetReview];
 
 	return str;
 }
@@ -147,8 +158,8 @@
 	NSString *reviewString = [NSString stringWithFormat:@"%.2f", [reviewValue floatValue]];
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               placeID, @"place_id",
-	                               reviewString, @"place_review",
+	                               placeID, kParamPlaceId,
+	                               reviewString, kParamPlaceReview,
 	                               nil];
 
 	[self getDataWithUrl:[self getSetReviewURL]
@@ -170,7 +181,7 @@
 
 - (NSString *)getCheckReserved
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"reservation_time.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:kRequestCheckReservation];
 
 	return str;
 }
@@ -183,8 +194,8 @@
 // }
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               placeID, @"place_id",
-	                               tableNr, @"table_no",
+	                               placeID, kParamPlaceId,
+	                               tableNr, kParamTableNomber,
 	                               nil];
 
 	[self getDataWithUrl:[self getCheckReserved]
@@ -222,8 +233,8 @@
 //
 // NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 // pinCode, @"pin_code",
-// placeID, @"place_id",
-// tableNr, @"table_no",
+// placeID, kParamPlaceId,
+// tableNr, kParamTableNomber,
 // nil];
 //
 // [self getDataWithUrl:[self getCheckPinCodeURL]
@@ -246,7 +257,7 @@
 
 - (NSString *)comparePinCodeURL
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"compare_pincode.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:kRequestComparePinCode];
 
 	return str;
 }
@@ -260,8 +271,8 @@
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 	                               pinCode, @"pin_code",
-	                               placeID, @"place_id",
-	                               tableNr, @"table_no",
+	                               placeID, kParamPlaceId,
+	                               tableNr, kParamTableNomber,
 	                               nil];
 
 	[self getDataWithUrl:[self comparePinCodeURL]
@@ -283,7 +294,7 @@
 
 - (NSString *)takeTableURL
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"table_sit.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:kRequestTakeTable];
 
 	return str;
 }
@@ -297,8 +308,8 @@
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
 	                               pinCode, @"pin",
-	                               placeID, @"place_id",
-	                               tableNr, @"table_no",
+	                               placeID, kParamPlaceId,
+	                               tableNr, kParamTableNomber,
 	                               [NSString stringWithFormat:@"name+%@", tableNr], @"name",
 	                               @"email-busy", @"email",
 	                               @"numar-busy", @"phone",
@@ -374,8 +385,8 @@
 // }
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               placeID, @"place_id",
-	                               tableNr, @"table_no",
+	                               placeID, kParamPlaceId,
+	                               tableNr, kParamTableNomber,
 	                               nil];
 
 	[self getDataWithUrl:[self getCallWaitressURL]
@@ -397,7 +408,7 @@
 
 - (NSString *)getCategoryFoodURL
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"get_category_food.php"];
+	NSString *str = [URL_SERVER stringByAppendingString:kRequestGetCategoryFood];
 
 	return str;
 }
@@ -410,8 +421,8 @@
 	// }
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               placeID, @"place_id",
-	                               tableNr, @"table_no",
+	                               placeID, kParamPlaceId,
+	                               tableNr, kParamTableNomber,
 	                               nil];
 
 	[self getDataWithUrl:[self getCategoryFoodURL]
