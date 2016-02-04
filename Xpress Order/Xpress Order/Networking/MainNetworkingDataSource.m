@@ -337,10 +337,10 @@
 - (void)createReservation:(Reservation *)reservation withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
 {
 	NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-	[dateFormater setDateFormat:@"dd.mm.yyyy"];
+	[dateFormater setDateFormat:@"yyyy-mm-dd"];
 
 	NSDateFormatter *timeFormater = [[NSDateFormatter alloc] init];
-	[dateFormater setDateFormat:@"HH:mm"];
+	[timeFormater setDateFormat:@"HH:mm"];
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:
 	                               @{ kParamPlaceId: reservation.place.place_id,
@@ -349,8 +349,8 @@
 	                                  kParamPhone: reservation.clientPhone,
 	                                  kParamComingDate: [dateFormater stringFromDate:reservation.clientDate],
 	                                  kParamArrivingTime: [timeFormater stringFromDate:reservation.clientDate],
-	                                  kParamPersonsCount: @"",
-	                                  kParamAndroidId: @"",
+	                                  kParamPersonsCount: reservation.personCount,
+	                                  kParamAndroidId: @"--",
 	                                  kParamObservations: reservation.clientObservation }];
 
 	[self getDataWithUrl:[URL_SERVER stringByAppendingString:kRequestReservation]

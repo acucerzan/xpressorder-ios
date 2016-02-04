@@ -18,6 +18,7 @@
 #import "UIImageView+AFNetworking.h"
 
 #import "UITextField+Types.h"
+#import "Reservation.h"
 
 #define kDefaulttextFieldTag 100
 
@@ -42,6 +43,8 @@ typedef NS_ENUM (NSInteger, CellType) {
 	NSArray *titles;
 	NSInteger viewControllerType;   // initializate with place = 0 -> initalizete with table = 1
 	NSInteger cellsCount;
+	NSDate *selectedDate;
+	NSInteger selectedIndex;
 
 	BOOL sized;
 }
@@ -120,11 +123,14 @@ typedef NS_ENUM (NSInteger, CellType) {
 
 	sized = YES;
 
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		CGSize size = self.tableViewReservation.contentSize;
 		size.height += keyboardFrame.size.height;
 
 		[self.tableViewReservation setContentSize:size];
+		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+			[self.tableViewReservation scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+		});
 	});
 }
 
@@ -137,7 +143,7 @@ typedef NS_ENUM (NSInteger, CellType) {
 		return;
 
 	sized = NO;
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		CGSize size = self.tableViewReservation.contentSize;
 		size.height -= keyboardFrame.size.height;
 
@@ -344,10 +350,9 @@ typedef NS_ENUM (NSInteger, CellType) {
 
 	[cell.textField setTextFieldType:TextFieldTypeNumerical];
 	[cell.textField setMaxLength:10];
-
-
-	[cell.textField setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
 	[cell.textField setReturnKeyType:UIReturnKeyNext];
+	[cell.textField setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+
 	[cell.textField setDelegate:self];
 
 	[cell.viewSeparator setHidden:YES];
@@ -380,15 +385,19 @@ typedef NS_ENUM (NSInteger, CellType) {
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
 
-    NSInteger index = indexPath.row;
-    if(cellsCount>CellCount)
-        index -=1;
-    
-    [cell.labelTitle setText:[titles objectAtIndex:index]];
-    [cell.textField setText:[dataSource objectAtIndex:index]];
+	NSInteger index = indexPath.row;
+	if (cellsCount > CellCount)
+		index -= 1;
 
+	[cell.labelTitle setText:[titles objectAtIndex:index]];
+	[cell.textField setText:[dataSource objectAtIndex:index]];
 
-	[cell.textField setTag:kDefaulttextFieldTag + indexPath.row];
+	[cell.textField setTextFieldType:TextFieldTypeNumerical];
+	[cell.textField setMaxLength:5];
+	[cell.textField setReturnKeyType:UIReturnKeyNext];
+	[cell.textField setKeyboardType:UIKeyboardTypeNumbersAndPunctuation];
+
+	[cell.textField setTag:kDefaulttextFieldTag + index];
 	[cell.textField setDelegate:self];
 
 	[cell.viewSeparator setHidden:YES];
@@ -403,14 +412,19 @@ typedef NS_ENUM (NSInteger, CellType) {
 		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 	}
 
-    NSInteger index = indexPath.row;
-    if(cellsCount>CellCount)
-        index -=1;
-    
+	NSInteger index = indexPath.row;
+	if (cellsCount > CellCount)
+		index -= 1;
+
 	[cell.labelTitle setText:[titles objectAtIndex:index]];
 	[cell.textField setText:[dataSource objectAtIndex:index]];
 
-	[cell.textField setTag:kDefaulttextFieldTag + indexPath.row];
+	[cell.textField setTextFieldType:TextFieldTypeAlpaNumerical];
+	[cell.textField setMaxLength:100];
+	[cell.textField setReturnKeyType:UIReturnKeyDone];
+	[cell.textField setKeyboardType:UIKeyboardTypeAlphabet];
+
+	[cell.textField setTag:kDefaulttextFieldTag + index];
 	[cell.textField setDelegate:self];
 
 	[cell.viewSeparator setHidden:NO];
@@ -476,6 +490,8 @@ typedef NS_ENUM (NSInteger, CellType) {
 {
 	NSInteger tag = textField.tag - kDefaulttextFieldTag;
 
+	selectedIndex = tag;
+
 	if (tag == CellTypeDate) {
 		if (cellsCount == CellCount)
 			[self insertDateCell];
@@ -504,6 +520,14 @@ typedef NS_ENUM (NSInteger, CellType) {
 			[dataSource replaceObjectAtIndex:CellTypePhone withObject:textField.text];
 			break;
 
+		case CellTypePreferedSeats:
+			[dataSource replaceObjectAtIndex:CellTypePreferedSeats withObject:textField.text];
+			break;
+
+		case CellTypeObservation:
+			[dataSource replaceObjectAtIndex:CellTypeObservation withObject:textField.text];
+			break;
+
 		default:
 			break;
 	}
@@ -529,6 +553,15 @@ typedef NS_ENUM (NSInteger, CellType) {
 			[self insertDateCell];
 			break;
 
+		case CellTypePreferedSeats:
+			[self goToNextTextFieldFromTextField:textField];
+			break;
+
+		case CellTypeObservation:
+			[self.view endEditing:YES];
+
+			break;
+
 		default:
 			break;
 	}
@@ -537,11 +570,37 @@ typedef NS_ENUM (NSInteger, CellType) {
 
 #pragma mark --- Helper Functions
 
+- (void)makeReservationFor:(Reservation *)reservation
+{
+	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+	[networkingDataSource createReservation:reservation withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo)
+	{
+	  if (!error) {
+	    NSString *message = @"";
+
+	    if (items.count > 1)
+				message = [NSString stringWithFormat:@"Reservarea s-a efectuat cu success! Codul dumneavoastra de access este :%@", [items objectAtIndex:1]];
+	    MakeAlert(@"Success", message);
+	    [self.navigationController popViewControllerAnimated:YES];
+		}
+	}];
+}
+
 - (void)makeReservation
 {
-	if (viewControllerType == ControllerTypeCafe)
-		// make reservation for the cafe api
+	if (viewControllerType == ControllerTypeCafe) {
+		Reservation *reserv = [[Reservation alloc] init];
+		reserv.place = self.currentPlace;
+		reserv.clientName = [dataSource objectAtIndex:CellTypeName];
+		reserv.clientEmail = [dataSource objectAtIndex:CellTypeEmail];
+		reserv.clientPhone = [dataSource objectAtIndex:CellTypePhone];
+		reserv.clientDate = selectedDate;
+		reserv.personCount = [dataSource objectAtIndex:CellTypePreferedSeats];
+		reserv.clientObservation = [dataSource objectAtIndex:CellTypeObservation];
+
+		[self makeReservationFor:reserv];
 		NSLog(@"controller type CAFE");
+	}
 	else
 		// make reservation for the table ap
 		NSLog(@"controller type table");
@@ -556,6 +615,7 @@ typedef NS_ENUM (NSInteger, CellType) {
 	NSDateFormatter *timeFormater = [[NSDateFormatter alloc] init];
 	[timeFormater setTimeStyle:NSDateFormatterShortStyle];
 
+	selectedDate = sender.date;
 	[cell.textField setText:[NSString stringWithFormat:@"%@ la %@", [dateFormater stringFromDate:sender.date], [timeFormater stringFromDate:sender.date]]];
 	[dataSource replaceObjectAtIndex:CellTypeDate withObject:cell.textField.text];
 }
@@ -575,7 +635,7 @@ typedef NS_ENUM (NSInteger, CellType) {
 	UITextField *nextTextField = (UITextField *) [self.view viewWithTag:nextTag];
 	[nextTextField becomeFirstResponder];
 
-	[self.tableViewReservation scrollRectToVisible:textField.frame animated:YES];
+	[self.tableViewReservation scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(nextTag - kDefaulttextFieldTag) inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 - (void)insertDateCell
@@ -584,21 +644,23 @@ typedef NS_ENUM (NSInteger, CellType) {
 	[self.view endEditing:YES];
 	cellsCount += 1;
 
-	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:CellTypeDate+1 inSection:0];
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:CellTypeDate + 1 inSection:0];
 	[self.tableViewReservation beginUpdates];
 	[self.tableViewReservation insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 	[self.tableViewReservation endUpdates];
+
+	[self.tableViewReservation scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:CellTypeDate inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 - (void)deleteDateCell
 {
 	cellsCount = CellCount;
 
-    NSArray *reloadedIndexes = @[[NSIndexPath indexPathForRow:CellTypePreferedSeats inSection:0],[NSIndexPath indexPathForRow:CellTypeObservation inSection:0]];
+	NSArray *reloadedIndexes = @[[NSIndexPath indexPathForRow:CellTypePreferedSeats inSection:0], [NSIndexPath indexPathForRow:CellTypeObservation inSection:0]];
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:CellCount inSection:0];
 	[self.tableViewReservation beginUpdates];
 	[self.tableViewReservation deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableViewReservation reloadRowsAtIndexPaths:reloadedIndexes withRowAnimation:UITableViewRowAnimationAutomatic];
+	[self.tableViewReservation reloadRowsAtIndexPaths:reloadedIndexes withRowAnimation:UITableViewRowAnimationAutomatic];
 	[self.tableViewReservation endUpdates];
 }
 

@@ -10,5 +10,8 @@
 
 @implementation Reservation
 
-
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"Reservation \n place: %@ \n clienName %@ \n clientEmail %@ \n clientPhone: %@ \n clientDate %@ \n nrPersons %@ \n clientPbservation %@", self.place, self.clientName, self.clientEmail, self.clientPhone, self.clientDate, self.personCount, self.clientObservation ];
+}
 @end

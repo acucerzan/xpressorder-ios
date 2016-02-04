@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
 
-    [self.textField setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.20]];
+    [self.textField setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.12]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
