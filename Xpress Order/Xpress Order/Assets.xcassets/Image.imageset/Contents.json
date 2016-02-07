@@ -1,0 +1,85 @@
+{
+  "images" : [
+    {
+      "idiom" : "iphone",
+      "filename" : "splash_screen.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "splash_screen@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "splash_screen@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "height-class" : "regular"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "height-class" : "regular"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "height-class" : "regular"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "1x",
+      "width-class" : "regular"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "2x",
+      "width-class" : "regular"
+    },
+    {
+      "idiom" : "iphone",
+      "scale" : "3x",
+      "width-class" : "regular"
+    },
+    {
+      "idiom" : "iphone",
+      "width-class" : "regular",
+      "height-class" : "regular",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "iphone",
+      "width-class" : "regular",
+      "height-class" : "regular",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "width-class" : "regular",
+      "height-class" : "regular",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "splash_screen-667h@2x.png",
+      "unassigned" : true,
+      "height-class" : "regular",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "iphone",
+      "filename" : "splash_screen-558h@2x.png",
+      "width-class" : "compact",
+      "unassigned" : true,
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
