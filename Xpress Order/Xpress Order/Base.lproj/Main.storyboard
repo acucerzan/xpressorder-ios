@@ -45,16 +45,12 @@
                                     <outlet property="delegate" destination="Ygv-gR-VdV" id="iYd-cr-cAY"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="WUj-yA-eH9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="yoP-VY-mlb" secondAttribute="trailing" constant="10" id="6kt-7k-fOE"/>
                             <constraint firstItem="XpI-8F-Tcu" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" constant="10" id="CVF-tT-lWH"/>
                             <constraint firstItem="ufQ-sd-Ql6" firstAttribute="top" secondItem="LzF-cr-mAt" secondAttribute="bottom" id="CaH-WE-zwL"/>
-                            <constraint firstItem="WUj-yA-eH9" firstAttribute="top" secondItem="9n9-EK-w1e" secondAttribute="top" id="D1U-Ty-kil"/>
                             <constraint firstItem="XpI-8F-Tcu" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" constant="10" id="Nek-KW-3fy"/>
                             <constraint firstItem="yoP-VY-mlb" firstAttribute="top" secondItem="8NZ-9t-Qnn" secondAttribute="bottom" constant="10" id="Nse-h5-qaz"/>
                             <constraint firstAttribute="trailing" secondItem="1D5-7g-tWS" secondAttribute="trailing" id="Obk-9k-Zz6"/>
@@ -64,10 +60,7 @@
                             <constraint firstItem="1D5-7g-tWS" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" id="ZKE-b5-1py"/>
                             <constraint firstItem="yoP-VY-mlb" firstAttribute="leading" secondItem="XpI-8F-Tcu" secondAttribute="trailing" constant="10" id="b7M-Mn-Q8L"/>
                             <constraint firstAttribute="trailing" secondItem="LzF-cr-mAt" secondAttribute="trailing" id="dRC-XY-xsL"/>
-                            <constraint firstAttribute="trailing" secondItem="WUj-yA-eH9" secondAttribute="trailing" id="dWR-LF-4Jo"/>
-                            <constraint firstItem="ufQ-sd-Ql6" firstAttribute="top" secondItem="WUj-yA-eH9" secondAttribute="bottom" id="gY3-cC-bEa"/>
                             <constraint firstItem="LzF-cr-mAt" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" id="keC-W1-6HD"/>
-                            <constraint firstItem="WUj-yA-eH9" firstAttribute="leading" secondItem="9n9-EK-w1e" secondAttribute="leading" id="n0l-Z5-veL"/>
                             <constraint firstItem="ufQ-sd-Ql6" firstAttribute="top" secondItem="1D5-7g-tWS" secondAttribute="bottom" id="r3d-qg-pKc"/>
                         </constraints>
                     </view>
@@ -98,7 +91,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="320" height="480"/>
         <image name="app_icon_primap" width="61" height="61"/>
         <image name="bg_texture" width="375" height="667"/>
     </resources>

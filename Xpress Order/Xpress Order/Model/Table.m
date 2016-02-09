@@ -1,9 +1,9 @@
 //
-//  Table.m
-//  CafeApp
+// Table.m
+// CafeApp
 //
-//  Created by Lion on 11/27/14.
-//  Copyright (c) 2014 han. All rights reserved.
+// Created by Lion on 11/27/14.
+// Copyright (c) 2014 han. All rights reserved.
 //
 
 #import "Table.h"
@@ -11,9 +11,23 @@
 @implementation Table
 
 
--(NSString *) description
+- (NSString *)description
 {
-    return [NSString stringWithFormat:@"TableId %@ PlaceId %@ userPhoneNumber %@ UserName %@ userAvailable %@ userState %@", self.table_id, self.place_id,
-            self.user_phone_num, self.user_name, self.user_available, self.user_state];
+	return [NSString stringWithFormat:@"TableId %@ PlaceId %@ phone %@  userAvailable %@ userState %@ isReserved %d isTable %d", self.table_id, self.place_id,
+	        self.phone, self.user_available, self.state, self.isReserved, self.isTable];
 }
+
+- (TableState)tableState
+{
+	TableState localState = TableStateFree;
+
+	if ([self.state isEqualToString:kBusyString])
+		localState = TableStateBusy;
+	else
+		if (self.isReserved)
+			localState = TableStateReserved;
+
+	return localState;
+}
+
 @end

@@ -55,6 +55,8 @@
 		4AE8AE451C0C647C006BB91F /* CategoryFoodsParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE441C0C647C006BB91F /* CategoryFoodsParser.m */; };
 		4AE8AE4A1C0C6534006BB91F /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE471C0C6534006BB91F /* CategoryModel.m */; };
 		4AE8AE4B1C0C6534006BB91F /* FoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE8AE491C0C6534006BB91F /* FoodModel.m */; };
+		BD0833821C694E78002676BC /* PinPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0833811C694E78002676BC /* PinPopUp.m */; };
+		BD0833841C694F0C002676BC /* PinPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0833831C694F0C002676BC /* PinPopUp.xib */; };
 		BD2DD0891C502D1A001CC137 /* ReservationImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD0871C502D1A001CC137 /* ReservationImageCell.m */; };
 		BD2DD08A1C502D1A001CC137 /* ReservationImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2DD0881C502D1A001CC137 /* ReservationImageCell.xib */; };
 		BD2DD08E1C502E76001CC137 /* ReservationNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD08C1C502E76001CC137 /* ReservationNameCell.m */; };
@@ -199,6 +201,9 @@
 		4AE8AE471C0C6534006BB91F /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		4AE8AE481C0C6534006BB91F /* FoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodModel.h; sourceTree = "<group>"; };
 		4AE8AE491C0C6534006BB91F /* FoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodModel.m; sourceTree = "<group>"; };
+		BD0833801C694E78002676BC /* PinPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinPopUp.h; sourceTree = "<group>"; };
+		BD0833811C694E78002676BC /* PinPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinPopUp.m; sourceTree = "<group>"; };
+		BD0833831C694F0C002676BC /* PinPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinPopUp.xib; sourceTree = "<group>"; };
 		BD2DD0861C502D1A001CC137 /* ReservationImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationImageCell.h; sourceTree = "<group>"; };
 		BD2DD0871C502D1A001CC137 /* ReservationImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationImageCell.m; sourceTree = "<group>"; };
 		BD2DD0881C502D1A001CC137 /* ReservationImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationImageCell.xib; sourceTree = "<group>"; };
@@ -582,6 +587,9 @@
 				BD8242FB1C44574F00444831 /* TableSelectionVC.h */,
 				BD8242FC1C44574F00444831 /* TableSelectionVC.m */,
 				BD8243001C4457B900444831 /* TableSelectionVC.xib */,
+				BD0833801C694E78002676BC /* PinPopUp.h */,
+				BD0833811C694E78002676BC /* PinPopUp.m */,
+				BD0833831C694F0C002676BC /* PinPopUp.xib */,
 			);
 			path = TableSelection;
 			sourceTree = "<group>";
@@ -721,6 +729,7 @@
 				BD8243321C446A9200444831 /* ReservationTimeCell.xib in Resources */,
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				BD82431C1C44665F00444831 /* ProductCell.xib in Resources */,
+				BD0833841C694F0C002676BC /* PinPopUp.xib in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
 				BD2DD08F1C502E76001CC137 /* ReservationNameCell.xib in Resources */,
 				BD4E11351C48613D00C71DD4 /* ReviewVC.xib in Resources */,
@@ -766,6 +775,7 @@
 				4A1852C61BE7DA2E00AF495F /* AFHTTPRequestOperation.m in Sources */,
 				4A1852CD1BE7DA2E00AF495F /* LAbstractAFDataSource.m in Sources */,
 				4A07C6741C0C7FE5003E0FB9 /* MyFoodsParser.m in Sources */,
+				BD0833821C694E78002676BC /* PinPopUp.m in Sources */,
 				4A1852631BE7CFBF00AF495F /* HCSStarRatingView.m in Sources */,
 				4A1852E31BE7DA9200AF495F /* CDataScanner.m in Sources */,
 				BD8243311C446A9200444831 /* ReservationTimeCell.m in Sources */,
