@@ -103,8 +103,8 @@
 		    if (items.count > 0)
 					NSLog(@"Tables: %@", items);
 
-		    Table * table = [items objectAtIndex:0];
-		    [table setState:@"none"];
+// Table * table = [items objectAtIndex:0];
+// [table setState:@"none"];
 
 		    dataSource = items;
 		    [self.tableViewTableSelection reloadData];
@@ -186,16 +186,35 @@
 	[tablePopUp showPopUpInViewController:self];
 }
 
-- (void)pinPopup:(PinPopUp *)pinPopUp dissmissedWithCode:(NSString *)code forTable:(Table *)selectedTable;
+- (void)pinPopup:(PinPopUp *)pinPopUp dissmissedWithCode:(NSString *)code forTable:(Table *)table;
 {
 	// make request for checking the pin code
 	NSLog(@"te pin code is %@", code);
 	[pinPopUp closePopUp];
+
+	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+
+	// if none - reservation_time.php
+
+	// if busy - compare pin code
+
+
+	[networkingDataSource takeTableWithPinCode:code forPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+	  if (!error) {
+	    NSLog(@"Success buy taking table");
+	    NSLog(@"UserInfi %@", userInfo);
+
+	    [self performSelectorOnMainThread:@selector(openTableViewDetails) withObject:nil waitUntilDone:YES];
+		}
+	  else
+			NSLog(@"Error %@", error);
+	}];
 }
 
 - (void)openTableViewDetails
 {
-	TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithTable:selectedTable];
+// TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithTable:selectedTable];
+	TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithNibName:@"TableViewDetailVC" bundle:[NSBundle mainBundle]];
 	[self.navigationController pushViewController:tableViewDetail animated:YES];
 }
 

@@ -9,7 +9,18 @@
 #import "PinPopUp.h"
 #import "UITextField+Types.h"
 
+
 @interface PinPopUp () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *labelTableName;
+@property (weak, nonatomic) IBOutlet UILabel *labelTableNumber;
+@property (weak, nonatomic) IBOutlet UILabel *labelPersonNumber;
+
+@property (weak, nonatomic) IBOutlet UILabel *labelState;
+@property (weak, nonatomic) IBOutlet UILabel *labelDetails;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPin;
+@property (weak, nonatomic) IBOutlet UIButton *buttonSend;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHorizontal;
 
 @end
 
@@ -40,6 +51,27 @@
 	[self.textFieldPin setPlaceholder:@"****"];
 
 	[self addTapToQuit];
+
+	NSString *tableName = @"Masa";
+    if(!self.selectedTable.isTable)
+        tableName = @"Bar";
+    
+    [self.labelTableName setText:tableName];
+    [self.labelTableNumber setText:self.selectedTable.place_id];
+    [self.labelPersonNumber setText:[NSString stringWithFormat:@"x%@",self.selectedTable.user_available]];
+    
+    NSString *tableState = @"Liber";
+    if(self.selectedTable.tableState == TableStateBusy)
+        tableState = @"Ocupat";
+    else
+        if(self.selectedTable.tableState == TableStateReserved)
+            tableState = @"Rezervat";
+    
+    [self.labelState setText:tableState];
+    [self.labelState setTextColor:XP_PURPLE];
+    
+    [self.labelDetails setText:@"pentru moment, insereaza pinul pentru aceasta masa sau gaseste o alta masa."];
+        
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -62,6 +94,7 @@
 	CGFloat yContainerBot = self.viewContainer.frame.origin.y + self.viewContainer.frame.size.height;
 	CGFloat difference = yContainerBot - yBot + kDefaultDifference;
 
+    
 	if (difference > 0) {
 		self.constraintHorizontal.constant = -difference;
 		[UIView animateWithDuration:kAnimationDuration animations:^{
@@ -92,7 +125,7 @@
 #pragma mark --- buttonAction
 - (IBAction)buttonSendPress:(id)sender
 {
-    [self.delegate pinPopup:self dissmissedWithCode:self.textFieldPin.text forTable:self.selectedTable];
+	[self.delegate pinPopup:self dissmissedWithCode:self.textFieldPin.text forTable:self.selectedTable];
 }
 
 @end
