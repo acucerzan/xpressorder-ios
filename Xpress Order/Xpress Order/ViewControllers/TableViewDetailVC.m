@@ -145,7 +145,7 @@
 
 - (IBAction)buttonMenuPress:(id)sender
 {
-	ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithSelectedTable:selectedTable];
+    ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithNibName:@"ProductSelectionVC" andSelectedTable:[XPModel sharedInstance].selectedTable];
 	[self.navigationController pushViewController:productSelection animated:YES];
 
 	NSLog(@"Button Menu Press");

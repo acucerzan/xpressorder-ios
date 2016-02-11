@@ -10,8 +10,8 @@
             <connections>
                 <outlet property="buttonSearch" destination="crV-V7-zlP" id="Ng3-Ui-IOM"/>
                 <outlet property="labelCategoryName" destination="4aD-h3-Jhe" id="q1s-yF-cUf"/>
-                <outlet property="scrollViewCategory" destination="maE-O6-gCd" id="Xxr-xI-jeO"/>
-                <outlet property="tableViewProducts" destination="Hya-6H-bUg" id="E2a-rk-IXJ"/>
+                <outlet property="scrollViewCategory" destination="maE-O6-gCd" id="cia-jE-1UK"/>
+                <outlet property="tableViewProducts" destination="Hya-6H-bUg" id="TDr-KV-EJn"/>
                 <outlet property="textFieldSearch" destination="Mu0-Rn-i2x" id="h9G-G5-dVP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

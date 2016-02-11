@@ -6,6 +6,10 @@
 // Copyright © 2015 Adrian Cucerzan. All rights reserved.
 //
 
+/**
+ *  load all locale from the server after finish geting all locale-s the backgropund thread download all tables for each place
+ *
+ */
 #import "PlacesVC.h"
 #import "TableSelectionVC.h"
 #import "HCSStarRatingView.h"
@@ -15,9 +19,8 @@
 #import "ReviewVC.h"
 #import "HistoryVC.h"
 #import "ReserveTableVC.h"
+#import "MenuVC.h"
 
-// test
-#import "TableReservedPopUp.h"
 
 #define ReviewTAG 120
 
@@ -37,12 +40,9 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
 	[self initialise];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToTableScreen) name:kGoToTableScreen object:nil];
 
 	[self downloadPlaces];
-
-
-// TableReservedPopUp *tablePopUp = [[TableReservedPopUp alloc] initWithNibName:@"TableReservedPopUp" bundle:[NSBundle mainBundle]];
-// [tablePopUp showPopUpInViewController:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -83,6 +83,25 @@
 	    [self.arrayCafe addObjectsFromArray:items];
 
 	    [self.myTableView reloadData];
+
+	    for (Cafe *cafe in items)
+				[self downloadAllTablesForPlace:cafe];
+		}
+	}];
+}
+
+- (void)downloadAllTablesForPlace:(Cafe *)cafe
+{
+	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+
+	__block Cafe *blockCafe = cafe;
+	[networkingDataSource getTablesForPlaceWithId:cafe.place_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+	  NSLog(@"Finished tables request for %@", blockCafe);
+
+	  if (items) {
+	    if (items.count > 0)
+				NSLog(@"Tables: %@", items);
+	    blockCafe.tables = items;
 		}
 	}];
 }
@@ -121,6 +140,16 @@
 
 #pragma mark UIBUttonAction
 
+- (IBAction)goToTableScreen:(id)sender
+{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		Cafe *cafeObj = [XPModel sharedInstance].selectedCafe;
+		TableSelectionVC *vc = [[TableSelectionVC alloc] loadFromNibForPlace:cafeObj];
+		[[XPModel sharedInstance] setSelectedCafe:cafeObj];
+		[self.navigationController pushViewController:vc animated:YES];
+	});
+}
+
 - (IBAction)buttonHistoryPress:(id)sender
 {
 	Cafe *cafeObj = [self.arrayCafe objectAtIndex:[sender tag]];
@@ -150,6 +179,12 @@
 - (IBAction)buttonMenuPress:(id)sender
 {
 	NSLog(@"buttonMenu press");
+
+	Cafe *cafeObj = [self.arrayCafe objectAtIndex:[sender tag]];
+	[XPModel sharedInstance].selectedCafe = cafeObj;
+
+	MenuVC *menuVC = [[MenuVC alloc] initWithNibName:@"MenuVC" andSelectedTable:[cafeObj.tables objectAtIndex:0]];
+	[self.navigationController pushViewController:menuVC animated:YES];
 }
 
 #pragma mark UITableViewDataSource

@@ -15,43 +15,13 @@
 #import "CategoryModel.h"
 #import "FoodModel.h"
 
-@interface ProductSelectionVC () <UITableViewDataSource, UITableViewDelegate>
-{
-	Table *selectedTable;
+@interface ProductSelectionVC ()
 
-	NSArray <CategoryModel *> *categoryList;
-
-	CategoryModel *selectedCategory;
-	NSArray <FoodModel *> *selectedFoods;
-
-	__weak IBOutlet UIScrollView *scrollViewCategory;
-	__weak IBOutlet UITableView *tableViewProducts;
-}
 
 @end
 
 @implementation ProductSelectionVC
 
-- (instancetype)initWithSelectedTable:(Table *)table
-{
-	self = [self init];
-	if (self) {
-		selectedTable = table;
-		[self menuForCurrentTable];
-		// download menu and stuff
-	}
-	return self;
-}
-
-- (instancetype)init
-{
-	self = [super initWithNibName:@"ProductSelectionVC" bundle:[NSBundle mainBundle]];
-	if (self) {
-		// get network data
-	}
-
-	return self;
-}
 
 - (void)viewDidLoad
 {
@@ -113,94 +83,6 @@
 
 - (IBAction)buttonMenuPress:(id)sender
 {
-}
-
-- (IBAction)buttonCategoryPress:(id)sender
-{
-	[self reloadProductsForCategoryAtIndex:[sender tag]];
-}
-
-#pragma mark --- TableView Delegate and Data Source
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-	return selectedFoods.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	ProductCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductCell"];
-
-	if (!cell) {
-		cell = LoadCell(@"ProductCell");
-		[cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-	}
-
-	FoodModel *foodModel = [selectedFoods objectAtIndex:indexPath.row];
-
-	[cell.imageViewProduct setImageWithURL:[NSURL URLWithString:foodModel.strImage]];
-	[cell.labelPrice setText:foodModel.strPrice];
-	[cell.labelProductname setText:foodModel.strFoodName];
-	[cell.labelQuantity setText:[NSString stringWithFormat:@"%@ %@", foodModel.strquantity, foodModel.strMeasuringUnit]];
-
-	return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return kProductCellHeight;
-}
-
-#pragma mark --- helperFunctions
-
-- (void)populateCategoryView
-{
-	int yPosition = 0;
-	int tagValue = 0;
-	for (CategoryModel *categ in categoryList) {
-		ProductGroupCell *cell = LoadCell(@"ProductGroupCell");
-		[cell.labelCategory setText:categ.strCategoryName];
-		[cell imageFromURLString:categ.imgCategoryLogo];
-		[cell setBackgroundColor:ClearColor];
-
-		[cell.buttonCategory setTag:tagValue];
-		[cell.buttonCategory addTarget:self action:@selector(buttonCategoryPress:) forControlEvents:1 << 6];
-
-		tagValue++;
-
-		CGRect frame = cell.frame;
-		frame.origin.y = yPosition;
-		cell.frame = frame;
-
-		yPosition += frame.size.height;
-		[scrollViewCategory addSubview:cell];
-	}
-
-	[self reloadProductsForCategoryAtIndex:0];
-	[scrollViewCategory setContentSize:CGSizeMake(scrollViewCategory.frame.size.width, yPosition)];
-}
-
-- (void)reloadProductsForCategoryAtIndex:(NSInteger)index
-{
-	selectedCategory = [categoryList objectAtIndex:index];
-	selectedFoods = selectedCategory.arrayOfFoods;
-
-	[self.labelCategoryName setText:selectedCategory.strCategoryName];
-
-	[tableViewProducts reloadData];
-}
-
-#pragma mark --- Network place
-
-- (void)menuForCurrentTable
-{
-	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
-
-	[networkingDataSource getCategoryFoodforPlaceID:selectedTable.place_id andTableNumber:selectedTable.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
-	  if (!error) {
-	    categoryList = items;
-	    [self populateCategoryView];
-		}
-	}];
 }
 
 @end

@@ -6,14 +6,12 @@
 //  Copyright © 2015 Adrian Cucerzan. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "BaseMenuVC.h"
 
 @class Table;
 
-@interface ProductSelectionVC : BaseViewController
+@interface ProductSelectionVC : BaseMenuVC
 
--(instancetype)initWithSelectedTable:(Table *) table;
-@property (weak, nonatomic) IBOutlet UILabel *labelCategoryName;
 @property (weak, nonatomic) IBOutlet UITextField *textFieldSearch;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSearch;
 
