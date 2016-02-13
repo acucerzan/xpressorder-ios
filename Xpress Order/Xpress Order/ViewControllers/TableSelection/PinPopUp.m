@@ -53,30 +53,30 @@
 	[self addTapToQuit];
 
 	NSString *tableName = @"Masa";
-    if(!self.selectedTable.isTable)
-        tableName = @"Bar";
-    
-    [self.labelTableName setText:tableName];
-    [self.labelTableNumber setText:self.selectedTable.place_id];
-    [self.labelPersonNumber setText:[NSString stringWithFormat:@"x%@",self.selectedTable.user_available]];
-    
-    NSString *tableState = @"Liber";
-    if(self.selectedTable.tableState == TableStateBusy)
-        tableState = @"Ocupat";
-    else
-        if(self.selectedTable.tableState == TableStateReserved)
-            tableState = @"Rezervat";
-    
-    [self.labelState setText:tableState];
-    [self.labelState setTextColor:XP_PURPLE];
-    
-    [self.labelDetails setText:@"pentru moment, insereaza pinul pentru aceasta masa sau gaseste o alta masa."];
-        
+	if (!self.selectedTable.isTable)
+		tableName = @"Bar";
+
+	[self.labelTableName setText:tableName];
+	[self.labelTableNumber setText:self.selectedTable.place_id];
+	[self.labelPersonNumber setText:[NSString stringWithFormat:@"x%@", self.selectedTable.user_available]];
+
+	NSString *tableState = @"Liber";
+	if (self.selectedTable.tableState == TableStateBusy)
+		tableState = @"Ocupat";
+	else
+		if (self.selectedTable.tableState == TableStateReserved)
+			tableState = @"Rezervat";
+
+	[self.labelState setText:tableState];
+	[self.labelState setTextColor:XP_PURPLE];
+
+	[self.labelDetails setText:@"pentru moment, insereaza pinul pentru aceasta masa sau gaseste o alta masa."];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	[self.textFieldPin becomeFirstResponder];
 }
 
 #pragma mark --- Keyboard Notification
@@ -94,7 +94,7 @@
 	CGFloat yContainerBot = self.viewContainer.frame.origin.y + self.viewContainer.frame.size.height;
 	CGFloat difference = yContainerBot - yBot + kDefaultDifference;
 
-    
+
 	if (difference > 0) {
 		self.constraintHorizontal.constant = -difference;
 		[UIView animateWithDuration:kAnimationDuration animations:^{

@@ -11,8 +11,8 @@
 #import "Table.h"
 #import "ProductCell.h"
 
-#define kDefaultImageTag 400
-
+#define kDefaultImageTag          400
+#define kDefaultAnimationDuration .3
 @interface BaseMenuVC ()
 
 
@@ -123,7 +123,9 @@
 	self.selectedCategory = [self.categoryList objectAtIndex:index];
 	self.selectedFoods = self.selectedCategory.arrayOfFoods;
 
-	[self.labelCategoryName setText:self.selectedCategory.strCategoryName];
+	[UIView transitionWithView:self.labelCategoryName duration:kDefaultAnimationDuration options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+	  [self.labelCategoryName setText:self.selectedCategory.strCategoryName];
+	} completion:nil];
 
 	[self.tableViewProducts beginUpdates];
 	[self.tableViewProducts reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
@@ -140,10 +142,10 @@
 {
 	UIView *view = [self.scrollViewCategory viewWithTag:[sender tag] + kDefaultImageTag];
 
-	[UIView animateWithDuration:.3 animations:^{
+	[UIView animateWithDuration:kDefaultAnimationDuration animations:^{
 	  view.transform = CGAffineTransformMakeScale(1.3, 1.3);
-	}completion:^(BOOL finished) {
-	  [UIView animateWithDuration:.3 animations:^{
+	} completion:^(BOOL finished) {
+	  [UIView animateWithDuration:kDefaultAnimationDuration animations:^{
 	    view.transform = CGAffineTransformMakeScale(1, 1);
 		}];
 	}];

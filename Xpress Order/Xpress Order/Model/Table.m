@@ -21,7 +21,7 @@
 {
 	TableState localState = TableStateFree;
 
-	if ([self.state isEqualToString:kBusyString])
+	if ([self.state isEqualToString:kBusyString] && !self.isReserved)
 		localState = TableStateBusy;
 	else
 		if (self.isReserved)

@@ -47,7 +47,7 @@
 
 	// [self loadBackButton];
 	[self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+	[self.navigationController setNavigationBarHidden:NO animated:YES];
 	self.title = @"Back";
 	[self setTitleString:@"Welcome"];
 
@@ -95,8 +95,10 @@
 {
 	NSMutableArray *buttonsMutable = [[NSMutableArray alloc] init];
 
+	viewShare.buttonSpacing = 5;
+
 	int i = 0;
-	for (NSString *title in @[@"social_media_button", @"social_media_button", @"social_media_button", @"social_media_button"]) {
+	for (NSString *title in @[@"share_twitter", @"share_facebook", @"share_google"]) {
 		UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 
 		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -145,7 +147,7 @@
 
 - (IBAction)buttonMenuPress:(id)sender
 {
-    ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithNibName:@"ProductSelectionVC" andSelectedTable:[XPModel sharedInstance].selectedTable];
+	ProductSelectionVC *productSelection = [[ProductSelectionVC alloc] initWithNibName:@"ProductSelectionVC" andSelectedTable:[XPModel sharedInstance].selectedTable];
 	[self.navigationController pushViewController:productSelection animated:YES];
 
 	NSLog(@"Button Menu Press");
@@ -164,7 +166,7 @@
 			break;
 
 		case 1:
-			NSLog(@"facevook pressed");
+			NSLog(@"facebook pressed");
 			break;
 
 		case 2:

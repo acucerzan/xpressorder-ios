@@ -1,33 +1,47 @@
 //
-//  XP_Shared.h
-//  XpressOrder
+// XP_Shared.h
+// XpressOrder
 //
-//  Created by Adrian Cucerzan on 1/08/14.
+// Created by Adrian Cucerzan on 1/08/14.
 //
 
 // import all model headers
 
-#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
+#define RGB(r, g, b) [UIColor colorWithRed: \
+	                    r / 255.0 green: \
+	                    g / 255.0 blue: \
+	                    b / 255.0 alpha : 1]
 
 #define XP_PURPLE RGB(76, 24, 76)
 
-#define kFailedToChangePushSetting @"kFailedToChangePushSetting"
+#define kFailedToChangePushSetting           @"kFailedToChangePushSetting"
 #define FinishedLoadingMerchantsNotification @"FinishedLoadingMerchantsNotification"
 
 #if TARGET_IPHONE_SIMULATOR
-    #define DUMMY @""
-    #define myAppend(A,B) [(A) stringByAppendingString:(B)]
-	#define getLang(key) [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:nil]
-	#define lang(key) myAppend(DUMMY, getLang(key))
+#define DUMMY          @""
+#define myAppend(A, B) [(A) stringByAppendingString: \
+	                      (B)]
+#define getLang(key)   [[NSBundle mainBundle] localizedStringForKey: \
+	                      (key) value: \
+	                      @"" table: \
+	                      nil]
+#define lang(key)      myAppend(DUMMY, getLang(key))
 #else
-	#define lang(key) [[NSBundle mainBundle] localizedStringForKey:(key) value:@"" table:nil]
- #define lang(key) MyLocalizedString(key, @"")
+#define lang(key) [[NSBundle mainBundle] localizedStringForKey: \
+	                 (key) value: \
+	                 @"" table: \
+	                 nil]
+#define lang(key) MyLocalizedString(key, @"")
 #endif
 
-#define MainStoryboardName @"Main"
-#define ViewControllerWithIdentifier(a) [XPModel viewControllerWithIdentifier:a fromStoryboardWithName:MainStoryboardName]
+#define MainStoryboardName              @"Main"
+#define ViewControllerWithIdentifier(a) [XPModel viewControllerWithIdentifier: \
+	                                       a fromStoryboardWithName: \
+	                                       MainStoryboardName]
 
-#define OpenViewControllerInNavigation(vc, nav) [XPModel openViewController:vc inNavigationController:nav]
+#define OpenViewControllerInNavigation(vc, nav) [XPModel openViewController: \
+	                                               vc inNavigationController: \
+	                                               nav]
 
 #import "MainNetworkingDataSource.h"
 #import "Cafe.h"
@@ -35,14 +49,14 @@
 #import "CategoryModel.h"
 #import "FoodModel.h"
 
-typedef NS_ENUM(int, iPhoneScreenSize) {
+typedef NS_ENUM (int, iPhoneScreenSize) {
 	iPhoneScreenSize_iPhone4 = 0,
 	iPhoneScreenSize_iPhone5 = 1,
 	iPhoneScreenSize_iPhone6 = 2,
 	iPhoneScreenSize_iPhone6Plus = 3
 };
 
-@interface XPModel : NSObject
+@interface XPModel: NSObject
 
 @property (nonatomic, readonly) NSInteger twoColListImageWidth;
 @property (nonatomic, readonly) NSInteger oneColListImageWidth;
@@ -55,6 +69,7 @@ typedef NS_ENUM(int, iPhoneScreenSize) {
 
 @property (nonatomic, strong) Cafe *selectedCafe;
 @property (nonatomic, strong) Table *selectedTable;
+@property (nonatomic, strong) TableAccess *tableAccess;
 #pragma mark Constructor
 
 + (XPModel *)sharedInstance;

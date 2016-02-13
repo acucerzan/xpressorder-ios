@@ -1,10 +1,13 @@
 PODS:
+  - DWBubbleMenuButton (1.0.1)
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
+  - DWBubbleMenuButton (~> 1.0.1)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  DWBubbleMenuButton: 4d9bdbb9d662bdf65c93ceb7fc65901871143d1e
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.38.2

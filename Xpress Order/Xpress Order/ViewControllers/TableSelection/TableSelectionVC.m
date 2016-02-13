@@ -93,6 +93,7 @@
 
 - (void)downloadTablesForCurrentTable
 {
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
 	if (self.currentPlace) {
 		MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
 
@@ -103,12 +104,10 @@
 		    if (items.count > 0)
 					NSLog(@"Tables: %@", items);
 
-// Table * table = [items objectAtIndex:0];
-// [table setState:@"none"];
-
 		    dataSource = items;
 		    [self.tableViewTableSelection reloadData];
 			}
+		  [SVProgressHUD dismiss];
 		}];
 	}
 }
@@ -192,29 +191,59 @@
 	NSLog(@"te pin code is %@", code);
 	[pinPopUp closePopUp];
 
+
+	// if table is reserved or is busy - check if if is your table
+	if ((table.tableState == TableStateBusy) || (table.tableState == TableStateReserved))
+		[self comparePinCode:code forTable:table];
+	// if table is free take table with pin code
+	if (table.tableState == TableStateFree)
+		[self takeTable:table withPinCode:code];
+}
+- (void)takeTable:(Table *)table withPinCode:(NSString *)code
+{
 	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
 
-	// if none - reservation_time.php
-
-	// if busy - compare pin code
-
-
+	NSLog(@"table is free, take table with pin %@", code);
 	[networkingDataSource takeTableWithPinCode:code forPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
 	  if (!error) {
 	    NSLog(@"Success buy taking table");
-	    NSLog(@"UserInfi %@", userInfo);
 
-	    [self performSelectorOnMainThread:@selector(openTableViewDetails) withObject:nil waitUntilDone:YES];
+	    // if no error then we should callo compare because the api :)) it too hard
+	    [self comparePinCode:code forTable:table];
 		}
 	  else
 			NSLog(@"Error %@", error);
 	}];
 }
 
+- (void)comparePinCode:(NSString *)code forTable:(Table *)table
+{
+	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+
+	NSLog(@"the table is %d check if is your table with code %@", (int) table.tableState, code);
+	[networkingDataSource comparePinCode:code forPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+	  [SVProgressHUD dismiss];
+
+	  // wrong pin code
+	  if (items.count == 0 && error == nil) {
+	    NSLog(@"Wrong pin code or is not your table");
+	    MakeAlert(@"Eroare", @"Pin gresit sau nu este masa rezervata!");
+		}
+	  // we have a math
+	  if (items.count != 0 && error == nil) { // save the
+	    [XPModel sharedInstance].tableAccess = [items firstObject];
+	    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				[self openTableViewDetails];
+			});
+		}
+	}];
+}
+
 - (void)openTableViewDetails
 {
-// TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithTable:selectedTable];
-	TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithNibName:@"TableViewDetailVC" bundle:[NSBundle mainBundle]];
+	TableViewDetailVC *tableViewDetail = [[TableViewDetailVC alloc] initWithTable:selectedTable];
 	[self.navigationController pushViewController:tableViewDetail animated:YES];
 }
 
