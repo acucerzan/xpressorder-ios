@@ -55,8 +55,12 @@
 	else
 		if (option == DismissOptionGoToTables) {
 			[popUp closePopUp];
-			// go to table VC
-			[[NSNotificationCenter defaultCenter] postNotificationName:kGoToTableScreen object:nil];
+
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				// go to table VC
+				[[NSNotificationCenter defaultCenter] postNotificationName:kGoToTableScreen object:nil];
+				[self.navigationController popViewControllerAnimated:YES];
+			});
 		}
 }
 

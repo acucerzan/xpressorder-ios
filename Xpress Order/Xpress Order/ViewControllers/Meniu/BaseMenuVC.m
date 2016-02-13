@@ -11,6 +11,8 @@
 #import "Table.h"
 #import "ProductCell.h"
 
+#define kDefaultImageTag 400
+
 @interface BaseMenuVC ()
 
 
@@ -36,6 +38,9 @@
 	[self.tableViewProducts setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[self.labelCategoryName setFont:MainFontBold(30)];
 	[self.labelCategoryName setTextColor:[XP_PURPLE colorWithAlphaComponent:.7]];
+
+	[self.labelCategoryName setText:@""];
+	[self.tableViewProducts setHidden:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -53,6 +58,8 @@
 
 - (void)menuForTable:(Table *)table;
 {
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+
 	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
 
 	[networkingDataSource getCategoryFoodforPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
@@ -60,6 +67,12 @@
 	    self.categoryList = items;
 	    [self populateCategoryView];
 		}
+
+
+	  dispatch_async(mainThread, ^{
+			[self.tableViewProducts setHidden:NO];
+			[SVProgressHUD dismiss];
+		});
 	}];
 }
 
@@ -71,10 +84,15 @@
 	int tagValue = 0;
 	for (CategoryModel *categ in self.categoryList) {
 		ProductGroupCell *cell = LoadCell(@"ProductGroupCell");
+
 		[cell.labelCategory setText:categ.strCategoryName];
+		[cell.labelCategory setTextColor:[UIColor whiteColor]];
+		[cell.labelCategory setFont:MainFontRegular(10)];
+
 		[cell imageFromURLString:categ.imgCategoryLogo];
 		[cell setBackgroundColor:ClearColor];
 
+		[cell.imageCategory setTag:kDefaultImageTag + tagValue];
 		[cell.buttonCategory setTag:tagValue];
 		[cell.buttonCategory addTarget:self action:@selector(buttonCategoryPress:) forControlEvents:1 << 6];
 
@@ -120,6 +138,16 @@
 
 - (IBAction)buttonCategoryPress:(id)sender
 {
+	UIView *view = [self.scrollViewCategory viewWithTag:[sender tag] + kDefaultImageTag];
+
+	[UIView animateWithDuration:.3 animations:^{
+	  view.transform = CGAffineTransformMakeScale(1.3, 1.3);
+	}completion:^(BOOL finished) {
+	  [UIView animateWithDuration:.3 animations:^{
+	    view.transform = CGAffineTransformMakeScale(1, 1);
+		}];
+	}];
+	// animate button category
 	[self reloadProductsForCategoryAtIndex:[sender tag]];
 }
 

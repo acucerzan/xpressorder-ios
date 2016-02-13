@@ -40,7 +40,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
 	[self initialise];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToTableScreen) name:kGoToTableScreen object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(goToTableScreen:) name:kGoToTableScreen object:nil];
 
 	[self downloadPlaces];
 }
@@ -70,6 +70,8 @@
 
 - (void)downloadPlaces
 {
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+
 	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
 
 	[networkingDataSource getPlacesWithCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
@@ -87,6 +89,10 @@
 	    for (Cafe *cafe in items)
 				[self downloadAllTablesForPlace:cafe];
 		}
+
+	  dispatch_async(mainThread, ^{
+			[SVProgressHUD dismiss];
+		});
 	}];
 }
 
@@ -142,7 +148,7 @@
 
 - (IBAction)goToTableScreen:(id)sender
 {
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		Cafe *cafeObj = [XPModel sharedInstance].selectedCafe;
 		TableSelectionVC *vc = [[TableSelectionVC alloc] loadFromNibForPlace:cafeObj];
 		[[XPModel sharedInstance] setSelectedCafe:cafeObj];
