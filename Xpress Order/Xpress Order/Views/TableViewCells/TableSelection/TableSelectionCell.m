@@ -48,9 +48,9 @@
 {
 	leftTable = table;
 
-	NSString *tableName = @"Masa";
+	NSString *tableName = kTableName;
 	if (!table.isTable)
-		tableName = @"Bar";
+		tableName = kBarTName;
 
 	[self.labelLeftTable setText:tableName];
 	[self.labelLeftTable setTextColor:[UIColor whiteColor]];

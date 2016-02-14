@@ -7,7 +7,6 @@
 //
 
 #import "MenuVC.h"
-#import "ProductDetailPopUp.h"
 
 @interface MenuVC () <ProductDetailProtocol>
 
@@ -48,12 +47,12 @@
 	[popUp showPopUpInViewController:self];
 }
 
-- (void)productDetail:(ProductDetailPopUp *)popUp dismissedWithOption:(DismissOption)option
+- (void)productDetail:(ProductDetailPopUp *)popUp dismissedWithOption:(DismissOption)option forFood:(FoodModel *)food
 {
 	if (option == DismissOptionOk)
 		[popUp closePopUp];
 	else
-		if (option == DismissOptionGoToTables) {
+		if (option == DismissOptionWithAction) {
 			[popUp closePopUp];
 
 			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

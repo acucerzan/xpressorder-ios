@@ -22,21 +22,21 @@
 	[self.viewContainerOrder.layer setCornerRadius:3];
 	[self.viewContainerOrder.layer setBorderWidth:1];
 	[self.viewContainerOrder.layer setBorderColor:[XP_PURPLE CGColor]];
+	[self.viewContainerOrder setClipsToBounds:YES];
 
 	[self.viewLabelSeparator setBackgroundColor:XP_PURPLE];
 
 	[self.viewContainerOrder setBackgroundColor:[UIColor whiteColor]];
-    
+
 	[self.labelPrice setBackgroundColor:ClearColor];
-    [self.labelPrice setTextAlignment:NSTextAlignmentCenter];
-    [self.labelPrice setTextColor:XP_PURPLE];
-    [self.labelPrice setFont:MainFontBold(20)];
-    
+	[self.labelPrice setTextAlignment:NSTextAlignmentCenter];
+	[self.labelPrice setTextColor:XP_PURPLE];
+	[self.labelPrice setFont:MainFontBold(20)];
+
 	[self.labelQuantity setBackgroundColor:ClearColor];
-    [self.labelQuantity setTextAlignment:NSTextAlignmentCenter];
-    [self.labelQuantity setTextColor:XP_PURPLE];
-    [self.labelQuantity setFont:MainFontRegular(18)];
-    
+	[self.labelQuantity setTextAlignment:NSTextAlignmentCenter];
+	[self.labelQuantity setTextColor:XP_PURPLE];
+	[self.labelQuantity setFont:MainFontRegular(18)];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -53,6 +53,12 @@
 		self.constraintButtonOrderBottom.constant = 0;
 		[self.buttonOrder setHidden:YES];
 	}
+	else
+		if (productCellType == ProductCellTypeOrder) {
+			UIImage *image = [XPUtils imageWithColor:XP_LIGHTPURPLE andFrame:self.buttonOrder.frame];
+			[self.buttonOrder setBackgroundImage:image forState:0];
+			[self.buttonOrder setTitle:@"Comanda" forState:0];
+		}
 }
 
 @end

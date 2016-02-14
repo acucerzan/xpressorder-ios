@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "ProductGroupCell.h"
 #import "ProductCell.h"
+#import "ProductDetailPopUp.h"
 
 @class Table;
 @class CategoryModel;
@@ -24,9 +25,11 @@
 @property (nonatomic, strong) NSArray <FoodModel *> *selectedFoods;
 @property (nonatomic, strong) Table *selectedTable;
 @property (nonatomic, strong) NSArray <CategoryModel *> *categoryList;
-
+@property (nonatomic, strong) NSArray <CategoryModel *> *originalCategoryList;
 
 - (instancetype)initWithNibName:(NSString *)nibName andSelectedTable:(Table *)table;
 
 - (void)beforeDisplayingProductCell:(ProductCell *)cell;
+- (void)reloadScrollView;
+
 @end

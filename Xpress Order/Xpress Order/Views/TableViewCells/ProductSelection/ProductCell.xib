@@ -34,59 +34,58 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9EO-AB-mnb">
-                        <rect key="frame" x="152" y="6" width="80" height="137"/>
+                        <rect key="frame" x="152" y="14" width="80" height="121"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2x-Eg-Rh3">
-                                <rect key="frame" x="8" y="8" width="64" height="37"/>
+                                <rect key="frame" x="8" y="8" width="64" height="30"/>
                                 <color key="backgroundColor" red="0.80571007853403143" green="0.0" blue="0.066022113047002173" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="jq0-LY-Z9J"/>
+                                    <constraint firstAttribute="height" constant="30" id="jq0-LY-Z9J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-xy-VoL">
-                                <rect key="frame" x="8" y="47" width="64" height="1"/>
+                                <rect key="frame" x="8" y="40" width="64" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Sga-5H-0A3"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHP-Ki-dsm">
-                                <rect key="frame" x="8" y="50" width="64" height="37"/>
+                                <rect key="frame" x="8" y="43" width="64" height="30"/>
                                 <color key="backgroundColor" red="0.80571007849999998" green="0.0" blue="0.066022113049999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="37" id="327-wv-QLM"/>
-                                    <constraint firstAttribute="height" constant="37" id="Jaz-xi-K02"/>
+                                    <constraint firstAttribute="height" constant="30" id="327-wv-QLM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-AH-4PW">
-                                <rect key="frame" x="8" y="95" width="64" height="34"/>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpX-AH-4PW">
+                                <rect key="frame" x="0.0" y="81" width="80" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="Qit-Ho-koc"/>
+                                    <constraint firstAttribute="height" constant="40" id="Qit-Ho-koc"/>
                                 </constraints>
                                 <state key="normal" title="Comanda"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.51687254581151831" green="0.51687254581151831" blue="0.51687254581151831" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xpX-AH-4PW" secondAttribute="trailing" constant="8" id="3Cj-la-PRy"/>
+                            <constraint firstAttribute="trailing" secondItem="xpX-AH-4PW" secondAttribute="trailing" id="3Cj-la-PRy"/>
                             <constraint firstItem="zg7-xy-VoL" firstAttribute="leading" secondItem="O2x-Eg-Rh3" secondAttribute="leading" id="881-bp-7aN"/>
                             <constraint firstItem="xpX-AH-4PW" firstAttribute="top" secondItem="AHP-Ki-dsm" secondAttribute="bottom" constant="8" id="9fT-Ad-D4U"/>
                             <constraint firstAttribute="trailing" secondItem="O2x-Eg-Rh3" secondAttribute="trailing" constant="8" id="HMS-c8-I78"/>
                             <constraint firstItem="AHP-Ki-dsm" firstAttribute="top" secondItem="zg7-xy-VoL" secondAttribute="bottom" constant="2" id="MLv-iy-123"/>
                             <constraint firstItem="O2x-Eg-Rh3" firstAttribute="top" secondItem="9EO-AB-mnb" secondAttribute="top" constant="8" id="XkX-ll-bEK"/>
-                            <constraint firstItem="xpX-AH-4PW" firstAttribute="leading" secondItem="9EO-AB-mnb" secondAttribute="leading" constant="8" id="dMa-6H-4QO"/>
+                            <constraint firstItem="xpX-AH-4PW" firstAttribute="leading" secondItem="9EO-AB-mnb" secondAttribute="leading" id="dMa-6H-4QO"/>
                             <constraint firstAttribute="trailing" secondItem="AHP-Ki-dsm" secondAttribute="trailing" constant="8" id="eUa-jG-Gfl"/>
                             <constraint firstItem="AHP-Ki-dsm" firstAttribute="leading" secondItem="9EO-AB-mnb" secondAttribute="leading" constant="8" id="hwg-i9-fHe"/>
                             <constraint firstItem="O2x-Eg-Rh3" firstAttribute="leading" secondItem="9EO-AB-mnb" secondAttribute="leading" constant="8" id="nY1-aO-fTy"/>
                             <constraint firstAttribute="width" constant="80" id="pyp-q5-hcW"/>
                             <constraint firstItem="zg7-xy-VoL" firstAttribute="top" secondItem="O2x-Eg-Rh3" secondAttribute="bottom" constant="2" id="wjm-FQ-gLD"/>
-                            <constraint firstAttribute="bottom" secondItem="xpX-AH-4PW" secondAttribute="bottom" constant="8" id="wzG-au-BMl"/>
+                            <constraint firstAttribute="bottom" secondItem="xpX-AH-4PW" secondAttribute="bottom" id="wzG-au-BMl"/>
                             <constraint firstItem="zg7-xy-VoL" firstAttribute="trailing" secondItem="O2x-Eg-Rh3" secondAttribute="trailing" id="z69-KM-mYl"/>
                         </constraints>
                     </view>

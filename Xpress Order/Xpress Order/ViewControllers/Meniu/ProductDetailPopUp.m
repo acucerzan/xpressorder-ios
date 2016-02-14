@@ -49,12 +49,18 @@
 	[self.buttonOK.layer setCornerRadius:3];
 	[self.buttonOK setClipsToBounds:YES];
 
-	[self.buttonGoToTables setBackgroundImage:image forState:0];
-	[self.buttonGoToTables.layer setCornerRadius:3];
-	[self.buttonGoToTables setClipsToBounds:YES];
+	[self.buttonAction setBackgroundImage:image forState:0];
+	[self.buttonAction.layer setCornerRadius:3];
+	[self.buttonAction setClipsToBounds:YES];
 
-
+	[self.buttonAction setTitle:self.actionButtonTitle forState:0];
 	[self addTapToQuit];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	[self.buttonAction setTitle:self.actionButtonTitle forState:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,12 +70,12 @@
 
 - (IBAction)buttonOKPress:(id)sender
 {
-	[self.delegate productDetail:self dismissedWithOption:DismissOptionOk];
+	[self.delegate productDetail:self dismissedWithOption:DismissOptionOk forFood:self.selectedFoodModel];
 }
 
-- (IBAction)buttonGoToTables:(id)sender
+- (IBAction)buttonActionPress:(id)sender
 {
-	[self.delegate productDetail:self dismissedWithOption:DismissOptionGoToTables];
+	[self.delegate productDetail:self dismissedWithOption:DismissOptionWithAction forFood:self.selectedFoodModel];
 }
 
 @end

@@ -189,8 +189,12 @@
 	Cafe *cafeObj = [self.arrayCafe objectAtIndex:[sender tag]];
 	[XPModel sharedInstance].selectedCafe = cafeObj;
 
-	MenuVC *menuVC = [[MenuVC alloc] initWithNibName:@"MenuVC" andSelectedTable:[cafeObj.tables objectAtIndex:0]];
-	[self.navigationController pushViewController:menuVC animated:YES];
+	if (cafeObj.tables.count != 0) {
+		MenuVC *menuVC = [[MenuVC alloc] initWithNibName:@"MenuVC" andSelectedTable:[cafeObj.tables objectAtIndex:0]];
+		[self.navigationController pushViewController:menuVC animated:YES];
+	}
+	else
+		MakeAlert(@"Eroare", @"Acest local nu are mese libere");
 }
 
 #pragma mark UITableViewDataSource

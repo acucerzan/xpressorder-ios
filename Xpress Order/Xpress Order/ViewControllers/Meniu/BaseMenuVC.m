@@ -11,8 +11,7 @@
 #import "Table.h"
 #import "ProductCell.h"
 
-#define kDefaultImageTag          400
-#define kDefaultAnimationDuration .3
+
 @interface BaseMenuVC ()
 
 
@@ -65,6 +64,7 @@
 	[networkingDataSource getCategoryFoodforPlaceID:table.place_id andTableNumber:table.table_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
 	  if (!error) {
 	    self.categoryList = items;
+	    self.originalCategoryList = items;
 	    [self populateCategoryView];
 		}
 
@@ -77,11 +77,20 @@
 }
 
 #pragma mark --- helperFunctions
+- (void)reloadScrollView
+{
+	[self.scrollViewCategory.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self populateCategoryView];
+	});
+}
 
 - (void)populateCategoryView
 {
 	int yPosition = 0;
 	int tagValue = 0;
+
 	for (CategoryModel *categ in self.categoryList) {
 		ProductGroupCell *cell = LoadCell(@"ProductGroupCell");
 
@@ -176,6 +185,7 @@
 	[cell.labelProductname setText:foodModel.strFoodName];
 	[cell.labelQuantity setText:[NSString stringWithFormat:@"%@ %@", foodModel.strquantity, foodModel.strMeasuringUnit]];
 
+	[cell.viewContainerOrder setTag:kDefaultViewMakeOrderTag + indexPath.row];
 	[self beforeDisplayingProductCell:cell];
 	return cell;
 }

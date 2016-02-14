@@ -12,7 +12,8 @@
 	                    g / 255.0 blue: \
 	                    b / 255.0 alpha : 1]
 
-#define XP_PURPLE RGB(76, 24, 76)
+#define XP_PURPLE      RGB(76, 24, 76)
+#define XP_LIGHTPURPLE RGB(130, 34, 84)
 
 #define kFailedToChangePushSetting           @"kFailedToChangePushSetting"
 #define FinishedLoadingMerchantsNotification @"FinishedLoadingMerchantsNotification"

@@ -7,64 +7,64 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A4B15045FE9E7E15A5AE047037A33A3 /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F43D0FD185A1E6B84A7134D7B84C90AA /* DWBubbleMenuButton.m */; };
-		20793056E05CCFF11650054AFCE1DCFA /* DWBubbleMenuButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 13FF0DB6BB543A7556F831271D672C5B /* DWBubbleMenuButton-dummy.m */; };
 		27C613CD8F0D5500013A024E4636F20C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BB94EBF0E4AAB5744A4933E65C05C4 /* SVProgressHUD.m */; };
 		2F8C6CAAE593D8F555D0D54C536E3580 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421D88E3116BD4238BF4D72BFB3802D8 /* Foundation.framework */; };
 		317602D7E2B9A957806A009744DBB727 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248AF69DE57106C64A592DE30A9D615A /* QuartzCore.framework */; };
+		3D2FB9D6571B52C865E77AAC76754AC8 /* DWBubbleMenuButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 5423D38230EF812CC78251E1AA916256 /* DWBubbleMenuButton.h */; };
 		4A656FF4D5815C7D1E63DE297E214EC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421D88E3116BD4238BF4D72BFB3802D8 /* Foundation.framework */; };
+		6CDB1E20C5FC40693E7F2CE9135B233C /* DWBubbleMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C01C5A7F83722F5C2A41F8F14FFEE58 /* DWBubbleMenuButton.m */; };
 		772872BB6B5FF9D3701A3B40410FB278 /* Pods-Xpress Order-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE538921484CFC8E02A9B8B2C4EE0BCA /* Pods-Xpress Order-dummy.m */; };
 		7BE7688304D568BF106470980EB865C7 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 004432F9ACB8EFC13B7338B91FA0B8D4 /* SVIndefiniteAnimatedView.m */; };
 		89F05D147E1D3780837633BB16691C53 /* SVIndefiniteAnimatedView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA63E54340658CFC42C26271C16AD1AB /* SVIndefiniteAnimatedView.h */; };
+		9B369AF92CA8F9D00EC29F3BBA513616 /* DWBubbleMenuButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A80E337FC7725A71BA67BE3878E20048 /* DWBubbleMenuButton-dummy.m */; };
+		9D4FDA9463D66A30A33B8F1B5CACF528 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421D88E3116BD4238BF4D72BFB3802D8 /* Foundation.framework */; };
 		B0D42E3798828F3B0DFEAE2E8C0A9D5F /* SVProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D640281A3F42E4FAD9878467BAB9928C /* SVProgressHUD.h */; };
-		B559C87A36080025541A351B5A49CA13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421D88E3116BD4238BF4D72BFB3802D8 /* Foundation.framework */; };
-		BAAC2EE760B8494F3949BC5CA84AC64B /* DWBubbleMenuButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B6BA279542F3D6EBF47F058DA5A1740D /* DWBubbleMenuButton.h */; };
 		F5ABA31CD2179D1EE0FC3F7183438E56 /* SVProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFE1515F429D484D775013DC61410E45 /* SVProgressHUD-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3DA2E79BAC2B3AB284E39C2D2FC1F349 /* PBXContainerItemProxy */ = {
+		15ADAFB6CD42612EAD328218E6CE9A34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 03D557660FE4371C6979A2B54738781F;
+			remoteInfo = DWBubbleMenuButton;
+		};
+		8C1F97D0223D8F27C6BF4962DAC95F81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B281DA29A9C3EDFB45BA53651F6BA611;
 			remoteInfo = SVProgressHUD;
 		};
-		E346E1494758E31A47E630B55786E7F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4B125C7332ADE8645717EB6D6845BA9;
-			remoteInfo = DWBubbleMenuButton;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		004432F9ACB8EFC13B7338B91FA0B8D4 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		04559BAAAA1C9A367CA4E28F84328355 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
-		07C6BF20D8ACB8E0FD0C7FBDB3084EF1 /* libDWBubbleMenuButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDWBubbleMenuButton.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		13859ACB1950432C31D933C0077EFCFA /* libSVProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSVProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		13FF0DB6BB543A7556F831271D672C5B /* DWBubbleMenuButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DWBubbleMenuButton-dummy.m"; sourceTree = "<group>"; };
 		1778EC4A41155422CC672B77523ACAA2 /* Pods-Xpress Order-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Xpress Order-resources.sh"; sourceTree = "<group>"; };
 		248AF69DE57106C64A592DE30A9D615A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		2FA0C47E7A893FD9318666F9777587B3 /* DWBubbleMenuButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DWBubbleMenuButton-Private.xcconfig"; sourceTree = "<group>"; };
+		3C01C5A7F83722F5C2A41F8F14FFEE58 /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DWBubbleMenuButton.m; path = Source/DWBubbleMenuButton.m; sourceTree = "<group>"; };
 		421D88E3116BD4238BF4D72BFB3802D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		5423D38230EF812CC78251E1AA916256 /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWBubbleMenuButton.h; path = Source/DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		5A16843694371719A615C5A86D27C473 /* SVProgressHUD-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SVProgressHUD-Private.xcconfig"; sourceTree = "<group>"; };
 		6BE12B2B524FE9D3146BFED199977892 /* Pods-Xpress Order.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Xpress Order.release.xcconfig"; sourceTree = "<group>"; };
 		781D4E7CCF2C851548E67FC602654BF0 /* Pods-Xpress Order.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Xpress Order.debug.xcconfig"; sourceTree = "<group>"; };
 		8C1BA57F8E70DEB508059783E208F963 /* DWBubbleMenuButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DWBubbleMenuButton-prefix.pch"; sourceTree = "<group>"; };
 		93F9FA8721C4C6DC478CAA37F3A0BB70 /* DWBubbleMenuButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DWBubbleMenuButton.xcconfig; sourceTree = "<group>"; };
 		98FE576F776529F0BF42FB4DEA30CAED /* Pods-Xpress Order-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Xpress Order-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F6F9897DB2BAEA188CA9917BB012868 /* libDWBubbleMenuButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDWBubbleMenuButton.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BB94EBF0E4AAB5744A4933E65C05C4 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		A80E337FC7725A71BA67BE3878E20048 /* DWBubbleMenuButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DWBubbleMenuButton-dummy.m"; sourceTree = "<group>"; };
 		A8D4708D1723CDB39786E063B9F0A37C /* Pods-Xpress Order-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Xpress Order-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B6BA279542F3D6EBF47F058DA5A1740D /* DWBubbleMenuButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DWBubbleMenuButton.h; path = Source/DWBubbleMenuButton.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C49AA879737A25CD854BB538C373DADB /* DWBubbleMenuButton-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DWBubbleMenuButton-Private.xcconfig"; sourceTree = "<group>"; };
 		CA63E54340658CFC42C26271C16AD1AB /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		D640281A3F42E4FAD9878467BAB9928C /* SVProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		DE538921484CFC8E02A9B8B2C4EE0BCA /* Pods-Xpress Order-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Xpress Order-dummy.m"; sourceTree = "<group>"; };
 		E54D77C946AE672433D531C48F23D288 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		E58D6B37607C67DC2D51E5FE2E6DE46E /* libPods-Xpress Order.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Xpress Order.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F43D0FD185A1E6B84A7134D7B84C90AA /* DWBubbleMenuButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DWBubbleMenuButton.m; path = Source/DWBubbleMenuButton.m; sourceTree = "<group>"; };
 		F700115D71244A2640ECC23307675B11 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
 		FFE1515F429D484D775013DC61410E45 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,19 +79,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F4883CAA8D7C43C5042970B418DC61D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D4FDA9463D66A30A33B8F1B5CACF528 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B0F2B072632E02CFD8850127CE69728 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4A656FF4D5815C7D1E63DE297E214EC1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EFAD44B1F450C956E619E5D7E4CB3488 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B559C87A36080025541A351B5A49CA13 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				93F9FA8721C4C6DC478CAA37F3A0BB70 /* DWBubbleMenuButton.xcconfig */,
-				2FA0C47E7A893FD9318666F9777587B3 /* DWBubbleMenuButton-Private.xcconfig */,
-				13FF0DB6BB543A7556F831271D672C5B /* DWBubbleMenuButton-dummy.m */,
+				C49AA879737A25CD854BB538C373DADB /* DWBubbleMenuButton-Private.xcconfig */,
+				A80E337FC7725A71BA67BE3878E20048 /* DWBubbleMenuButton-dummy.m */,
 				8C1BA57F8E70DEB508059783E208F963 /* DWBubbleMenuButton-prefix.pch */,
 			);
 			name = "Support Files";
@@ -196,7 +196,7 @@
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07C6BF20D8ACB8E0FD0C7FBDB3084EF1 /* libDWBubbleMenuButton.a */,
+				9F6F9897DB2BAEA188CA9917BB012868 /* libDWBubbleMenuButton.a */,
 				E58D6B37607C67DC2D51E5FE2E6DE46E /* libPods-Xpress Order.a */,
 				13859ACB1950432C31D933C0077EFCFA /* libSVProgressHUD.a */,
 			);
@@ -215,8 +215,8 @@
 		F3048A3A99B9CA1319B409B7AA0E50A1 /* DWBubbleMenuButton */ = {
 			isa = PBXGroup;
 			children = (
-				B6BA279542F3D6EBF47F058DA5A1740D /* DWBubbleMenuButton.h */,
-				F43D0FD185A1E6B84A7134D7B84C90AA /* DWBubbleMenuButton.m */,
+				5423D38230EF812CC78251E1AA916256 /* DWBubbleMenuButton.h */,
+				3C01C5A7F83722F5C2A41F8F14FFEE58 /* DWBubbleMenuButton.m */,
 				984BD40641F84A49BBCB54BE030D9EA6 /* Support Files */,
 			);
 			path = DWBubbleMenuButton;
@@ -225,11 +225,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0EAA64E89E210A7F7D65F1C3B8AA4819 /* Headers */ = {
+		71348BAA1A5741AEBF5218774C086A6B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAC2EE760B8494F3949BC5CA84AC64B /* DWBubbleMenuButton.h in Headers */,
+				3D2FB9D6571B52C865E77AAC76754AC8 /* DWBubbleMenuButton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +245,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		03D557660FE4371C6979A2B54738781F /* DWBubbleMenuButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ADCF86D27EC9EC6C7985A8D6953868F /* Build configuration list for PBXNativeTarget "DWBubbleMenuButton" */;
+			buildPhases = (
+				9AFD0A87CD4186E31BF60A6069A45C15 /* Sources */,
+				4F4883CAA8D7C43C5042970B418DC61D /* Frameworks */,
+				71348BAA1A5741AEBF5218774C086A6B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DWBubbleMenuButton;
+			productName = DWBubbleMenuButton;
+			productReference = 9F6F9897DB2BAEA188CA9917BB012868 /* libDWBubbleMenuButton.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		277E697DCA115E8F22EAFD178CB51A8F /* Pods-Xpress Order */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E81C4C080EF494DFEB03AE47EDEF6568 /* Build configuration list for PBXNativeTarget "Pods-Xpress Order" */;
@@ -255,29 +272,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				D6ABE8716D56A7A99BD5E2376D742D14 /* PBXTargetDependency */,
-				DB910E4A920066CE83F05ADA1E135AB3 /* PBXTargetDependency */,
+				D12665540BD94A1D34E0ED56E9E98B2E /* PBXTargetDependency */,
+				E35334234FFABEFB972B2E8AA26CB49A /* PBXTargetDependency */,
 			);
 			name = "Pods-Xpress Order";
 			productName = "Pods-Xpress Order";
 			productReference = E58D6B37607C67DC2D51E5FE2E6DE46E /* libPods-Xpress Order.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		A4B125C7332ADE8645717EB6D6845BA9 /* DWBubbleMenuButton */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 389997B342EA1128F1B3944A4729D4AB /* Build configuration list for PBXNativeTarget "DWBubbleMenuButton" */;
-			buildPhases = (
-				798C5C8C40977705FD544DF4E2D350C6 /* Sources */,
-				EFAD44B1F450C956E619E5D7E4CB3488 /* Frameworks */,
-				0EAA64E89E210A7F7D65F1C3B8AA4819 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DWBubbleMenuButton;
-			productName = DWBubbleMenuButton;
-			productReference = 07C6BF20D8ACB8E0FD0C7FBDB3084EF1 /* libDWBubbleMenuButton.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		B281DA29A9C3EDFB45BA53651F6BA611 /* SVProgressHUD */ = {
@@ -318,7 +318,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A4B125C7332ADE8645717EB6D6845BA9 /* DWBubbleMenuButton */,
+				03D557660FE4371C6979A2B54738781F /* DWBubbleMenuButton */,
 				277E697DCA115E8F22EAFD178CB51A8F /* Pods-Xpress Order */,
 				B281DA29A9C3EDFB45BA53651F6BA611 /* SVProgressHUD */,
 			);
@@ -336,12 +336,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		798C5C8C40977705FD544DF4E2D350C6 /* Sources */ = {
+		9AFD0A87CD4186E31BF60A6069A45C15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20793056E05CCFF11650054AFCE1DCFA /* DWBubbleMenuButton-dummy.m in Sources */,
-				0A4B15045FE9E7E15A5AE047037A33A3 /* DWBubbleMenuButton.m in Sources */,
+				9B369AF92CA8F9D00EC29F3BBA513616 /* DWBubbleMenuButton-dummy.m in Sources */,
+				6CDB1E20C5FC40693E7F2CE9135B233C /* DWBubbleMenuButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,37 +356,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D6ABE8716D56A7A99BD5E2376D742D14 /* PBXTargetDependency */ = {
+		D12665540BD94A1D34E0ED56E9E98B2E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DWBubbleMenuButton;
-			target = A4B125C7332ADE8645717EB6D6845BA9 /* DWBubbleMenuButton */;
-			targetProxy = E346E1494758E31A47E630B55786E7F3 /* PBXContainerItemProxy */;
+			target = 03D557660FE4371C6979A2B54738781F /* DWBubbleMenuButton */;
+			targetProxy = 15ADAFB6CD42612EAD328218E6CE9A34 /* PBXContainerItemProxy */;
 		};
-		DB910E4A920066CE83F05ADA1E135AB3 /* PBXTargetDependency */ = {
+		E35334234FFABEFB972B2E8AA26CB49A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SVProgressHUD;
 			target = B281DA29A9C3EDFB45BA53651F6BA611 /* SVProgressHUD */;
-			targetProxy = 3DA2E79BAC2B3AB284E39C2D2FC1F349 /* PBXContainerItemProxy */;
+			targetProxy = 8C1F97D0223D8F27C6BF4962DAC95F81 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1A824952DE67026886E625E85E9EAC5A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FA0C47E7A893FD9318666F9777587B3 /* DWBubbleMenuButton-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DWBubbleMenuButton/DWBubbleMenuButton-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		322B361819FFFAE9FE9E7813F0E246A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6BE12B2B524FE9D3146BFED199977892 /* Pods-Xpress Order.release.xcconfig */;
@@ -403,9 +387,9 @@
 			};
 			name = Release;
 		};
-		719631A7A1BCBDEE0159B0AAEF9E9868 /* Debug */ = {
+		3EA5B72F09193CBB18CFE6B13B14C7B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FA0C47E7A893FD9318666F9777587B3 /* DWBubbleMenuButton-Private.xcconfig */;
+			baseConfigurationReference = C49AA879737A25CD854BB538C373DADB /* DWBubbleMenuButton-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DWBubbleMenuButton/DWBubbleMenuButton-prefix.pch";
@@ -473,6 +457,22 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		D035DA6EA6806D213D3EDD844231123C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C49AA879737A25CD854BB538C373DADB /* DWBubbleMenuButton-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DWBubbleMenuButton/DWBubbleMenuButton-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		DC0AB86C68D395E5A1B2BCBF94455BFE /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -552,20 +552,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		389997B342EA1128F1B3944A4729D4AB /* Build configuration list for PBXNativeTarget "DWBubbleMenuButton" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				719631A7A1BCBDEE0159B0AAEF9E9868 /* Debug */,
-				1A824952DE67026886E625E85E9EAC5A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6B10C8D8BC6346D953E0D2DDABC63F3E /* Build configuration list for PBXNativeTarget "SVProgressHUD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DC0AB86C68D395E5A1B2BCBF94455BFE /* Debug */,
 				E306C872DB371BCB6363DB365D786249 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ADCF86D27EC9EC6C7985A8D6953868F /* Build configuration list for PBXNativeTarget "DWBubbleMenuButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EA5B72F09193CBB18CFE6B13B14C7B6 /* Debug */,
+				D035DA6EA6806D213D3EDD844231123C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

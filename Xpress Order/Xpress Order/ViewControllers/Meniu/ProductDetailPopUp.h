@@ -13,11 +13,11 @@
 
 typedef NS_ENUM (NSInteger, DismissOption) {
 	DismissOptionOk = 0,
-	DismissOptionGoToTables
+	DismissOptionWithAction
 };
 @protocol ProductDetailProtocol <NSObject>
 
-- (void)productDetail:(ProductDetailPopUp *)popUp dismissedWithOption:(DismissOption)option;
+- (void)productDetail:(ProductDetailPopUp *)popUp dismissedWithOption:(DismissOption)option forFood:(FoodModel *)food;
 
 @end
 
@@ -27,8 +27,10 @@ typedef NS_ENUM (NSInteger, DismissOption) {
 @property (nonatomic, weak) IBOutlet UIImageView *imageViewProduct;
 @property (nonatomic, weak) IBOutlet UILabel *labelDetails;
 @property (nonatomic, weak) IBOutlet UIButton *buttonOK;
-@property (nonatomic, weak) IBOutlet UIButton *buttonGoToTables;
+@property (nonatomic, weak) IBOutlet UIButton *buttonAction;
 @property (nonatomic, weak) id <ProductDetailProtocol> delegate;
+
+@property (nonatomic, strong) NSString *actionButtonTitle;
 
 - (instancetype)initWithNibName:(NSString *)nibName andFoodModel:(FoodModel *)foodModel;
 

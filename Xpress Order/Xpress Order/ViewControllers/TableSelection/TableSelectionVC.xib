@@ -62,6 +62,7 @@
                     <constraint firstAttribute="trailing" secondItem="S52-sF-ekv" secondAttribute="trailing" id="zRp-54-FVV"/>
                 </constraints>
             </view>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
                 <outlet property="tableViewTableSelection" destination="7iK-CX-8pt" id="s3K-1Y-PyP"/>
