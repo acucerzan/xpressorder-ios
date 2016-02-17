@@ -43,6 +43,8 @@
 	FoodModel *foodModel = [self.selectedFoods objectAtIndex:indexPath.row];
 	ProductDetailPopUp *popUp = [[ProductDetailPopUp alloc] initWithNibName:@"ProductDetailPopUp" andFoodModel:foodModel];
 
+	[popUp setActionButtonTitle:@"Mese"];
+
 	popUp.delegate = self;
 	[popUp showPopUpInViewController:self];
 }

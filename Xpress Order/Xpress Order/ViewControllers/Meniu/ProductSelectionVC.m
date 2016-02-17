@@ -7,12 +7,17 @@
 //
 
 #import "ProductSelectionVC.h"
+#import "ProductOrderPopUp.h"
 #import "Table.h"
+#import "OrderedFoodsVC.h"
 
 #import "CategoryModel.h"
 #import "FoodModel.h"
 
-@interface ProductSelectionVC () <ProductDetailProtocol, UISearchBarDelegate, UIGestureRecognizerDelegate>
+@interface ProductSelectionVC () <ProductDetailProtocol, UISearchBarDelegate, UIGestureRecognizerDelegate, ProductOrderProtocol>
+{
+// BOOL isAllredySelected;
+}
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIView *viewSearchBar;
 
@@ -82,9 +87,21 @@
 	[cell setProductCellType:ProductCellTypeOrder];
 
 // UIGestureRecognizer *gesture = [[UIGestureRecognizer alloc] init];
-	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewMakeOrderPress:)];
-	[tapGesture setDelegate:self];
-	[cell.viewContainerOrder addGestureRecognizer:tapGesture];
+
+	UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+	[button setTitle:@"" forState:0];
+
+	CGRect frame = cell.viewContainerOrder.frame;
+	frame.origin.x = frame.origin.y = 0;
+	[button setExclusiveTouch:YES];
+	[button setFrame:frame];
+	[button addTarget:self action:@selector(viewMakeOrderPress:) forControlEvents:1 << 6];
+	[button addTarget:self action:@selector(viewMakeOrderHeighlight:) forControlEvents:UIControlEventTouchDown];
+
+	[cell.viewContainerOrder addSubview:button];
+// UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewMakeOrderPress:)];
+// [tapGesture setDelegate:self];
+// [cell.viewContainerOrder addGestureRecognizer:tapGesture];
 }
 
 #pragma mark --- Gesture recognizer Delegate
@@ -92,37 +109,94 @@
 // this touch
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
+// if (isAllredySelected)
+// return YES;
+
 	UIView *view = touch.view;
 	if ([view.superview.superview isKindOfClass:[UITableViewCell class]]) {
 		[UIView animateWithDuration:kDefaultAnimationDuration animations:^{
 		  view.transform = CGAffineTransformMakeScale(1.1, 1.1);
 		  [view setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.12]];
+		} completion:^(BOOL finished) {
+// isAllredySelected = YES;
+// [self.tableViewProducts setScrollEnabled:NO];
 		}];
 	}
 	return YES;
 }
 
 #pragma mark --- HelperFunctions
+- (IBAction)viewMakeOrderHeighlight:(id)sender
+{
+	UIView *view = [sender superview];
+
+	if ([view.superview.superview isKindOfClass:[UITableViewCell class]]) {
+		[UIView animateWithDuration:kDefaultAnimationDuration animations:^{
+		  view.transform = CGAffineTransformMakeScale(1.1, 1.1);
+		  [view setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.12]];
+		} completion:^(BOOL finished) {
+// isAllredySelected = YES;
+// [self.tableViewProducts setScrollEnabled:NO];
+		}];
+	}
+}
 
 - (IBAction)viewMakeOrderPress:(id)sender
 {
-	UIView *view = [sender view];
+	UIView *view = [sender superview];
 
 	[UIView animateWithDuration:kDefaultAnimationDuration animations:^{
 	  view.transform = CGAffineTransformMakeScale(1, 1);
 	  [view setBackgroundColor:[UIColor whiteColor]];
+	} completion:^(BOOL finished) {
+// isAllredySelected = NO;
+// [self.tableViewProducts setScrollEnabled:YES];
 	}];
 
 	NSInteger index = [view tag] - kDefaultViewMakeOrderTag;
 	if (index <= self.selectedFoods.count - 1) {
 		FoodModel *foodModel = [self.selectedFoods objectAtIndex:index];
-		[self makeOrderForFood:foodModel];
+		[self showPopUpOrderForFood:foodModel];
 	}
 }
 
-- (void)makeOrderForFood:(FoodModel *)food
+- (void)showPopUpOrderForFood:(FoodModel *)foodModel
+{
+	ProductOrderPopUp *popUp = [[ProductOrderPopUp alloc] initWithNibName:@"ProductOrderPopUp" andFoodModel:foodModel];
+	[popUp setDelegate:self];
+	[popUp setActionButtonTitle:@"Comanda"];
+	[popUp showPopUpInViewController:self];
+}
+
+- (void)makeOrderForFood:(FoodModel *)food withObservation:(NSString *)observation
 {
 	NSLog(@"make an order press");
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+
+	XPModel *shared = [XPModel sharedInstance];
+
+	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
+	[networkingDataSource addProductID:food.strFoodId toOrderID:shared.tableAccess.orderID withObservation:observation withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+	  if (!error)
+			NSLog(@"order added with success");
+
+	  [SVProgressHUD dismiss];
+	}];
+}
+
+- (void)productOrder:(ProductOrderPopUp *)popUp dismissedWithOption:(DismissOption)option forFood:(FoodModel *)food andObservation:(NSString *)observations
+{
+	if (option == DismissOptionOk)
+		[popUp closePopUp];
+	else
+		if (option == DismissOptionWithAction) {
+			[popUp closePopUp];
+
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				// go to table VC
+				[self makeOrderForFood:food withObservation:observations];
+			});
+		}
 }
 
 #pragma mark --- tableview delegate
@@ -145,7 +219,9 @@
 	else
 		if (option == DismissOptionWithAction) {
 			[popUp closePopUp];
-			[self makeOrderForFood:food];
+			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+				[self showPopUpOrderForFood:food];
+			});
 		}
 }
 
@@ -160,6 +236,8 @@
 
 - (IBAction)buttonBillPress:(id)sender
 {
+	OrderedFoodsVC *order = [[OrderedFoodsVC alloc] init];
+	[self.navigationController pushViewController:order animated:YES];
 }
 
 #pragma mark --- Search bar delegate

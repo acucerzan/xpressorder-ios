@@ -57,6 +57,8 @@
 		B970587467D94BA4A9CCDDBF /* libPods-Xpress Order.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 858163F371ABFA011C288FB0 /* libPods-Xpress Order.a */; };
 		BD0833821C694E78002676BC /* PinPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0833811C694E78002676BC /* PinPopUp.m */; };
 		BD0833841C694F0C002676BC /* PinPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0833831C694F0C002676BC /* PinPopUp.xib */; };
+		BD0B4B051C726A35002BB48B /* ProductOrderPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BD0B4B031C726A35002BB48B /* ProductOrderPopUp.m */; };
+		BD0B4B061C726A35002BB48B /* ProductOrderPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0B4B041C726A35002BB48B /* ProductOrderPopUp.xib */; };
 		BD12D7371C709D0E007E9EB1 /* ProductSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD12D7351C709D0E007E9EB1 /* ProductSelectionVC.m */; };
 		BD12D7381C709D0E007E9EB1 /* ProductSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD12D7361C709D0E007E9EB1 /* ProductSelectionVC.xib */; };
 		BD2DD0891C502D1A001CC137 /* ReservationImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD0871C502D1A001CC137 /* ReservationImageCell.m */; };
@@ -103,6 +105,10 @@
 		BD9C7A601C708758003EF70D /* TableViewDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD9C7A5E1C708758003EF70D /* TableViewDetailVC.xib */; };
 		BDE3A9021C62C41800117772 /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE3A9011C62C41800117772 /* Reservation.m */; };
 		BDE4A2B31C58CC1500EBF324 /* UITextField+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE4A2B21C58CC1500EBF324 /* UITextField+Types.m */; };
+		BDF4A99D1C750C6D00DF0FF7 /* OrderedFoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF4A99C1C750C6D00DF0FF7 /* OrderedFoodsVC.m */; };
+		BDF4A9A01C7518AC00DF0FF7 /* FoodOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF4A99F1C7518AC00DF0FF7 /* FoodOrder.m */; };
+		BDF4A9A51C75282300DF0FF7 /* OrderedFoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF4A9A31C75282300DF0FF7 /* OrderedFoodCell.m */; };
+		BDF4A9A61C75282300DF0FF7 /* OrderedFoodCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDF4A9A41C75282300DF0FF7 /* OrderedFoodCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +212,9 @@
 		BD0833801C694E78002676BC /* PinPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinPopUp.h; sourceTree = "<group>"; };
 		BD0833811C694E78002676BC /* PinPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinPopUp.m; sourceTree = "<group>"; };
 		BD0833831C694F0C002676BC /* PinPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinPopUp.xib; sourceTree = "<group>"; };
+		BD0B4B021C726A35002BB48B /* ProductOrderPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductOrderPopUp.h; sourceTree = "<group>"; };
+		BD0B4B031C726A35002BB48B /* ProductOrderPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductOrderPopUp.m; sourceTree = "<group>"; };
+		BD0B4B041C726A35002BB48B /* ProductOrderPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductOrderPopUp.xib; sourceTree = "<group>"; };
 		BD12D7331C709395007E9EB1 /* Keys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
 		BD12D7341C709D0E007E9EB1 /* ProductSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectionVC.h; sourceTree = "<group>"; };
 		BD12D7351C709D0E007E9EB1 /* ProductSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectionVC.m; sourceTree = "<group>"; };
@@ -280,6 +289,13 @@
 		BDE3A9011C62C41800117772 /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
 		BDE4A2B11C58CC1500EBF324 /* UITextField+Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Types.h"; sourceTree = "<group>"; };
 		BDE4A2B21C58CC1500EBF324 /* UITextField+Types.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Types.m"; sourceTree = "<group>"; };
+		BDF4A99B1C750C6D00DF0FF7 /* OrderedFoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedFoodsVC.h; sourceTree = "<group>"; };
+		BDF4A99C1C750C6D00DF0FF7 /* OrderedFoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedFoodsVC.m; sourceTree = "<group>"; };
+		BDF4A99E1C7518AC00DF0FF7 /* FoodOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodOrder.h; sourceTree = "<group>"; };
+		BDF4A99F1C7518AC00DF0FF7 /* FoodOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodOrder.m; sourceTree = "<group>"; };
+		BDF4A9A21C75282300DF0FF7 /* OrderedFoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedFoodCell.h; sourceTree = "<group>"; };
+		BDF4A9A31C75282300DF0FF7 /* OrderedFoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedFoodCell.m; sourceTree = "<group>"; };
+		BDF4A9A41C75282300DF0FF7 /* OrderedFoodCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderedFoodCell.xib; sourceTree = "<group>"; };
 		F56C6570CC180E1787B759D9 /* Pods-Xpress Order.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xpress Order.release.xcconfig"; path = "Pods/Target Support Files/Pods-Xpress Order/Pods-Xpress Order.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -384,6 +400,8 @@
 				4AE8AE491C0C6534006BB91F /* FoodModel.m */,
 				BDE3A9001C62C41800117772 /* Reservation.h */,
 				BDE3A9011C62C41800117772 /* Reservation.m */,
+				BDF4A99E1C7518AC00DF0FF7 /* FoodOrder.h */,
+				BDF4A99F1C7518AC00DF0FF7 /* FoodOrder.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -491,6 +509,7 @@
 		4A1852F11BE9289900AF495F /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				BDF4A9A11C7527A700DF0FF7 /* PaymentCell */,
 				BD2DD09F1C504447001CC137 /* Review */,
 				BD2DD0851C502CD6001CC137 /* TableReservation */,
 				BD8243141C44665F00444831 /* ProductSelection */,
@@ -580,6 +599,9 @@
 				BD3B5CF11C6D446500BBC19C /* ProductDetailPopUp.h */,
 				BD3B5CF21C6D446500BBC19C /* ProductDetailPopUp.m */,
 				BD3B5CF31C6D446500BBC19C /* ProductDetailPopUp.xib */,
+				BD0B4B021C726A35002BB48B /* ProductOrderPopUp.h */,
+				BD0B4B031C726A35002BB48B /* ProductOrderPopUp.m */,
+				BD0B4B041C726A35002BB48B /* ProductOrderPopUp.xib */,
 			);
 			path = Meniu;
 			sourceTree = "<group>";
@@ -669,6 +691,8 @@
 		BDAC0DCA1C710AEB0015CA93 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
+				BDF4A99B1C750C6D00DF0FF7 /* OrderedFoodsVC.h */,
+				BDF4A99C1C750C6D00DF0FF7 /* OrderedFoodsVC.m */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -681,6 +705,16 @@
 				BD12D7331C709395007E9EB1 /* Keys.h */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BDF4A9A11C7527A700DF0FF7 /* PaymentCell */ = {
+			isa = PBXGroup;
+			children = (
+				BDF4A9A21C75282300DF0FF7 /* OrderedFoodCell.h */,
+				BDF4A9A31C75282300DF0FF7 /* OrderedFoodCell.m */,
+				BDF4A9A41C75282300DF0FF7 /* OrderedFoodCell.xib */,
+			);
+			path = PaymentCell;
 			sourceTree = "<group>";
 		};
 		CC781F59454893B1E1A7CC42 /* Pods */ = {
@@ -759,6 +793,7 @@
 				BD2DD09E1C50329E001CC137 /* ReservationButtonCell.xib in Resources */,
 				BD4E113A1C48655700C71DD4 /* HistoryVC.xib in Resources */,
 				BD8243231C4466AB00444831 /* LogoCenterCell.xib in Resources */,
+				BD0B4B061C726A35002BB48B /* ProductOrderPopUp.xib in Resources */,
 				BD12D7381C709D0E007E9EB1 /* ProductSelectionVC.xib in Resources */,
 				BD9C7A601C708758003EF70D /* TableViewDetailVC.xib in Resources */,
 				BD82431E1C44665F00444831 /* ProductGroupCell.xib in Resources */,
@@ -771,6 +806,7 @@
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
 				BD82431C1C44665F00444831 /* ProductCell.xib in Resources */,
 				BD0833841C694F0C002676BC /* PinPopUp.xib in Resources */,
+				BDF4A9A61C75282300DF0FF7 /* OrderedFoodCell.xib in Resources */,
 				4A1852271BE7CD0D00AF495F /* Main.storyboard in Resources */,
 				BD2DD08F1C502E76001CC137 /* ReservationNameCell.xib in Resources */,
 				BD4E11351C48613D00C71DD4 /* ReviewVC.xib in Resources */,
@@ -833,6 +869,7 @@
 				4A1852CE1BE7DA2E00AF495F /* UIImageView+AFNetworking.m in Sources */,
 				BD9C7A5F1C708758003EF70D /* TableViewDetailVC.m in Sources */,
 				4A1852E61BE7DA9200AF495F /* CJSONSerializer.m in Sources */,
+				BDF4A9A51C75282300DF0FF7 /* OrderedFoodCell.m in Sources */,
 				4A1852CC1BE7DA2E00AF495F /* AFXMLRequestOperation.m in Sources */,
 				BD8243121C44663300444831 /* TableSelectionCell.m in Sources */,
 				BD8243221C4466AB00444831 /* LogoCenterCell.m in Sources */,
@@ -856,6 +893,7 @@
 				4AE8AE4A1C0C6534006BB91F /* CategoryModel.m in Sources */,
 				4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */,
 				4A1852E51BE7DA9200AF495F /* CJSONScanner.m in Sources */,
+				BDF4A99D1C750C6D00DF0FF7 /* OrderedFoodsVC.m in Sources */,
 				BD2DD0931C50308C001CC137 /* ReservationDateCell.m in Sources */,
 				4AE8AE361C0C4811006BB91F /* CheckReservationParser.m in Sources */,
 				4A1852ED1BE9151700AF495F /* AFNetworkReachabilityManager.m in Sources */,
@@ -866,6 +904,8 @@
 				4A1852211BE7CD0D00AF495F /* PlacesVC.m in Sources */,
 				4A1852D41BE7DA8600AF495F /* PlaceListParser.m in Sources */,
 				4A07C67D1C0C8CC5003E0FB9 /* AddToOrderParser.m in Sources */,
+				BD0B4B051C726A35002BB48B /* ProductOrderPopUp.m in Sources */,
+				BDF4A9A01C7518AC00DF0FF7 /* FoodOrder.m in Sources */,
 				BD3B5CF41C6D446500BBC19C /* ProductDetailPopUp.m in Sources */,
 				4A1852C71BE7DA2E00AF495F /* AFImageRequestOperation.m in Sources */,
 				4A07C67A1C0C8843003E0FB9 /* CompareTableCodeParser.m in Sources */,

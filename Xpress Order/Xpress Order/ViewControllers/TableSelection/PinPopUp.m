@@ -76,7 +76,15 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	[self.textFieldPin becomeFirstResponder];
+
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), mainThread, ^{
+		[self.textFieldPin becomeFirstResponder];
+	});
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
 }
 
 #pragma mark --- Keyboard Notification

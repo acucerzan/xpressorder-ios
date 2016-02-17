@@ -37,20 +37,22 @@
 #define kRequestComparePinCode   @"compare_pincode.php"
 #define kRequestTakeTable        @"table_sit.php"
 #define kRequestGetCategoryFood  @"get_category_food.php"
-
+#define kRequestGetFoodOrder     @"get_food_order.php"
 
 // MARK: request Params
-#define kParamPlaceId      @"place_id"
-#define kParamName         @"Name"
-#define kParamEmail        @"Email"
-#define kParamPhone        @"Phone"
-#define kParamComingDate   @"Coming_date"
-#define kParamArrivingTime @"Arriving_time"
-#define kParamPersonsCount @"Nrpersoane"
-#define kParamAndroidId    @"Android_id"
-#define kParamObservations @"Observatii"
-#define kParamTableNomber  @"table_no"
-#define kParamPlaceReview  @"place_review"
+#define kParamPlaceId       @"place_id"
+#define kParamName          @"Name"
+#define kParamEmail         @"Email"
+#define kParamPhone         @"Phone"
+#define kParamComingDate    @"Coming_date"
+#define kParamArrivingTime  @"Arriving_time"
+#define kParamPersonsCount  @"Nrpersoane"
+#define kParamAndroidId     @"Android_id"
+#define kParamObservations  @"Observatii"
+#define kParamTableNomber   @"table_no"
+#define kParamPlaceReview   @"place_review"
+#define kParamReservationId @"reservation_id"
+#define kParamOrderId       @"order_id"
 
 
 @implementation MainNetworkingDataSource
@@ -457,7 +459,7 @@
 	// }
 
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               orderID, @"reservation_id",
+	                               orderID, kParamOrderId,
 	                               foodID, @"food_id",
 	                               @"pushToken", @"",
 	                               observationsString, @"observatii",
@@ -480,27 +482,50 @@
 	[self cancelOperationWithUrl:[self addOrderURL]];
 }
 
-- (NSString *)getMyFoodURL
+//- (NSString *)getMyFoodURL
+//{
+//	NSString *str = [URL_SERVER stringByAppendingString:@"get_food_like.php"];
+//
+//	return str;
+//}
+//
+//- (void)getFoodFromOrderID:(NSString *)orderID withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+//{
+//	// if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//	// completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//	// return;
+//	// }
+//
+//	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//	                               orderID, kParamReservationId,
+//	                               nil];
+//
+//	[self getDataWithUrl:[self getMyFoodURL]
+//	     timeoutInterval:kDefaultTimeOut
+//	             headers:nil  // headers
+//	          parameters:params
+//	       requestMethod:@"POST"
+//	     fallbackToCache:NO
+//	         parserClass:[MyFoodsParser class]
+//	   completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+//	  completitionBlock(items, error, userInfo);
+//	}];
+//}
+//
+//- (void)cancelFoodFromOrderRequest
+//{
+//	[self cancelOperationWithUrl:[self getMyFoodURL]];
+//}
+
+- (void)getFoodOrderForOrderId:(NSString *)reservationId withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
 {
-	NSString *str = [URL_SERVER stringByAppendingString:@"get_food_like.php"];
-
-	return str;
-}
-
-- (void)getFoodFromOrderID:(NSString *)orderID withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
-{
-	// if (![AFNetworkReachabilityManager sharedManager].reachable) {
-	// completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
-	// return;
-	// }
-
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               orderID, @"reservation_id",
+	                               reservationId, kParamOrderId,
 	                               nil];
 
-	[self getDataWithUrl:[self getMyFoodURL]
+	[self getDataWithUrl:[URL_SERVER stringByAppendingString:kRequestGetFoodOrder]
 	     timeoutInterval:kDefaultTimeOut
-	             headers:nil  // headers
+	             headers:nil    // headers
 	          parameters:params
 	       requestMethod:@"POST"
 	     fallbackToCache:NO
@@ -510,9 +535,9 @@
 	}];
 }
 
-- (void)cancelFoodFromOrderRequest
+- (void)cancelGetFoodForOrder
 {
-	[self cancelOperationWithUrl:[self getMyFoodURL]];
+	[self cancelOperationWithUrl:[URL_SERVER stringByAppendingString:kRequestGetFoodOrder]];
 }
 
 @end
