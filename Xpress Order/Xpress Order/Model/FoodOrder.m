@@ -14,6 +14,12 @@
 {
 	[aCoder encodeObject:self.foodName forKey:kFoodName];
 	[aCoder encodeObject:self.foodId forKey:kFoodId];
+	[aCoder encodeObject:self.foodImageName forKey:kFoodImageName];
+	[aCoder encodeObject:self.foodQuantity forKey:kFoodQuantity];
+	[aCoder encodeObject:self.foodPrice forKey:kFoodPrice];
+	[aCoder encodeObject:self.foodOrderedQuantity forKey:kFoodOrderedQuantity];
+	[aCoder encodeObject:self.foodOrdered forKey:kFoodOrdered];
+	[aCoder encodeObject:self.foodMeasuringUnit forKey:kFoodMeasuringUnitt];
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
@@ -22,6 +28,12 @@
 	if (self) {
 		self.foodId = [aDecoder decodeObjectForKey:kFoodId];
 		self.foodName = [aDecoder decodeObjectForKey:kFoodName];
+		self.foodImageName = [aDecoder decodeObjectForKey:kFoodImageName];
+		self.foodQuantity = [aDecoder decodeObjectForKey:kFoodQuantity];
+		self.foodPrice = [aDecoder decodeObjectForKey:kFoodPrice];
+		self.foodOrderedQuantity = [aDecoder decodeObjectForKey:kFoodOrderedQuantity];
+		self.foodOrdered = [aDecoder decodeObjectForKey:kFoodOrdered];
+		self.foodMeasuringUnit = [aDecoder decodeObjectForKey:kFoodMeasuringUnitt];
 	}
 	return self;
 }

@@ -104,6 +104,11 @@ typedef NS_ENUM (NSInteger, CellType) {
 	[self.tableViewReservation setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.10]];
 
 	[self.view setBackgroundColor:[UIColor whiteColor]];
+
+	if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+		self.edgesForExtendedLayout = UIRectEdgeNone;
+		self.automaticallyAdjustsScrollViewInsets = NO;
+	}
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -572,9 +577,13 @@ typedef NS_ENUM (NSInteger, CellType) {
 
 - (void)makeReservationFor:(Reservation *)reservation
 {
+	[SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
+
 	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
 	[networkingDataSource createReservation:reservation withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo)
 	{
+	  [SVProgressHUD dismiss];
+
 	  if (!error) {
 	    NSString *message = @"";
 

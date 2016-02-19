@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *place_name;
 @property (nonatomic, strong) NSNumber *place_review;
 
+@property (nonatomic) BOOL haveHistory;
 @property (nonatomic, strong) NSArray <Table *> *tables;
 
 @end

@@ -57,6 +57,7 @@
 	[self.tableViewTableSelection setContentInset:UIEdgeInsetsMake(64, 0, 0, 0)];
 }
 
+
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];

@@ -17,7 +17,7 @@
 #import "PlaceCell.h"
 
 #import "ReviewVC.h"
-#import "HistoryVC.h"
+#import "OrderedHistoryVC.h"
 #import "ReserveTableVC.h"
 #import "MenuVC.h"
 
@@ -86,8 +86,14 @@
 
 	    [self.myTableView reloadData];
 
-	    for (Cafe *cafe in items)
-				[self downloadAllTablesForPlace:cafe];
+	    for (Cafe *cafe in items) {
+	      [self downloadAllTablesForPlace:cafe];
+	      NSArray *orderedHistory = [UserDefaultsManager orderedFoodForPlace:cafe];
+	      if (orderedHistory.count != 0)
+					cafe.haveHistory = YES;
+	      else
+					cafe.haveHistory = NO;
+			}
 		}
 
 	  dispatch_async(mainThread, ^{
@@ -159,7 +165,7 @@
 - (IBAction)buttonHistoryPress:(id)sender
 {
 	Cafe *cafeObj = [self.arrayCafe objectAtIndex:[sender tag]];
-	HistoryVC *vc = [[HistoryVC alloc] loadViewControllerForPlace:cafeObj];
+	OrderedHistoryVC *vc = [[OrderedHistoryVC alloc] initWithPlace:cafeObj];
 	[self.navigationController pushViewController:vc animated:YES];
 
 	NSLog(@"button history press");
@@ -228,6 +234,7 @@
 
 	[cell.buttonHistory addTarget:self action:@selector(buttonHistoryPress:) forControlEvents:1 << 6];
 	[cell.buttonHistory setTag:indexPath.row];
+	[cell.buttonHistory setHidden:!cafeObj.haveHistory]; // if no history hide the button
 
 	[cell.buttonReservTable addTarget:self action:@selector(buttonReserveTablePress:) forControlEvents:1 << 6];
 	[cell.buttonReservTable setTag:indexPath.row];

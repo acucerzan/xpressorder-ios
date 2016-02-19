@@ -81,10 +81,16 @@
 		BD4E11291C48581500C71DD4 /* XPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E11281C48581500C71DD4 /* XPUtils.m */; };
 		BD4E11341C48613D00C71DD4 /* ReviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E11321C48613D00C71DD4 /* ReviewVC.m */; };
 		BD4E11351C48613D00C71DD4 /* ReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E11331C48613D00C71DD4 /* ReviewVC.xib */; };
-		BD4E11391C48655700C71DD4 /* HistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E11371C48655700C71DD4 /* HistoryVC.m */; };
-		BD4E113A1C48655700C71DD4 /* HistoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E11381C48655700C71DD4 /* HistoryVC.xib */; };
 		BD4E113E1C48661200C71DD4 /* ReserveTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD4E113C1C48661200C71DD4 /* ReserveTableVC.m */; };
 		BD4E113F1C48661200C71DD4 /* ReserveTableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD4E113D1C48661200C71DD4 /* ReserveTableVC.xib */; };
+		BD621E041C766E2C0069AE6C /* TotalPayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD621E021C766E2C0069AE6C /* TotalPayCell.m */; };
+		BD621E051C766E2C0069AE6C /* TotalPayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD621E031C766E2C0069AE6C /* TotalPayCell.xib */; };
+		BD621E081C767B8B0069AE6C /* UserDefaultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BD621E071C767B8B0069AE6C /* UserDefaultsManager.m */; };
+		BD621E0B1C76826E0069AE6C /* OrderedHistoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD621E0A1C76826E0069AE6C /* OrderedHistoryVC.m */; };
+		BD621E0F1C7682F40069AE6C /* OrderedHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = BD621E0D1C7682F40069AE6C /* OrderedHistory.m */; };
+		BD621E101C7682F40069AE6C /* OrderedHistory.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD621E0E1C7682F40069AE6C /* OrderedHistory.xib */; };
+		BD621E141C7686350069AE6C /* OrderedHistoryTotal.m in Sources */ = {isa = PBXBuildFile; fileRef = BD621E121C7686350069AE6C /* OrderedHistoryTotal.m */; };
+		BD621E151C7686350069AE6C /* OrderedHistoryTotal.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD621E131C7686350069AE6C /* OrderedHistoryTotal.xib */; };
 		BD8242FF1C44574F00444831 /* TableSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8242FC1C44574F00444831 /* TableSelectionVC.m */; };
 		BD8243011C4457B900444831 /* TableSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8243001C4457B900444831 /* TableSelectionVC.xib */; };
 		BD82430A1C4462A800444831 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8243091C4462A800444831 /* BaseViewController.m */; };
@@ -250,12 +256,22 @@
 		BD4E11311C48613D00C71DD4 /* ReviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewVC.h; sourceTree = "<group>"; };
 		BD4E11321C48613D00C71DD4 /* ReviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewVC.m; sourceTree = "<group>"; };
 		BD4E11331C48613D00C71DD4 /* ReviewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewVC.xib; sourceTree = "<group>"; };
-		BD4E11361C48655700C71DD4 /* HistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryVC.h; sourceTree = "<group>"; };
-		BD4E11371C48655700C71DD4 /* HistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryVC.m; sourceTree = "<group>"; };
-		BD4E11381C48655700C71DD4 /* HistoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryVC.xib; sourceTree = "<group>"; };
 		BD4E113B1C48661200C71DD4 /* ReserveTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReserveTableVC.h; sourceTree = "<group>"; };
 		BD4E113C1C48661200C71DD4 /* ReserveTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReserveTableVC.m; sourceTree = "<group>"; };
 		BD4E113D1C48661200C71DD4 /* ReserveTableVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReserveTableVC.xib; sourceTree = "<group>"; };
+		BD621E011C766E2C0069AE6C /* TotalPayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalPayCell.h; sourceTree = "<group>"; };
+		BD621E021C766E2C0069AE6C /* TotalPayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalPayCell.m; sourceTree = "<group>"; };
+		BD621E031C766E2C0069AE6C /* TotalPayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalPayCell.xib; sourceTree = "<group>"; };
+		BD621E061C767B8B0069AE6C /* UserDefaultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDefaultsManager.h; sourceTree = "<group>"; };
+		BD621E071C767B8B0069AE6C /* UserDefaultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDefaultsManager.m; sourceTree = "<group>"; };
+		BD621E091C76826E0069AE6C /* OrderedHistoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedHistoryVC.h; sourceTree = "<group>"; };
+		BD621E0A1C76826E0069AE6C /* OrderedHistoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedHistoryVC.m; sourceTree = "<group>"; };
+		BD621E0C1C7682F40069AE6C /* OrderedHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedHistory.h; sourceTree = "<group>"; };
+		BD621E0D1C7682F40069AE6C /* OrderedHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedHistory.m; sourceTree = "<group>"; };
+		BD621E0E1C7682F40069AE6C /* OrderedHistory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderedHistory.xib; sourceTree = "<group>"; };
+		BD621E111C7686350069AE6C /* OrderedHistoryTotal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderedHistoryTotal.h; sourceTree = "<group>"; };
+		BD621E121C7686350069AE6C /* OrderedHistoryTotal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderedHistoryTotal.m; sourceTree = "<group>"; };
+		BD621E131C7686350069AE6C /* OrderedHistoryTotal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderedHistoryTotal.xib; sourceTree = "<group>"; };
 		BD8242FB1C44574F00444831 /* TableSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSelectionVC.h; sourceTree = "<group>"; };
 		BD8242FC1C44574F00444831 /* TableSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSelectionVC.m; sourceTree = "<group>"; };
 		BD8243001C4457B900444831 /* TableSelectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableSelectionVC.xib; sourceTree = "<group>"; };
@@ -402,6 +418,8 @@
 				BDE3A9011C62C41800117772 /* Reservation.m */,
 				BDF4A99E1C7518AC00DF0FF7 /* FoodOrder.h */,
 				BDF4A99F1C7518AC00DF0FF7 /* FoodOrder.m */,
+				BD621E061C767B8B0069AE6C /* UserDefaultsManager.h */,
+				BD621E071C767B8B0069AE6C /* UserDefaultsManager.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -612,9 +630,6 @@
 				BD4E11311C48613D00C71DD4 /* ReviewVC.h */,
 				BD4E11321C48613D00C71DD4 /* ReviewVC.m */,
 				BD4E11331C48613D00C71DD4 /* ReviewVC.xib */,
-				BD4E11361C48655700C71DD4 /* HistoryVC.h */,
-				BD4E11371C48655700C71DD4 /* HistoryVC.m */,
-				BD4E11381C48655700C71DD4 /* HistoryVC.xib */,
 				BD4E113B1C48661200C71DD4 /* ReserveTableVC.h */,
 				BD4E113C1C48661200C71DD4 /* ReserveTableVC.m */,
 				BD4E113D1C48661200C71DD4 /* ReserveTableVC.xib */,
@@ -693,6 +708,8 @@
 			children = (
 				BDF4A99B1C750C6D00DF0FF7 /* OrderedFoodsVC.h */,
 				BDF4A99C1C750C6D00DF0FF7 /* OrderedFoodsVC.m */,
+				BD621E091C76826E0069AE6C /* OrderedHistoryVC.h */,
+				BD621E0A1C76826E0069AE6C /* OrderedHistoryVC.m */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -713,6 +730,15 @@
 				BDF4A9A21C75282300DF0FF7 /* OrderedFoodCell.h */,
 				BDF4A9A31C75282300DF0FF7 /* OrderedFoodCell.m */,
 				BDF4A9A41C75282300DF0FF7 /* OrderedFoodCell.xib */,
+				BD621E011C766E2C0069AE6C /* TotalPayCell.h */,
+				BD621E021C766E2C0069AE6C /* TotalPayCell.m */,
+				BD621E031C766E2C0069AE6C /* TotalPayCell.xib */,
+				BD621E0C1C7682F40069AE6C /* OrderedHistory.h */,
+				BD621E0D1C7682F40069AE6C /* OrderedHistory.m */,
+				BD621E0E1C7682F40069AE6C /* OrderedHistory.xib */,
+				BD621E111C7686350069AE6C /* OrderedHistoryTotal.h */,
+				BD621E121C7686350069AE6C /* OrderedHistoryTotal.m */,
+				BD621E131C7686350069AE6C /* OrderedHistoryTotal.xib */,
 			);
 			path = PaymentCell;
 			sourceTree = "<group>";
@@ -791,16 +817,18 @@
 				BD4E113F1C48661200C71DD4 /* ReserveTableVC.xib in Resources */,
 				BD3B5CF51C6D446500BBC19C /* ProductDetailPopUp.xib in Resources */,
 				BD2DD09E1C50329E001CC137 /* ReservationButtonCell.xib in Resources */,
-				BD4E113A1C48655700C71DD4 /* HistoryVC.xib in Resources */,
 				BD8243231C4466AB00444831 /* LogoCenterCell.xib in Resources */,
 				BD0B4B061C726A35002BB48B /* ProductOrderPopUp.xib in Resources */,
 				BD12D7381C709D0E007E9EB1 /* ProductSelectionVC.xib in Resources */,
 				BD9C7A601C708758003EF70D /* TableViewDetailVC.xib in Resources */,
+				BD621E101C7682F40069AE6C /* OrderedHistory.xib in Resources */,
 				BD82431E1C44665F00444831 /* ProductGroupCell.xib in Resources */,
 				BD8243281C44678D00444831 /* ClientDetailCell.xib in Resources */,
 				BD8243131C44663300444831 /* TableSelectionCell.xib in Resources */,
 				BD2DD0A41C504510001CC137 /* ReviewCurrentVoteCell.xib in Resources */,
 				BD2DD08A1C502D1A001CC137 /* ReservationImageCell.xib in Resources */,
+				BD621E051C766E2C0069AE6C /* TotalPayCell.xib in Resources */,
+				BD621E151C7686350069AE6C /* OrderedHistoryTotal.xib in Resources */,
 				BD8243321C446A9200444831 /* ReservationTimeCell.xib in Resources */,
 				BD3B5CF01C6D2EE800BBC19C /* MenuVC.xib in Resources */,
 				4A1852291BE7CD0D00AF495F /* Assets.xcassets in Resources */,
@@ -865,6 +893,7 @@
 				BD82430D1C4462CC00444831 /* BasePopUp.m in Sources */,
 				4AE8AE4B1C0C6534006BB91F /* FoodModel.m in Sources */,
 				4A1852D31BE7DA8600AF495F /* MainNetworkingDataSource.m in Sources */,
+				BD621E041C766E2C0069AE6C /* TotalPayCell.m in Sources */,
 				BD82431D1C44665F00444831 /* ProductGroupCell.m in Sources */,
 				4A1852CE1BE7DA2E00AF495F /* UIImageView+AFNetworking.m in Sources */,
 				BD9C7A5F1C708758003EF70D /* TableViewDetailVC.m in Sources */,
@@ -878,7 +907,6 @@
 				BDE3A9021C62C41800117772 /* Reservation.m in Sources */,
 				4A1852C81BE7DA2E00AF495F /* AFJSONRequestOperation.m in Sources */,
 				4AE8AE3F1C0C558C006BB91F /* TableAccess.m in Sources */,
-				BD4E11391C48655700C71DD4 /* HistoryVC.m in Sources */,
 				4A07C6771C0C822C003E0FB9 /* TakeTableParser.m in Sources */,
 				BD4E113E1C48661200C71DD4 /* ReserveTableVC.m in Sources */,
 				BD4E11341C48613D00C71DD4 /* ReviewVC.m in Sources */,
@@ -893,6 +921,8 @@
 				4AE8AE4A1C0C6534006BB91F /* CategoryModel.m in Sources */,
 				4A18521E1BE7CD0D00AF495F /* AppDelegate.m in Sources */,
 				4A1852E51BE7DA9200AF495F /* CJSONScanner.m in Sources */,
+				BD621E141C7686350069AE6C /* OrderedHistoryTotal.m in Sources */,
+				BD621E081C767B8B0069AE6C /* UserDefaultsManager.m in Sources */,
 				BDF4A99D1C750C6D00DF0FF7 /* OrderedFoodsVC.m in Sources */,
 				BD2DD0931C50308C001CC137 /* ReservationDateCell.m in Sources */,
 				4AE8AE361C0C4811006BB91F /* CheckReservationParser.m in Sources */,
@@ -912,9 +942,11 @@
 				4A1852E21BE7DA9200AF495F /* CDataScanner_Extensions.m in Sources */,
 				BD2DD0891C502D1A001CC137 /* ReservationImageCell.m in Sources */,
 				4ABFCF341BF24FC800987B79 /* Table.m in Sources */,
+				BD621E0B1C76826E0069AE6C /* OrderedHistoryVC.m in Sources */,
 				BD82431B1C44665F00444831 /* ProductCell.m in Sources */,
 				BD2DD0A81C50479A001CC137 /* ReviewSetVoteCell.m in Sources */,
 				4A1852C91BE7DA2E00AF495F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				BD621E0F1C7682F40069AE6C /* OrderedHistory.m in Sources */,
 				BD3B5CEF1C6D2EE800BBC19C /* MenuVC.m in Sources */,
 				4A18521B1BE7CD0D00AF495F /* main.m in Sources */,
 				4ABFCF371BF250A300987B79 /* SetReviewParser.m in Sources */,

@@ -1,14 +1,14 @@
 //
-// OrderedFoodCell.m
+// OrderedHistory.m
 // Xpress Order
 //
-// Created by Constantin Saulenco on 17/02/16.
+// Created by Constantin Saulenco on 18/02/16.
 // Copyright © 2016 Adrian Cucerzan. All rights reserved.
 //
 
-#import "OrderedFoodCell.h"
+#import "OrderedHistory.h"
 
-@implementation OrderedFoodCell
+@implementation OrderedHistory
 
 - (void)awakeFromNib
 {

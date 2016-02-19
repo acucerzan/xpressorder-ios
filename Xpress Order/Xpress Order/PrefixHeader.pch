@@ -19,6 +19,7 @@
 #import "SVProgressHUD.h"
 #import "Keys.h"
 
+#import "UserDefaultsManager.h"
 #import "XPModel.h"
 #import "XPUtils.h"
 #import "Macros.h"
