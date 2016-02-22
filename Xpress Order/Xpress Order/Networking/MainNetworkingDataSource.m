@@ -482,45 +482,46 @@
 	[self cancelOperationWithUrl:[self addOrderURL]];
 }
 
-//- (NSString *)getMyFoodURL
-//{
-//	NSString *str = [URL_SERVER stringByAppendingString:@"get_food_like.php"];
+// - (NSString *)getMyFoodURL
+// {
+// NSString *str = [URL_SERVER stringByAppendingString:@"get_food_like.php"];
 //
-//	return str;
-//}
+// return str;
+// }
 //
-//- (void)getFoodFromOrderID:(NSString *)orderID withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
-//{
-//	// if (![AFNetworkReachabilityManager sharedManager].reachable) {
-//	// completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
-//	// return;
-//	// }
+// - (void)getFoodFromOrderID:(NSString *)orderID withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary
+// *userInfo))completitionBlock
+// {
+//// if (![AFNetworkReachabilityManager sharedManager].reachable) {
+//// completitionBlock([NSMutableArray arrayWithCapacity:0], [NSError errorWithDomain:lang(@"no_internet_connection") code:-1 userInfo:nil], nil);
+//// return;
+//// }
 //
-//	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//	                               orderID, kParamReservationId,
-//	                               nil];
+// NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+// orderID, kParamReservationId,
+// nil];
 //
-//	[self getDataWithUrl:[self getMyFoodURL]
-//	     timeoutInterval:kDefaultTimeOut
-//	             headers:nil  // headers
-//	          parameters:params
-//	       requestMethod:@"POST"
-//	     fallbackToCache:NO
-//	         parserClass:[MyFoodsParser class]
-//	   completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
-//	  completitionBlock(items, error, userInfo);
-//	}];
-//}
+// [self getDataWithUrl:[self getMyFoodURL]
+// timeoutInterval:kDefaultTimeOut
+// headers:nil  // headers
+// parameters:params
+// requestMethod:@"POST"
+// fallbackToCache:NO
+// parserClass:[MyFoodsParser class]
+// completitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo) {
+// completitionBlock(items, error, userInfo);
+// }];
+// }
 //
-//- (void)cancelFoodFromOrderRequest
-//{
-//	[self cancelOperationWithUrl:[self getMyFoodURL]];
-//}
+// - (void)cancelFoodFromOrderRequest
+// {
+// [self cancelOperationWithUrl:[self getMyFoodURL]];
+// }
 
-- (void)getFoodOrderForOrderId:(NSString *)reservationId withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
+- (void)getFoodOrderForOrderId:(NSString *)orderId withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock
 {
 	NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-	                               reservationId, kParamOrderId,
+	                               orderId, kParamOrderId,
 	                               nil];
 
 	[self getDataWithUrl:[URL_SERVER stringByAppendingString:kRequestGetFoodOrder]

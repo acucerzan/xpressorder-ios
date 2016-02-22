@@ -49,6 +49,9 @@ typedef NS_ENUM (NSInteger, CellType) {
 
 	[self.tableViewReview setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 	[self.tableViewReview setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:.10]];
+
+	self.extendedLayoutIncludesOpaqueBars = NO;
+	self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning
@@ -223,15 +226,12 @@ typedef NS_ENUM (NSInteger, CellType) {
 {
 	MainNetworkingDataSource *networkingDataSource = [[XPModel sharedInstance] mainNetworkingDataSource];
 	[networkingDataSource setReview:[NSNumber numberWithFloat:selectedRating] forPlaceWithId:self.currentPlace.place_id withCompletitionBlock:^(NSArray *items, NSError *error, NSDictionary *userInfo)
-    {
-        if(!error)
-        {
-            MakeAlert(@"Success", @"Va multumim pentru evaluare!");
-            [self.navigationController popViewControllerAnimated:YES];
-        }
+	{
+	  if (!error) {
+	    MakeAlert(@"Success", @"Va multumim pentru evaluare!");
+	    [self.navigationController popViewControllerAnimated:YES];
+		}
 	}];
-
-	
 }
 
 - (void)ratingViewChanged:(HCSStarRatingView *)sender

@@ -76,7 +76,7 @@
 - (void)addProductID:(NSString *)foodID toOrderID:(NSString *)orderID withObservation:(NSString *)observationsString withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
 - (void)cancelAddOrderRequest;
 
-- (void)getFoodOrderForOrderId:(NSString *)reservationId withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
+- (void)getFoodOrderForOrderId:(NSString *)orderId withCompletitionBlock:(void (^)(NSArray *items, NSError *error, NSDictionary *userInfo))completitionBlock;
 - (void)cancelGetFoodForOrder;
 
 

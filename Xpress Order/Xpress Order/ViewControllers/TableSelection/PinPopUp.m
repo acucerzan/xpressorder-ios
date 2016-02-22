@@ -57,7 +57,7 @@
 		tableName = @"Bar";
 
 	[self.labelTableName setText:tableName];
-	[self.labelTableNumber setText:self.selectedTable.place_id];
+	[self.labelTableNumber setText:self.selectedTable.table_id];
 	[self.labelPersonNumber setText:[NSString stringWithFormat:@"x%@", self.selectedTable.user_available]];
 
 	NSString *tableState = @"Liber";

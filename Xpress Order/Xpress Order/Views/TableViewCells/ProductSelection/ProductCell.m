@@ -37,6 +37,8 @@
 	[self.labelQuantity setTextAlignment:NSTextAlignmentCenter];
 	[self.labelQuantity setTextColor:XP_PURPLE];
 	[self.labelQuantity setFont:MainFontRegular(18)];
+
+	[self.imageViewProduct setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
