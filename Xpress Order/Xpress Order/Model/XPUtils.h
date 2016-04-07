@@ -12,7 +12,7 @@
 
 #pragma mark --- Image methods
 
-+ (UIImage *)imageWithColor:(__weak UIColor *)color andFrame:(CGRect)frame;
++ (UIImage *)imageWithColor:(UIColor *)color andFrame:(CGRect)frame;
 + (UIImage *)imageByCombiningImage:(UIImage *)firstImage withImage:(UIImage *)secondImage;
 
 @end

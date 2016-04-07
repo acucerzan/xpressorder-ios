@@ -61,6 +61,8 @@
 		BD0B4B061C726A35002BB48B /* ProductOrderPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD0B4B041C726A35002BB48B /* ProductOrderPopUp.xib */; };
 		BD12D7371C709D0E007E9EB1 /* ProductSelectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BD12D7351C709D0E007E9EB1 /* ProductSelectionVC.m */; };
 		BD12D7381C709D0E007E9EB1 /* ProductSelectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD12D7361C709D0E007E9EB1 /* ProductSelectionVC.xib */; };
+		BD2304451CB7143F0021ED09 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2304431CB7143F0021ED09 /* Fabric.framework */; };
+		BD2304461CB7143F0021ED09 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD2304441CB7143F0021ED09 /* Crashlytics.framework */; };
 		BD2DD0891C502D1A001CC137 /* ReservationImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD0871C502D1A001CC137 /* ReservationImageCell.m */; };
 		BD2DD08A1C502D1A001CC137 /* ReservationImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD2DD0881C502D1A001CC137 /* ReservationImageCell.xib */; };
 		BD2DD08E1C502E76001CC137 /* ReservationNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BD2DD08C1C502E76001CC137 /* ReservationNameCell.m */; };
@@ -225,6 +227,8 @@
 		BD12D7341C709D0E007E9EB1 /* ProductSelectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSelectionVC.h; sourceTree = "<group>"; };
 		BD12D7351C709D0E007E9EB1 /* ProductSelectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSelectionVC.m; sourceTree = "<group>"; };
 		BD12D7361C709D0E007E9EB1 /* ProductSelectionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductSelectionVC.xib; sourceTree = "<group>"; };
+		BD2304431CB7143F0021ED09 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		BD2304441CB7143F0021ED09 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BD2DD0861C502D1A001CC137 /* ReservationImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationImageCell.h; sourceTree = "<group>"; };
 		BD2DD0871C502D1A001CC137 /* ReservationImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReservationImageCell.m; sourceTree = "<group>"; };
 		BD2DD0881C502D1A001CC137 /* ReservationImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReservationImageCell.xib; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B970587467D94BA4A9CCDDBF /* libPods-Xpress Order.a in Frameworks */,
+				BD2304461CB7143F0021ED09 /* Crashlytics.framework in Frameworks */,
+				BD2304451CB7143F0021ED09 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +344,8 @@
 		4A18520D1BE7CD0D00AF495F = {
 			isa = PBXGroup;
 			children = (
+				BD2304431CB7143F0021ED09 /* Fabric.framework */,
+				BD2304441CB7143F0021ED09 /* Crashlytics.framework */,
 				4A1852181BE7CD0D00AF495F /* Xpress Order */,
 				4A1852171BE7CD0D00AF495F /* Products */,
 				CC781F59454893B1E1A7CC42 /* Pods */,
@@ -764,6 +772,7 @@
 				4A1852131BE7CD0D00AF495F /* Frameworks */,
 				4A1852141BE7CD0D00AF495F /* Resources */,
 				37991F08E5A4C6D867529340 /* Copy Pods Resources */,
+				BD2304421CB712C10021ED09 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -876,6 +885,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		BD2304421CB712C10021ED09 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run fe4425a2f21af8c49a432dd26df54bd4cb14045a bc76b80e9f65e99b8c5dcf8b3dff62d8b08b4fdbd7e8e1e7ff621e98c13b5ea4";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1076,6 +1098,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "Xpress Order/PrefixHeader.pch";
 				INFOPLIST_FILE = "Xpress Order/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1093,6 +1119,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "Xpress Order/PrefixHeader.pch";
 				INFOPLIST_FILE = "Xpress Order/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
